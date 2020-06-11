@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"wyqian.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="数据结构的分类线性结构线性结构主要包括：数组、队列、链表和栈。 非线性结构非线性结构主要包括二维数组、多维数组、广义表、树结构和图结构">
+  <meta name="description" content="数据结构的分类线性结构线性结构主要包括：数组、队列、链表和栈。 非线性结构非线性结构主要包括二维数组、多维数组、广义表、树结构和图结构 稀疏数组的定义当一个数组大部分元素为0时，为了压缩数组的存储空间，可以考虑使用稀疏数组来保存。稀疏数组的结构是： 整体思路分析如下： 代码实现如下： 123456789101112131415161718192021222324252627282930313233">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构与算法重拾day1">
 <meta property="og:url" content="http://wyqian.top/2020/06/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E9%87%8D%E6%8B%BEday1/index.html">
 <meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
-<meta property="og:description" content="数据结构的分类线性结构线性结构主要包括：数组、队列、链表和栈。 非线性结构非线性结构主要包括二维数组、多维数组、广义表、树结构和图结构">
+<meta property="og:description" content="数据结构的分类线性结构线性结构主要包括：数组、队列、链表和栈。 非线性结构非线性结构主要包括二维数组、多维数组、广义表、树结构和图结构 稀疏数组的定义当一个数组大部分元素为0时，为了压缩数组的存储空间，可以考虑使用稀疏数组来保存。稀疏数组的结构是： 整体思路分析如下： 代码实现如下： 123456789101112131415161718192021222324252627282930313233">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-11T07:52:47.000Z">
-<meta property="article:modified_time" content="2020-06-11T07:54:54.031Z">
+<meta property="og:image" content="http://wyqian.top/2020/06/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E9%87%8D%E6%8B%BEday1/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E7%9A%84%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://wyqian.top/2020/06/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E9%87%8D%E6%8B%BEday1/%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90.png">
+<meta property="article:published_time" content="2020-06-11T12:35:09.000Z">
+<meta property="article:modified_time" content="2020-06-11T12:40:21.883Z">
 <meta property="article:author" content="Curryforthreeeeee30">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://wyqian.top/2020/06/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E9%87%8D%E6%8B%BEday1/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E7%9A%84%E7%BB%93%E6%9E%84.png">
 
 <link rel="canonical" href="http://wyqian.top/2020/06/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E9%87%8D%E6%8B%BEday1/">
 
@@ -189,7 +192,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-06-11 15:52:47" itemprop="dateCreated datePublished" datetime="2020-06-11T15:52:47+08:00">2020-06-11</time>
+              <time title="创建时间：2020-06-11 20:35:09" itemprop="dateCreated datePublished" datetime="2020-06-11T20:35:09+08:00">2020-06-11</time>
             </span>
 
           
@@ -212,14 +215,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>66</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -233,7 +236,10 @@
       
         <h2 id="数据结构的分类"><a href="#数据结构的分类" class="headerlink" title="数据结构的分类"></a>数据结构的分类</h2><h3 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h3><p>线性结构主要包括：数组、队列、链表和栈。</p>
 <h3 id="非线性结构"><a href="#非线性结构" class="headerlink" title="非线性结构"></a>非线性结构</h3><p>非线性结构主要包括二维数组、多维数组、广义表、树结构和图结构</p>
-
+<h2 id="稀疏数组的定义"><a href="#稀疏数组的定义" class="headerlink" title="稀疏数组的定义"></a>稀疏数组的定义</h2><p>当一个数组大部分元素为0时，为了压缩数组的存储空间，可以考虑使用稀疏数组来保存。<br>稀疏数组的结构是：<br><img src="/2020/06/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E9%87%8D%E6%8B%BEday1/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E7%9A%84%E7%BB%93%E6%9E%84.png" alt></p>
+<p>整体思路分析如下：<br><img src="/2020/06/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E9%87%8D%E6%8B%BEday1/%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90.png" alt></p>
+<p>代码实现如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public class sparseArr &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;创建原始数组</span><br><span class="line">		int[][] chessArr_ori &#x3D; new int[11][11];</span><br><span class="line">		chessArr_ori[0][1] &#x3D; 1;</span><br><span class="line">		chessArr_ori[1][2] &#x3D; 2;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;打印原始数组</span><br><span class="line">		System.out.println(&quot;这是原始数组：&quot;);</span><br><span class="line">		for(int[] arr : chessArr_ori) &#123;</span><br><span class="line">			for(int arr2 : arr) &#123;</span><br><span class="line">				System.out.printf(&quot;%d\t&quot;,arr2);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;创建稀疏数组</span><br><span class="line">		&#x2F;&#x2F;1.数清楚有多少个非0的数</span><br><span class="line">		&#x2F;&#x2F;2.将非零数塞进稀疏数组中</span><br><span class="line">		int sum &#x3D; 0;</span><br><span class="line">		for(int[] arr : chessArr_ori) &#123;</span><br><span class="line">			for(int arr2 : arr) &#123;</span><br><span class="line">				if(arr2 !&#x3D; 0) &#123;</span><br><span class="line">					sum++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.printf(&quot;原始数组中有%d个数不为0&quot;, sum);</span><br><span class="line">		System.out.println();</span><br><span class="line">		</span><br><span class="line">		int [][] sparseArr &#x3D; new int[sum+1][3];</span><br><span class="line">		sparseArr[0][0] &#x3D; chessArr_ori.length;</span><br><span class="line">		sparseArr[0][1] &#x3D; chessArr_ori.length;</span><br><span class="line">		sparseArr[0][2] &#x3D; sum;</span><br><span class="line">		</span><br><span class="line">		int count &#x3D; 0;</span><br><span class="line">		for(int i &#x3D; 0; i &lt; chessArr_ori.length; i++) &#123;</span><br><span class="line">			for(int j &#x3D; 0; j &lt; chessArr_ori.length; j++) &#123;</span><br><span class="line">				if(chessArr_ori[i][j] !&#x3D; 0) &#123;</span><br><span class="line">					count++;</span><br><span class="line">					sparseArr[count][0] &#x3D; i;</span><br><span class="line">					sparseArr[count][1] &#x3D; j;</span><br><span class="line">					sparseArr[count][2] &#x3D; chessArr_ori[i][j];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;打印稀疏数组</span><br><span class="line">		System.out.println(&quot;这是稀疏数组：&quot;);</span><br><span class="line">		for(int[] arr3 : sparseArr) &#123;</span><br><span class="line">			for(int arr4 : arr3) &#123;</span><br><span class="line">				System.out.printf(&quot;%d\t&quot;,arr4);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;稀疏数组还原成原始数组</span><br><span class="line">		&#x2F;&#x2F;1.提取原始数组的行数和列数，创建恢复数组；</span><br><span class="line">		&#x2F;&#x2F;2.将稀疏数组中非零数塞进恢复数组。</span><br><span class="line">		int [][] chessArr_back &#x3D; new int [sparseArr[0][0]][sparseArr[0][1]];</span><br><span class="line">		for(int m &#x3D; 1; m &lt; sum+1; m++) &#123;</span><br><span class="line">			chessArr_back[sparseArr[m][0]][sparseArr[m][1]] &#x3D; sparseArr[m][2];		</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;打印恢复数组</span><br><span class="line">		System.out.println(&quot;这是恢复数组：&quot;);</span><br><span class="line">		for(int[] arr5 : chessArr_ori) &#123;</span><br><span class="line">			for(int arr6 : arr5) &#123;</span><br><span class="line">				System.out.printf(&quot;%d\t&quot;,arr6);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -268,13 +274,6 @@
 
 
         
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/06/02/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
-    </a></div>
-      <div class="post-nav-item"></div>
-    </div>
       </footer>
     
   </article>
@@ -333,7 +332,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构的分类"><span class="nav-number">1.</span> <span class="nav-text">数据结构的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性结构"><span class="nav-number">1.1.</span> <span class="nav-text">线性结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非线性结构"><span class="nav-number">1.2.</span> <span class="nav-text">非线性结构</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构的分类"><span class="nav-number">1.</span> <span class="nav-text">数据结构的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性结构"><span class="nav-number">1.1.</span> <span class="nav-text">线性结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非线性结构"><span class="nav-number">1.2.</span> <span class="nav-text">非线性结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#稀疏数组的定义"><span class="nav-number">2.</span> <span class="nav-text">稀疏数组的定义</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -349,7 +348,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -394,12 +393,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">0k</span>
+    <span title="站点总字数">2k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">2 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
