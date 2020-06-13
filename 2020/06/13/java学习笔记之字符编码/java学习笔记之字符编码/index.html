@@ -22,18 +22,18 @@
 
   <meta name="description" content="各种字符编码我们最熟悉的字符编码是ASCII编码，它的编码范围是0~127，它是一套英文字母、数字和常用符号的编码，是由美国某组织制定的。 为了将中文纳入编码，中国制定了一个GB2312编码标准，很显然，一个字节肯定是不够的（毕竟中文汉字辣么多），因此采用两个字节来表示。为了和ASCII编码区分开，第一个字节的最高位始终为1（ASCII始终为0嘛）。 但是问题来了，很多国家都有自己的语言，都提出自">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java学习之字符编码">
-<meta property="og:url" content="http://wyqian.top/2020/06/13/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/index.html">
+<meta property="og:title" content="java学习笔记之字符编码">
+<meta property="og:url" content="http://wyqian.top/2020/06/13/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/index.html">
 <meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
 <meta property="og:description" content="各种字符编码我们最熟悉的字符编码是ASCII编码，它的编码范围是0~127，它是一套英文字母、数字和常用符号的编码，是由美国某组织制定的。 为了将中文纳入编码，中国制定了一个GB2312编码标准，很显然，一个字节肯定是不够的（毕竟中文汉字辣么多），因此采用两个字节来表示。为了和ASCII编码区分开，第一个字节的最高位始终为1（ASCII始终为0嘛）。 但是问题来了，很多国家都有自己的语言，都提出自">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-13T11:51:24.000Z">
-<meta property="article:modified_time" content="2020-06-13T12:17:52.015Z">
+<meta property="article:modified_time" content="2020-06-13T12:27:48.885Z">
 <meta property="article:author" content="Curryforthreeeeee30">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://wyqian.top/2020/06/13/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
+<link rel="canonical" href="http://wyqian.top/2020/06/13/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>java学习之字符编码 | SC&KD's Blog</title>
+  <title>java学习笔记之字符编码 | SC&KD's Blog</title>
   
 
 
@@ -164,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/06/13/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/06/13/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
@@ -177,7 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          java学习之字符编码
+          java学习笔记之字符编码
         </h1>
 
         <div class="post-meta">
@@ -215,8 +215,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/06/13/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/13/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/06/13/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/13/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -247,7 +247,7 @@
       
         <h3 id="各种字符编码"><a href="#各种字符编码" class="headerlink" title="各种字符编码"></a>各种字符编码</h3><p>我们最熟悉的字符编码是<em>ASCII编码</em>，它的编码范围是0~127，它是一套英文字母、数字和常用符号的编码，是由美国某组织制定的。</p>
 <p>为了将中文纳入编码，中国制定了一个<em>GB2312编码</em>标准，很显然，一个字节肯定是不够的（毕竟中文汉字辣么多），因此采用两个字节来表示。为了和ASCII编码区分开，第一个字节的最高位始终为1（ASCII始终为0嘛）。</p>
-<p>但是问题来了，很多国家都有自己的语言，都提出自己的编码标准，因此编码标准众多，比如韩国有EUC-KR编码，日本有Shift_JIS编码。为了同意标准，全球统一码联盟提出了<strong>Unicode编码</strong>。</p>
+<p>但是问题来了，很多国家都有自己的语言，都提出自己的编码标准，因此编码标准众多，比如韩国有EUC-KR编码，日本有Shift_JIS编码。为了统一标准，全球统一码联盟提出了<strong>Unicode编码</strong>。</p>
 <p>这个Unicode编码需要两个或者更多字节表示，所以就会出现Unicode编码比ASCII编码还长的情况。因此，为了解决这个现象，提出了另一种编码——<strong>UTF-8编码</strong>，UTF-8是一种变长编码，好处是容错能力强。如果传输过程中某些字符出错，不会影响后续字符，因为UTF-8编码依靠高字节位来确定一个字符究竟是几个字节，它经常用来作为传输编码。</p>
 <h3 id="Unicode编码和java有什么关系？"><a href="#Unicode编码和java有什么关系？" class="headerlink" title="Unicode编码和java有什么关系？"></a>Unicode编码和java有什么关系？</h3><p>Java的String和char在内存中总是以Unicode编码表示。</p>
 
