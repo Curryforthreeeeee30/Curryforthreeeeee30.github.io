@@ -216,7 +216,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>496</span>
+              <span>781</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -236,8 +236,15 @@
 
       
           <h3 id="java集合的概念"><a href="#java集合的概念" class="headerlink" title="java集合的概念"></a>java集合的概念</h3><p>定义：如果一个Java对象能够在内部持有其他Java对象，并对外提供访问接口，那么这个对象就是集合。<br>有各种各样的集合，比如：<br>1.数组<br>2.元素不重复的集合<br>3.可变大小的顺序链表<br>。。。。。。<br>java.util自带集合类，主要提供三种集合类：<br>1.list: 有序列表的集合<br>2.Set: 没有重复元素的集合<br>3.Map: “key-value”类型的集合<br>今天主要记录的是Set，其中最著名的是Hash Set。</p>
-<h3 id="Hash-Set"><a href="#Hash-Set" class="headerlink" title="Hash Set"></a>Hash Set</h3><p>Hash Set是无序的，而Tree Set则是有序的。<br><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/img/hashSet.jpg" width="60%" height="60%"><br>比如说，举个栗子：</p>
+<h3 id="Hash-Set"><a href="#Hash-Set" class="headerlink" title="Hash Set"></a>Hash Set</h3><p>Hash Set是无序的，而Tree Set则是有序的。</p>
+<img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/img/hashSet.jpg" width="60%" height="60%">
+
+<p>比如说，举个栗子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Set&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        set.add(<span class="string">"apple"</span>);</span><br><span class="line">        set.add(<span class="string">"banana"</span>);</span><br><span class="line">        set.add(<span class="string">"pear"</span>);</span><br><span class="line">        set.add(<span class="string">"orange"</span>);</span><br><span class="line">        <span class="keyword">for</span> (String s : set) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种情况是HashSet，其结果为：<br><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/img/Hashset.png" width="60%" height="60%"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Set&lt;String&gt; set = <span class="keyword">new</span> TreeSet&lt;&gt;();</span><br><span class="line">        set.add(<span class="string">"apple"</span>);</span><br><span class="line">        set.add(<span class="string">"banana"</span>);</span><br><span class="line">        set.add(<span class="string">"pear"</span>);</span><br><span class="line">        set.add(<span class="string">"orange"</span>);</span><br><span class="line">        <span class="keyword">for</span> (String s : set) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种情况是TreeSet，其结果为：<br><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/img/TreeSet.png" width="60%" height="60%"></p>
+
       
     </div>
 
