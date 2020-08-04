@@ -28,7 +28,7 @@
 <meta property="og:description" content="Java Number &amp; Math 类1.所有的包装类（Integer、Long、Byte、Double、Float、Short）都是抽象类Number 的子类。当内置数据类型被当作对象使用的时候，编译器会把内置类型装箱为包装类。相似的，编译器也可以把一个对象拆箱为内置类型。 2.Math 的方法都被定义为 static 形式，通过 Math 类可以在主函数中直接调用。主要有：Math.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-04T00:18:50.000Z">
-<meta property="article:modified_time" content="2020-08-04T00:34:56.296Z">
+<meta property="article:modified_time" content="2020-08-04T01:43:51.494Z">
 <meta property="article:author" content="Curryforthreeeeee30">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -226,14 +226,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>315</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -247,7 +247,41 @@
       
         <h3 id="Java-Number-amp-Math-类"><a href="#Java-Number-amp-Math-类" class="headerlink" title="Java Number &amp; Math 类"></a>Java Number &amp; Math 类</h3><p>1.所有的包装类（Integer、Long、Byte、Double、Float、Short）都是抽象类Number 的子类。当内置数据类型被当作对象使用的时候，编译器会把内置类型装箱为包装类。相似的，编译器也可以把一个对象拆箱为内置类型。</p>
 <p>2.Math 的方法都被定义为 static 形式，通过 Math 类可以在主函数中直接调用。<br>主要有：<strong>Math.sin, Math.cos, Math.tan, Math.atan, Math.toDegrees</strong>.</p>
-<p>3.整理Number和Math的常用API如下：<br>| 序号 | 方法和描述 |<br>| —- | —- |<br>| ***Value() |   将 Number 对象转换为xxx数据类型的值并返回。   |</p>
+<p>3.整理Number和Math的常用API如下：</p>
+<p>***Value(): 将 Number 对象转换为xxx数据类型的值并返回。<br>比如：intValue(), longValue(), doubleValue(), shortValue(), floatValue(), byteValue()，不是静态方法。</p>
+<p>compareTo()：将number对象与参数比较。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(NumberSubClass referenceName)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>这里NumberSubClass可以是Byte, Double, Float, Integer, Short和Long中的一个。<br>返回值： 若相等返回0，小于（指定小于参数）返回-1， 大于返回1。</p>
+<p>equals()：用于判断 Number 对象与方法的参数是否相等。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>只有类型和值都相等才会返回true，否则返回false。</p>
+<p>valueOf(): 方法用于返回给定参数的原生 Number 对象值，是一个静态方法。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(String s)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(String s, <span class="keyword">int</span> redix)</span></span>;<span class="comment">//redix表示指定的进制数。</span></span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Integer x = Integer.valueOf(<span class="number">8</span>);<span class="comment">//生成一个值为8的Integer实例。</span></span><br><span class="line">Double y = Double.valueOf(<span class="string">"80"</span>);<span class="comment">//生成一个值为80.0的Double实例。</span></span><br><span class="line">Double z = Double.valueOf(<span class="number">80</span>);<span class="comment">//生成一个值为80.0的的Double实例。</span></span><br><span class="line">Integer w = Integer.valueOf(<span class="string">"444"</span>, <span class="number">16</span>);<span class="comment">//使用16进制。</span></span><br></pre></td></tr></table></figure>
+
+
+<p>toString方法：用于返回以一个字符串表示的 Number 对象值。<br>语法形式有两种，其中一种是静态方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">toString</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> String <span class="title">toString</span><span class="params">(<span class="keyword">int</span> i)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer x = <span class="number">5</span>;</span><br><span class="line">x.toString();<span class="comment">//返回String对象</span></span><br><span class="line">Integer.toString(<span class="number">12</span>);<span class="comment">//返回String对象</span></span><br></pre></td></tr></table></figure>
+
+
+<p>parseInt方法：将字符串参数解析成int整型。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">parseInt</span><span class="params">(String s)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">parseInt</span><span class="params">(String s, <span class="keyword">int</span> i)</span></span>;<span class="comment">//i为进制数</span></span><br></pre></td></tr></table></figure>
+<p>这里和valueOf()方法有相同之处————都是静态的，但是两者不同的地方是返回值类型不同，valueOf()返回的是Integer对象，而parseInt则返回一个int整型变量。<br>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x = Integer.parseInt(<span class="string">"9"</span>);</span><br><span class="line">Double y = Double.parseDouble(<span class="string">"10"</span>);<span class="comment">//返回值为5.0的double变量</span></span><br><span class="line"><span class="keyword">int</span> z = Integer.parseInt(<span class="string">"444"</span>, <span class="number">16</span>);<span class="comment">//16进制</span></span><br></pre></td></tr></table></figure>
+
+
+<p>abs方法：调用形式为Math.abs(x);<br>ceil方法：上舍入（大于等于给定值）<br>floor方法：下舍入（小于等于给定值）<br>ceil和floor的语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ceil</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ceil</span><span class="params">(<span class="keyword">float</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">floor</span><span class="params">(<span class="keyword">double</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">floor</span><span class="params">(<span class="keyword">float</span> y)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>rint方法：返回最接近参数的整数值<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">rint</span><span class="params">(<span class="keyword">double</span> y)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>round方法：四舍五入，算法是Math.floor(x+0.5)。</p>
+<p>min和max方法：返回两者之间最小值和最大值。<br>exp方法：Math.exp(x).(另：Math.E表示表示自然对数的底数e。<br>log方法：Math.log(x).<br>pow方法：Math.pow(x, y).返回的是x的y次方。<br>sqrt方法：返回算术平方根。<br>toDegrees方法和toRadians方法分别是弧度转换成角度和角度转换成弧度的API。</p>
+<p>random()方法：这是一个产生随机数的静态方法，语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">double</span> <span class="title">random</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>返回值范围在0.0 =&lt; Math.random &lt; 1.0。</p>
 
     </div>
 
@@ -448,12 +482,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">12k</span>
+    <span title="站点总字数">14k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11 分钟</span>
+    <span title="站点阅读时长">13 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
