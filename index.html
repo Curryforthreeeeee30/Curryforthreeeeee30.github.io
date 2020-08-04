@@ -235,10 +235,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Java-Number-amp-Math-类"><a href="#Java-Number-amp-Math-类" class="headerlink" title="Java Number &amp; Math 类"></a>Java Number &amp; Math 类</h3><p>1.所有的包装类（Integer、Long、Byte、Double、Float、Short）都是抽象类Number 的子类。当内置数据类型被当作对象使用的时候，编译器会把内置类型装箱为包装类。相似的，编译器也可以把一个对象拆箱为内置类型。</p>
+          <h3 id="Java-Number-amp-Math-类"><a href="#Java-Number-amp-Math-类" class="headerlink" title="Java Number &amp; Math 类"></a>Java Number &amp; Math 类</h3><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>1.所有的包装类（Integer、Long、Byte、Double、Float、Short）都是抽象类Number 的子类。当内置数据类型被当作对象使用的时候，编译器会把内置类型装箱为包装类。相似的，编译器也可以把一个对象拆箱为内置类型。</p>
 <p>2.Math 的方法都被定义为 static 形式，通过 Math 类可以在主函数中直接调用。<br>主要有：<strong>Math.sin, Math.cos, Math.tan, Math.atan, Math.toDegrees</strong>.</p>
-<p>3.整理Number和Math的常用API如下：</p>
-<p><strong>###Value()</strong>: 将 Number 对象转换为xxx数据类型的值并返回。<br>比如：intValue(), longValue(), doubleValue(), shortValue(), floatValue(), byteValue()，不是静态方法。</p>
+<h4 id="Number和Math的常用API："><a href="#Number和Math的常用API：" class="headerlink" title="Number和Math的常用API："></a>Number和Math的常用API：</h4><p><strong>###Value()</strong>: 将 Number 对象转换为xxx数据类型的值并返回。<br>比如：intValue(), longValue(), doubleValue(), shortValue(), floatValue(), byteValue()，不是静态方法。</p>
 <p><strong>compareTo()</strong>：将number对象与参数比较。<br>语法形式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(NumberSubClass referenceName)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>这里NumberSubClass可以是Byte, Double, Float, Integer, Short和Long中的一个。<br>返回值： 若相等返回0，小于（指定小于参数）返回-1， 大于返回1。</p>
