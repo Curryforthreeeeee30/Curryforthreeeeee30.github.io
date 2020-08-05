@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.1">
+<meta name="baidu-site-verification" content="m5NcKgUu0g" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -28,7 +29,7 @@
 <meta property="og:description" content="Java Number &amp; Math 类说明1.所有的包装类（Integer、Long、Byte、Double、Float、Short）都是抽象类Number 的子类。当内置数据类型被当作对象使用的时候，编译器会把内置类型装箱为包装类。相似的，编译器也可以把一个对象拆箱为内置类型。 2.Math 的方法都被定义为 static 形式，通过 Math 类可以在主函数中直接调用。主要有：Mat">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-04T00:18:50.000Z">
-<meta property="article:modified_time" content="2020-08-05T07:16:07.429Z">
+<meta property="article:modified_time" content="2020-08-05T07:52:12.156Z">
 <meta property="article:author" content="Curryforthreeeeee30">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -226,7 +227,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.1k</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -321,6 +322,10 @@
 <p>举个栗子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Character.toString(<span class="string">'a'</span>);<span class="comment">//返回一个String对象，值为"a".</span></span><br></pre></td></tr></table></figure>
 <hr>
+<h3 id="Java-String-类"><a href="#Java-String-类" class="headerlink" title="Java String 类"></a>Java String 类</h3><h4 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h4><p>String 类是不可改变的，所以你一旦创建了 String 对象，那它的值就无法改变了。</p>
+<p>如果需要对字符串做很多修改，那么应该选择使用 StringBuffer &amp; StringBuilder 类（之前的博客中有介绍）。</p>
+<h4 id="String类中常用的API"><a href="#String类中常用的API" class="headerlink" title="String类中常用的API"></a>String类中常用的API</h4><hr>
+<hr>
 
     </div>
 
@@ -334,16 +339,16 @@
       <div class="popular-posts-title"><a href="\2020\06\13\java学习笔记之字符串专栏\java学习笔记之字符串专栏\" rel="bookmark">java学习笔记之字符串专栏</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\06\12\java学习笔记之面向对象基础\java学习笔记之面向对象基础\" rel="bookmark">java学习笔记之面向对象基础</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\06\11\数据结构与算法重拾day1\数据结构与算法重拾day1\" rel="bookmark">数据结构与算法重拾day1</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2020\06\13\java学习笔记之字符编码\java学习笔记之字符编码\" rel="bookmark">java学习笔记之字符编码</a></div>
     </li>
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\07\21\java学习笔记之集合\java学习笔记之集合\" rel="bookmark">java集合和Hash Set</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2020\06\13\拼接字符串神器——StringBuilder\拼接字符串神器——StringBuilder\" rel="bookmark">拼接字符串神器——StringBuilder</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\06\12\java学习笔记之面向对象基础\java学习笔记之面向对象基础\" rel="bookmark">java学习笔记之面向对象基础</a></div>
     </li>
   </ul>
 
@@ -442,7 +447,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-Number-amp-Math-类"><span class="nav-number">1.</span> <span class="nav-text">Java Number &amp; Math 类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#说明"><span class="nav-number">1.1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Number和Math的常用API："><span class="nav-number">1.2.</span> <span class="nav-text">Number和Math的常用API：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-Character-类"><span class="nav-number">2.</span> <span class="nav-text">Java Character 类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#装箱和拆箱的区别说明"><span class="nav-number">2.1.</span> <span class="nav-text">装箱和拆箱的区别说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的Character类的API"><span class="nav-number">2.2.</span> <span class="nav-text">常见的Character类的API</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-Number-amp-Math-类"><span class="nav-number">1.</span> <span class="nav-text">Java Number &amp; Math 类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#说明"><span class="nav-number">1.1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Number和Math的常用API："><span class="nav-number">1.2.</span> <span class="nav-text">Number和Math的常用API：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-Character-类"><span class="nav-number">2.</span> <span class="nav-text">Java Character 类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#装箱和拆箱的区别说明"><span class="nav-number">2.1.</span> <span class="nav-text">装箱和拆箱的区别说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的Character类的API"><span class="nav-number">2.2.</span> <span class="nav-text">常见的Character类的API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-String-类"><span class="nav-number">3.</span> <span class="nav-text">Java String 类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#说明-1"><span class="nav-number">3.1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String类中常用的API"><span class="nav-number">3.2.</span> <span class="nav-text">String类中常用的API</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
