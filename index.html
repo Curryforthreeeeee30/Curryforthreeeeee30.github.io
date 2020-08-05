@@ -216,14 +216,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>3.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -275,15 +275,41 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">double</span> <span class="title">random</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>返回值范围在0.0 =&lt; Math.random &lt; 1.0。</p>
 <hr>
-<h3 id="Java-Character-类"><a href="#Java-Character-类" class="headerlink" title="Java Character 类"></a>Java Character 类</h3><h4 id="说明一下装箱和拆箱的区别"><a href="#说明一下装箱和拆箱的区别" class="headerlink" title="说明一下装箱和拆箱的区别"></a>说明一下装箱和拆箱的区别</h4><p>比如：将一个char类型的参数传递给需要一个Character类型参数的方法时，那么编译器会自动地将char类型参数转换为Character对象。 这种特征称为装箱，反过来称为拆箱。<br>再比如：将一个int类型参数转换成Integer对象是装箱，将Integer对象转换成int类型参数是拆箱。</p>
+<h3 id="Java-Character-类"><a href="#Java-Character-类" class="headerlink" title="Java Character 类"></a>Java Character 类</h3><h4 id="装箱和拆箱的区别说明"><a href="#装箱和拆箱的区别说明" class="headerlink" title="装箱和拆箱的区别说明"></a>装箱和拆箱的区别说明</h4><p>比如：将一个char类型的参数传递给需要一个Character类型参数的方法时，那么编译器会自动地将char类型参数转换为Character对象。 这种特征称为装箱，反过来称为拆箱。<br>再比如：将一个int类型参数转换成Integer对象是装箱，将Integer对象转换成int类型参数是拆箱。</p>
 <h4 id="常见的Character类的API"><a href="#常见的Character类的API" class="headerlink" title="常见的Character类的API"></a>常见的Character类的API</h4><hr>
 <p><strong>isLetter()</strong>方法：用于判断指定字符是否是字母。<br>语法形式：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLetter</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>比如：Character.isLetter(‘C’);//返回值为true.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isLetter</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Character.isLetter(<span class="string">'C'</span>);<span class="comment">//返回值为true.</span></span><br></pre></td></tr></table></figure>
 <hr>
-<p><strong>isDigit</strong>方法：用于判断指定字符是否是数字。<br>语法形式：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="title">isDigit</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>比如：Character.isDigit(‘5’);//返回值为true.</p>
+<p><strong>isDigit()</strong>方法：用于判断指定字符是否是数字。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isDigit</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Character.isDigit(<span class="string">'5'</span>);<span class="comment">//返回值为true.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>isWhitespace()</strong>方法：用于判断指定字符是否是空白字符，包括：<strong><em>tab键、空格键和换行符</em></strong>。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isWhitespace</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Character.isWhitespace(<span class="string">' '</span>);<span class="comment">//返回true.</span></span><br><span class="line">Character.isWhitespace(<span class="string">'\t'</span>);<span class="comment">//返回true.</span></span><br><span class="line">Character.isWhitespace(<span class="string">'\n'</span>);<span class="comment">//返回true.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>isUpperCase()</strong>方法：用于判断指定字符是否为大写字母。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isUpperCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><strong>isLowerCase()</strong>方法：用于判断指定字符是否为大写字母。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isLowerCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>toUpperCase()</strong>方法：用于将小写字符转换成大写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">toUpperCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Character.toUpperCase(<span class="string">'c'</span>);<span class="comment">//返回字符'C'.</span></span><br></pre></td></tr></table></figure>
+<p><strong>toLowerCase()</strong>方法：用于将小写字符转换成大写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">toLowerCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Character.toLowerCase(<span class="string">'C'</span>);<span class="comment">//返回字符'c'.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>toString()</strong>方法：用于返回一个指定char值的String对象。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">toString</span><span class="params">(<span class="keyword">char</span> c)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Character.toString(<span class="string">'a'</span>);<span class="comment">//返回一个String对象，值为"a".</span></span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -1254,12 +1280,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">14k</span>
+    <span title="站点总字数">15k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13 分钟</span>
+    <span title="站点阅读时长">14 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
