@@ -29,7 +29,7 @@
 <meta property="og:description" content="Java Number &amp; Math 类说明1.所有的包装类（Integer、Long、Byte、Double、Float、Short）都是抽象类Number 的子类。当内置数据类型被当作对象使用的时候，编译器会把内置类型装箱为包装类。相似的，编译器也可以把一个对象拆箱为内置类型。 2.Math 的方法都被定义为 static 形式，通过 Math 类可以在主函数中直接调用。主要有：Mat">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-04T00:18:50.000Z">
-<meta property="article:modified_time" content="2020-08-06T06:51:55.617Z">
+<meta property="article:modified_time" content="2020-08-06T07:27:52.088Z">
 <meta property="article:author" content="Curryforthreeeeee30">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -227,14 +227,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.9k</span>
+              <span>6.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>6 分钟</span>
             </span>
 
         </div>
@@ -387,6 +387,30 @@
 <p>举个例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"HELLONJU"</span>;</span><br><span class="line">str.replace(<span class="string">'N'</span>, <span class="string">'S'</span>);<span class="comment">//返回字符串"HELLOSJU"</span></span><br></pre></td></tr></table></figure>
 <hr>
+<p><strong>subSequence()</strong>方法：返回字符串的子序列。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> CharSequence <span class="title">subSequence</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>subString()</strong>方法：返回字符串的子字符串。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">subString</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"HELLONJU"</span>;</span><br><span class="line">String str2 = str1.subString(<span class="number">0</span>,<span class="number">5</span>);<span class="comment">//返回字符串"HELLO".</span></span><br><span class="line">****</span><br><span class="line">**toCharArray()**方法：将字符串转换成字符数组</span><br><span class="line">语法形式：</span><br><span class="line">```java</span><br><span class="line"><span class="keyword">public</span> Char[] toCharArray();</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"HELLONJU"</span>;</span><br><span class="line"><span class="keyword">char</span>[] chars = str1.toCharArray();</span><br><span class="line">System.out.println(chars);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">char</span> ch : chars)&#123;</span><br><span class="line">    System.out.println(ch);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//复习一下数组的输出哈哈哈</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>toUpperCase()</strong>方法：将字符串变成大写。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toUpperCase</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>同理，还有<strong>toLowerCase()</strong>方法，将字符串变成小写。</p>
+<hr>
+<p><strong>toString()</strong>方法：返回此对象本身。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="keyword">new</span> String(<span class="string">"HELLONJU"</span>);</span><br><span class="line">s.toString();<span class="comment">//返回字符串"HELLONJU".</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>trim()</strong>方法：去除字符串首尾空白。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">trim</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>valueOf()</strong>方法：返回字符串形式，静态方法。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">char</span>[] data)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">char</span>[] data, <span class="keyword">int</span> offset, <span class="keyword">int</span> count)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">char</span> c)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
 <hr>
 
     </div>
@@ -588,12 +612,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">19k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">16 分钟</span>
+    <span title="站点阅读时长">17 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
