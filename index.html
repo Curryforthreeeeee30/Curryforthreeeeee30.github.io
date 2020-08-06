@@ -311,7 +311,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>75</span>
+              <span>589</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -338,6 +338,11 @@
 <li><p>很多贪心的问题都可以由dp来做，但是dp并不能解决所有的贪心问题。</p>
 </li>
 </ul>
+<h3 id="贪心应用"><a href="#贪心应用" class="headerlink" title="贪心应用"></a>贪心应用</h3><h4 id="leetcode第55题-跳跃游戏"><a href="#leetcode第55题-跳跃游戏" class="headerlink" title="leetcode第55题-跳跃游戏"></a>leetcode第55题-跳跃游戏</h4><p>题目展示：<br><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/img/跳跃游戏.png" width="60%" height="60%"></p>
+<p>这道题刚拿到手，以为数组里的元素是要跳的步数，后来才知道是可以跳跃的最大步数，因此，这就是一个优化问题了。采用贪心算法正好可以解决。</p>
+<p>可以设置一个变量来动态保存当前能到达的最大位置，如果这个位置能够覆盖，也就是大于等于数组的最后位置，那说明就是可以到达的，返回true即可。反之，如果遍历完了整个数组之后还没有覆盖到数组的最后位置，那说明是不能到达的，那么则返回false。</p>
+<p>下面是java版本的实现代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canJump</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">int</span> reachMost = <span class="number">0</span>;<span class="comment">//可以到达的最大位置</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; reachMost)&#123;</span><br><span class="line">                reachMost = reachMost &gt; i+nums[i] ? reachMost : i+nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(reachMost &gt;= len-<span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1465,12 +1470,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">19k</span>
+    <span title="站点总字数">20k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
