@@ -418,14 +418,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.9k</span>
+              <span>7.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -602,6 +602,26 @@
 <hr>
 <p><strong>valueOf()</strong>方法：返回字符串形式，静态方法。<br>语法形式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">char</span>[] data)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">char</span>[] data, <span class="keyword">int</span> offset, <span class="keyword">int</span> count)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">char</span> c)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Java-StringBuffer-类"><a href="#Java-StringBuffer-类" class="headerlink" title="Java StringBuffer 类"></a>Java StringBuffer 类</h3><h4 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h4><p>当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。</p>
+<p>和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象。</p>
+<p>StringBuilder 类在 Java 5 中被提出，它和 StringBuffer 之间的最大不同在于 StringBuilder 的方法不是线程安全的（不能同步访问）。</p>
+<p>由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder 类。然而在应用程序要求线程安全的情况下，则必须使用 StringBuffer 类。</p>
+<h4 id="StringBuffer类常用API"><a href="#StringBuffer类常用API" class="headerlink" title="StringBuffer类常用API"></a>StringBuffer类常用API</h4><hr>
+<p><strong>append()</strong>方法：将指定的字符串追加到此字符序列。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">append</span><span class="params">(String s)</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>reverse()</strong>方法：将此字符序列用其反转形式取代。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">reverse</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>delete()</strong>方法：移除此序列的子字符串中的字符。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">delete</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>insert()</strong>方法：在原字符序列插入字符。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">insert</span><span class="params">(<span class="keyword">int</span> offset, <span class="keyword">int</span> i)</span></span>;<span class="comment">//以String.valueOf(i)插入原字符序列的offset处。</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>replace()</strong>方法：使用给定 String 中的字符替换此序列的子字符串中的字符。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">replace</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end, String str)</span></span>;</span><br></pre></td></tr></table></figure>
 <hr>
 
       
