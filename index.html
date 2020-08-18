@@ -98,7 +98,7 @@
       <h1 class="site-title">SC&KD's Blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">记录和分享我的技术成长历程</p>
+      <p class="site-subtitle" itemprop="description">保持热情，不被生活琐事所磨灭</p>
   </div>
 
   <div class="site-nav-right">
@@ -208,7 +208,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>431</span>
+              <span>484</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -227,7 +227,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>这篇blog是来源于leetcode28题——实现strStr()（<a href="https://leetcode-cn.com/problems/implement-strstr/" target="_blank" rel="noopener">题目链接</a>）</p>
+          <p>这篇blog是来源于leetcode28题——实现strStr()（<a href="https://leetcode-cn.com/problems/implement-strstr/" target="_blank" rel="noopener">28题题目链接</a>）<br><a href="https://leetcode-cn.com/problems/implement-strstr/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/implement-strstr/</a></p>
 <p>其实可以很简单地使用java语言中的substring函数和equals函数来实现，具体代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len_hay = haystack.length();</span><br><span class="line">        <span class="keyword">int</span> len_nee = needle.length();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> start = <span class="number">0</span>; start &lt; len_hay-len_nee+<span class="number">1</span>; start++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(haystack.substring(start, start+len_nee).equals(needle))&#123;</span><br><span class="line">                <span class="keyword">return</span> start;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>仔细看看，就算needle是一个空字符串，返回值是-1，也是满足题目要求的。</p>
