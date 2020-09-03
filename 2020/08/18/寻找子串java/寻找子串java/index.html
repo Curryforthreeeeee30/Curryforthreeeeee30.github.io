@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"wyqian.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="这篇blog是来源于leetcode28题——实现strStr()（28题题目链接）https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;implement-strstr&#x2F; 其实可以很简单地使用java语言中的substring函数和equals函数来实现，具体代码如下： 123456789101112class Solution&amp;#123;    public int strStr(">
+  <meta name="description" content="这篇blog是来源于leetcode28题——实现strStr()（28题题目链接） 其实可以很简单地使用java语言中的substring函数和equals函数来实现，具体代码如下： 123456789101112class Solution&amp;#123;    public int strStr(String haystack, String needle)&amp;#123;        int l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="寻找子串java">
 <meta property="og:url" content="http://wyqian.top/2020/08/18/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/index.html">
 <meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
-<meta property="og:description" content="这篇blog是来源于leetcode28题——实现strStr()（28题题目链接）https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;implement-strstr&#x2F; 其实可以很简单地使用java语言中的substring函数和equals函数来实现，具体代码如下： 123456789101112class Solution&amp;#123;    public int strStr(">
+<meta property="og:description" content="这篇blog是来源于leetcode28题——实现strStr()（28题题目链接） 其实可以很简单地使用java语言中的substring函数和equals函数来实现，具体代码如下： 123456789101112class Solution&amp;#123;    public int strStr(String haystack, String needle)&amp;#123;        int l">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-18T06:00:12.000Z">
-<meta property="article:modified_time" content="2020-08-18T06:17:11.101Z">
+<meta property="article:modified_time" content="2020-08-18T06:19:13.158Z">
 <meta property="article:author" content="Curryforthreeeeee30">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="java学习">
@@ -219,7 +219,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>484</span>
+              <span>434</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -238,7 +238,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>这篇blog是来源于leetcode28题——实现strStr()（<a href="https://leetcode-cn.com/problems/implement-strstr/" target="_blank" rel="noopener">28题题目链接</a>）<br><a href="https://leetcode-cn.com/problems/implement-strstr/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/implement-strstr/</a></p>
+        <p>这篇blog是来源于leetcode28题——实现strStr()（<a href="https://leetcode-cn.com/problems/implement-strstr/" target="_blank" rel="noopener">28题题目链接</a>）</p>
 <p>其实可以很简单地使用java语言中的substring函数和equals函数来实现，具体代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len_hay = haystack.length();</span><br><span class="line">        <span class="keyword">int</span> len_nee = needle.length();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> start = <span class="number">0</span>; start &lt; len_hay-len_nee+<span class="number">1</span>; start++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(haystack.substring(start, start+len_nee).equals(needle))&#123;</span><br><span class="line">                <span class="keyword">return</span> start;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>仔细看看，就算needle是一个空字符串，返回值是-1，也是满足题目要求的。</p>
@@ -252,10 +252,10 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\08\06\贪心算法\贪心算法\" rel="bookmark">贪心算法</a></div>
+      <div class="popular-posts-title"><a href="\2020\08\06\动态规划\动态规划\" rel="bookmark">动态规划</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\08\06\动态规划\动态规划\" rel="bookmark">动态规划</a></div>
+      <div class="popular-posts-title"><a href="\2020\08\06\贪心算法\贪心算法\" rel="bookmark">贪心算法</a></div>
     </li>
   </ul>
 
@@ -295,7 +295,10 @@
     <a href="/2020/08/06/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="prev" title="动态规划">
       <i class="fa fa-chevron-left"></i> 动态规划
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/02/%E5%8C%B9%E9%85%8D%E6%BB%A4%E6%B3%A2/%E5%8C%B9%E9%85%8D%E6%BB%A4%E6%B3%A2/" rel="next" title="匹配滤波">
+      匹配滤波 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -370,20 +373,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
