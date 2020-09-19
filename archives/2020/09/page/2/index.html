@@ -21,19 +21,17 @@
     var CONFIG = {"hostname":"wyqian.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="题目描述https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;min-stack&#x2F;题目分析这道题看起来是一个用其他数据结构来实现栈，然后你就会去想什么样的结构能够满足题目里说的能在常数时间内检索到最小元素，这一般是数组，只需要索引就能够完成查找，然后你又不能直接使用数组去实现，因为数组声明的时候需要知道数组的大小或者数组里面的元素是哪些，因此，我在这里是用ArrayList来实现的，p">
-<meta property="og:type" content="article">
-<meta property="og:title" content="leetcode第155题-最小栈">
-<meta property="og:url" content="http://wyqian.top/2020/09/19/leetcode%E7%AC%AC155%E9%A2%98-%E6%9C%80%E5%B0%8F%E6%A0%88/leetcode%E7%AC%AC155%E9%A2%98-%E6%9C%80%E5%B0%8F%E6%A0%88/index.html">
+  <meta name="description" content="把复杂留给自己，把简单留给世界。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SC&amp;KD&#39;s Blog">
+<meta property="og:url" content="http://wyqian.top/archives/2020/09/page/2/index.html">
 <meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
-<meta property="og:description" content="题目描述https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;min-stack&#x2F;题目分析这道题看起来是一个用其他数据结构来实现栈，然后你就会去想什么样的结构能够满足题目里说的能在常数时间内检索到最小元素，这一般是数组，只需要索引就能够完成查找，然后你又不能直接使用数组去实现，因为数组声明的时候需要知道数组的大小或者数组里面的元素是哪些，因此，我在这里是用ArrayList来实现的，p">
+<meta property="og:description" content="把复杂留给自己，把简单留给世界。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-19T11:10:22.000Z">
-<meta property="article:modified_time" content="2020-09-19T12:25:39.990Z">
 <meta property="article:author" content="Curryforthreeeeee30">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://wyqian.top/2020/09/19/leetcode%E7%AC%AC155%E9%A2%98-%E6%9C%80%E5%B0%8F%E6%A0%88/leetcode%E7%AC%AC155%E9%A2%98-%E6%9C%80%E5%B0%8F%E6%A0%88/">
+<link rel="canonical" href="http://wyqian.top/archives/2020/09/page/2/">
 
 
 <script id="page-configurations">
@@ -41,12 +39,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>leetcode第155题-最小栈 | SC&KD's Blog</title>
+  <title>归档 | SC&KD's Blog</title>
   
 
 
@@ -157,145 +155,59 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content archive">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/09/19/leetcode%E7%AC%AC155%E9%A2%98-%E6%9C%80%E5%B0%8F%E6%A0%88/leetcode%E7%AC%AC155%E9%A2%98-%E6%9C%80%E5%B0%8F%E6%A0%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
-      <meta itemprop="name" content="Curryforthreeeeee30">
-      <meta itemprop="description" content="把复杂留给自己，把简单留给世界。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SC&KD's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          leetcode第155题-最小栈
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-19 19:10:22" itemprop="dateCreated datePublished" datetime="2020-09-19T19:10:22+08:00">2020-09-19</time>
-            </span>
-
-          
-            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
   
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/09/19/leetcode%E7%AC%AC155%E9%A2%98-%E6%9C%80%E5%B0%8F%E6%A0%88/leetcode%E7%AC%AC155%E9%A2%98-%E6%9C%80%E5%B0%8F%E6%A0%88/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/19/leetcode%E7%AC%AC155%E9%A2%98-%E6%9C%80%E5%B0%8F%E6%A0%88/leetcode%E7%AC%AC155%E9%A2%98-%E6%9C%80%E5%B0%8F%E6%A0%88/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h4 id="https-leetcode-cn-com-problems-min-stack"><a href="#https-leetcode-cn-com-problems-min-stack" class="headerlink" title="https://leetcode-cn.com/problems/min-stack/"></a><a href="https://leetcode-cn.com/problems/min-stack/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/min-stack/</a></h4><h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>这道题看起来是一个用其他数据结构来实现栈，然后你就会去想什么样的结构能够满足题目里说的能在常数时间内检索到最小元素，这一般是数组，只需要索引就能够完成查找，然后你又不能直接使用数组去实现，因为数组声明的时候需要知道数组的大小或者数组里面的元素是哪些，因此，我在这里是用ArrayList来实现的，pop，top这些只需要设置一个index去记录List里面当前元素的个数。但是getMin函数实现的话需要使用到Collections对List进行排序。但是呢，又会出现一个问题，你不能直接去拿类里面定义的东西直接去排序，你需要去赋值一个新的ArrayList，一开始我是用ArrayList<integer> integers_ano = integers;来实现，出现了问题，因为这样只是复制了一个ArrayList的指针，所以需要用拷贝来完成：ArrayList<Integer> integers_ano = new ArrayList&lt;&gt;(integers);或者ArrayList<Integer> integers_ano  =(ArrayList<Integer>) integers.clone();利用克隆的方法进行赋值。</Integer></Integer></Integer></integer></p>
-<h3 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="keyword">public</span> ArrayList&lt;Integer&gt; integers = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> index = -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        integers.add(x);</span><br><span class="line">        index++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        integers.remove(index);</span><br><span class="line">        index--;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> integers.get(index);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; integers_ano = <span class="keyword">new</span> ArrayList&lt;&gt;(integers);</span><br><span class="line">        Collections.sort(integers_ano);</span><br><span class="line">        <span class="keyword">return</span> integers_ano.get(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-    </div>
-
-    
-    
-    
-      
-
-        <div class="reward-container">
-  <div></div>
-  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-      
-      <div style="display: inline-block;">
-        <img src="/images/wechatpay.png" alt="Curryforthreeeeee30 微信支付">
-        <p>微信支付</p>
-      </div>
-      
-      <div style="display: inline-block;">
-        <img src="/images/alipay.png" alt="Curryforthreeeeee30 支付宝">
-        <p>支付宝</p>
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <span class="collection-header">嗯..! 目前共计 23 篇日志。 继续努力。</span>
       </div>
 
-  </div>
-</div>
-
-
-      <footer class="post-footer">
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/09/19/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" rel="prev" title="leetcode第20题-有效的括号">
-      <i class="fa fa-chevron-left"></i> leetcode第20题-有效的括号
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/09/19/leetcode%E7%AC%AC225%E9%A2%98-%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/leetcode%E7%AC%AC225%E9%A2%98-%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/" rel="next" title="leetcode第225题-用队列实现栈">
-      leetcode第225题-用队列实现栈 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      
+    <div class="collection-year">
+      <span class="collection-header">2020</span>
     </div>
-      </footer>
-    
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-09-02T11:05:53+08:00"
+              content="2020-09-02">
+          09-02
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/09/02/%E5%8C%B9%E9%85%8D%E6%BB%A4%E6%B3%A2/%E5%8C%B9%E9%85%8D%E6%BB%A4%E6%B3%A2/" itemprop="url">
+            <span itemprop="name">匹配滤波</span>
+          </a>
+      </div>
+
+    </header>
   </article>
+
+
+    </div>
+  </div>
   
   
   
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/2020/09/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2020/09/">1</a><span class="page-number current">2</span>
+  </nav>
 
 
 
           </div>
           
-    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -342,7 +254,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#https-leetcode-cn-com-problems-min-stack"><span class="nav-number">1.1.</span> <span class="nav-text">https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;min-stack&#x2F;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目分析"><span class="nav-number">2.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目代码"><span class="nav-number">3.</span> <span class="nav-text">题目代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
