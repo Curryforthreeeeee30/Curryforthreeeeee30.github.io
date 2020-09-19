@@ -21,21 +21,21 @@
     var CONFIG = {"hostname":"wyqian.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="静态字段与静态方法静态字段静态字段是为类所拥有的，不为实例所拥有，在代码中，实例对象能访问静态字段只是因为编译器可以根据实例类型自动转换为类名.静态字段来访问静态对象。 1234567891011121314151617181920212223public class Static &amp;#123;	public static void main(String[] args) &amp;#123;		St s">
+  <meta name="description" content="题目描述题目分析这道题从题目描述来看就是一道用栈能够完成的题，用一句话就是要按照顺序进行括号的闭合。那么我们可以先将字符串的第一个元素压栈，然后再判断字符串的第二个元素是否与栈顶元素是“双胞胎”，但是要注意一个问题，比如说出现这种情况：“（）{}”，前两个元素都过了之后，此时栈为空，因此需要判断下栈是否为空，如果栈是空的，那么直接将元素压栈就可以了，再就是双胞胎的判断的话，可以写一个函数来实现。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java学习笔记之面向对象基础">
-<meta property="og:url" content="http://wyqian.top/2020/06/12/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="leetcode第20题-有效的括号">
+<meta property="og:url" content="http://wyqian.top/2020/09/19/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/index.html">
 <meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
-<meta property="og:description" content="静态字段与静态方法静态字段静态字段是为类所拥有的，不为实例所拥有，在代码中，实例对象能访问静态字段只是因为编译器可以根据实例类型自动转换为类名.静态字段来访问静态对象。 1234567891011121314151617181920212223public class Static &amp;#123;	public static void main(String[] args) &amp;#123;		St s">
+<meta property="og:description" content="题目描述题目分析这道题从题目描述来看就是一道用栈能够完成的题，用一句话就是要按照顺序进行括号的闭合。那么我们可以先将字符串的第一个元素压栈，然后再判断字符串的第二个元素是否与栈顶元素是“双胞胎”，但是要注意一个问题，比如说出现这种情况：“（）{}”，前两个元素都过了之后，此时栈为空，因此需要判断下栈是否为空，如果栈是空的，那么直接将元素压栈就可以了，再就是双胞胎的判断的话，可以写一个函数来实现。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-12T14:06:18.000Z">
-<meta property="article:modified_time" content="2020-06-13T09:23:11.124Z">
+<meta property="article:published_time" content="2020-09-19T08:17:27.000Z">
+<meta property="article:modified_time" content="2020-09-19T11:03:38.279Z">
 <meta property="article:author" content="Curryforthreeeeee30">
-<meta property="article:tag" content="java">
-<meta property="article:tag" content="类和对象">
+<meta property="article:tag" content="java学习">
+<meta property="article:tag" content="数据结构与算法">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://wyqian.top/2020/06/12/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/">
+<link rel="canonical" href="http://wyqian.top/2020/09/19/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>java学习笔记之面向对象基础 | SC&KD's Blog</title>
+  <title>leetcode第20题-有效的括号 | SC&KD's Blog</title>
   
 
 
@@ -166,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/06/12/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/09/19/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
@@ -179,7 +179,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          java学习笔记之面向对象基础
+          leetcode第20题-有效的括号
         </h1>
 
         <div class="post-meta">
@@ -189,16 +189,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-06-12 22:06:18" itemprop="dateCreated datePublished" datetime="2020-06-12T22:06:18+08:00">2020-06-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">java学习</span></a>
-                </span>
+              <time title="创建时间：2020-09-19 16:17:27" itemprop="dateCreated datePublished" datetime="2020-09-19T16:17:27+08:00">2020-09-19</time>
             </span>
 
           
@@ -217,8 +208,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/06/12/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/12/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/09/19/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/19/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/leetcode%E7%AC%AC20%E9%A2%98-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -228,7 +219,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>965</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -247,11 +238,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="静态字段与静态方法"><a href="#静态字段与静态方法" class="headerlink" title="静态字段与静态方法"></a>静态字段与静态方法</h3><h4 id="静态字段"><a href="#静态字段" class="headerlink" title="静态字段"></a>静态字段</h4><p>静态字段是为类所拥有的，不为实例所拥有，在代码中，实例对象能访问静态字段只是因为编译器可以根据实例类型自动转换为类名.静态字段来访问静态对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Static</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		St student1 = <span class="keyword">new</span> St(<span class="number">16</span>, <span class="string">"小明"</span>);</span><br><span class="line">		St student2 = <span class="keyword">new</span> St(<span class="number">12</span>, <span class="string">"小红"</span>);</span><br><span class="line">		student1.number = <span class="number">17</span>;</span><br><span class="line">		System.out.println(student2.number);<span class="comment">//实例.字段</span></span><br><span class="line">		student2.number = <span class="number">20</span>;</span><br><span class="line">		System.out.println(student1.number);<span class="comment">//实例.字段</span></span><br><span class="line">		System.out.println(St.number);<span class="comment">//类名.字段</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">St</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">public</span> String name;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> number;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">St</span><span class="params">(<span class="keyword">int</span> age, String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>静态方法则只能访问静态字段，不能访问非静态的实例字段，因此不能使用this指针。静态方法也是为类所拥有，常用于工具类的函数中，比如Math.random()。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Static_practice</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">boolean</span> loop = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">while</span>(loop) &#123;</span><br><span class="line">			System.out.println(<span class="string">"(a)增加一个实例"</span>);</span><br><span class="line">			System.out.println(<span class="string">"(b)查看实例的个数"</span>);</span><br><span class="line">			System.out.println(<span class="string">"(e)退出"</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">char</span> key = scanner.next().charAt(<span class="number">0</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">switch</span> (key) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'a'</span>: </span><br><span class="line">				<span class="keyword">new</span> Person_S(<span class="number">12</span>, <span class="string">"Curry"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'b'</span>:</span><br><span class="line">				System.out.println(Person_S.getCount());</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'e'</span>:</span><br><span class="line">				loop = <span class="keyword">false</span>;</span><br><span class="line">				System.out.println(<span class="string">"退出程序"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Unexpected value: "</span> + key);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person_S</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> count;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person_S</span><span class="params">(<span class="keyword">int</span> age, String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		count++;</span><br><span class="line">		<span class="keyword">return</span> count;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>这道题从题目描述来看就是一道用栈能够完成的题，用一句话就是要按照顺序进行括号的闭合。那么我们可以先将字符串的第一个元素压栈，然后再判断字符串的第二个元素是否与栈顶元素是“双胞胎”，但是要注意一个问题，比如说出现这种情况：“（）{}”，前两个元素都过了之后，此时栈为空，因此需要判断下栈是否为空，如果栈是空的，那么直接将元素压栈就可以了，再就是双胞胎的判断的话，可以写一个函数来实现。</p>
+<h3 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.equals(<span class="keyword">null</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        Stack stack = <span class="keyword">new</span> Stack();</span><br><span class="line">        stack.push(s.charAt(<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(stack.empty())&#123;</span><br><span class="line">                stack.push(s.charAt(i));</span><br><span class="line"></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(isTwin(String.valueOf(s.charAt(i)), stack.peek().toString()))&#123;</span><br><span class="line">                    stack.pop();</span><br><span class="line"></span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    stack.push(s.charAt(i));</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(stack.empty())&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isTwin</span><span class="params">(String a, String b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a.equals(<span class="string">"&#125;"</span>) &amp;&amp; b.equals(<span class="string">"&#123;"</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(a.equals(<span class="string">"]"</span>) &amp;&amp; b.equals(<span class="string">"["</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(a.equals(<span class="string">")"</span>) &amp;&amp; b.equals(<span class="string">"("</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -263,19 +251,19 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\06\13\java学习笔记之字符串专栏\java学习笔记之字符串专栏\" rel="bookmark">java学习笔记之字符串专栏</a></div>
+      <div class="popular-posts-title"><a href="\2020\08\06\动态规划\动态规划\" rel="bookmark">动态规划</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\07\21\java学习笔记之集合\java学习笔记之集合\" rel="bookmark">java集合和Hash Set</a></div>
+      <div class="popular-posts-title"><a href="\2020\08\18\寻找子串java\寻找子串java\" rel="bookmark">寻找子串java</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\06\13\java学习笔记之字符编码\java学习笔记之字符编码\" rel="bookmark">java学习笔记之字符编码</a></div>
+      <div class="popular-posts-title"><a href="\2020\08\06\贪心算法\贪心算法\" rel="bookmark">贪心算法</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\06\14\字符串拼接方法比较\字符串拼接方法比较\" rel="bookmark">字符串拼接方法比较</a></div>
+      <div class="popular-posts-title"><a href="\2020\09\05\==与equals的区别\==与equals的区别\" rel="bookmark">==与equals的区别</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\06\13\拼接字符串神器——StringBuilder\拼接字符串神器——StringBuilder\" rel="bookmark">拼接字符串神器——StringBuilder</a></div>
+      <div class="popular-posts-title"><a href="\2020\09\05\深拷贝、浅拷贝和拷贝构造函数\深拷贝、浅拷贝和拷贝构造函数\" rel="bookmark">深拷贝、浅拷贝和拷贝构造函数</a></div>
     </li>
   </ul>
 
@@ -302,8 +290,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/java/" rel="tag"># java</a>
-              <a href="/tags/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" rel="tag"># 类和对象</a>
+              <a href="/tags/java%E5%AD%A6%E4%B9%A0/" rel="tag"># java学习</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag"># 数据结构与算法</a>
           </div>
 
         
@@ -312,13 +300,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/06/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E9%87%8D%E6%8B%BEday2/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E9%87%8D%E6%8B%BEday2/" rel="prev" title="数据结构与算法重拾day2">
-      <i class="fa fa-chevron-left"></i> 数据结构与算法重拾day2
+    <a href="/2020/09/15/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="prev" title="网络编程">
+      <i class="fa fa-chevron-left"></i> 网络编程
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/06/13/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E6%A0%8F/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E6%A0%8F/" rel="next" title="java学习笔记之字符串专栏">
-      java学习笔记之字符串专栏 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -378,7 +363,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态字段与静态方法"><span class="nav-number">1.</span> <span class="nav-text">静态字段与静态方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#静态字段"><span class="nav-number">1.1.</span> <span class="nav-text">静态字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态方法"><span class="nav-number">1.2.</span> <span class="nav-text">静态方法</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目分析"><span class="nav-number">2.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目代码"><span class="nav-number">3.</span> <span class="nav-text">题目代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
