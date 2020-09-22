@@ -161,6 +161,106 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/09/22/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
+      <meta itemprop="name" content="Curryforthreeeeee30">
+      <meta itemprop="description" content="把复杂留给自己，把简单留给世界。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SC&KD's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/22/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-title-link" itemprop="url">多线程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-22 11:25:19" itemprop="dateCreated datePublished" datetime="2020-09-22T11:25:19+08:00">2020-09-22</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/09/22/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/22/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-1、线程、进程、多线程"><a href="#1-1、线程、进程、多线程" class="headerlink" title="1.1、线程、进程、多线程"></a>1.1、线程、进程、多线程</h3><p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-09-22%20112720.png" alt></p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-09-22%20112848.png" alt></p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-09-22%20141301.png" alt></p>
+<h3 id="1-2、继承Thread类"><a href="#1-2、继承Thread类" class="headerlink" title="1.2、继承Thread类"></a>1.2、继承Thread类</h3><p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-09-22%20140135.png" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang.demo01;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建线程方式一：继承Thread类，重写run()方法，使用start()方法开启</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//注意：线程开启后不一定立即执行，由CPU调度执行</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThread1</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//重写run()方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">200</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">"我在看代码！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个线程对象</span></span><br><span class="line">        TestThread1 thread1 = <span class="keyword">new</span> TestThread1();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//开启多线程</span></span><br><span class="line">        thread1.start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">"我在学习多线程！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3、网图下载"><a href="#1-3、网图下载" class="headerlink" title="1.3、网图下载"></a>1.3、网图下载</h3><p>利用Thread类来实现同时下载三张图片。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang.demo01;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.io.FileUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.net.MalformedURLException;</span><br><span class="line"><span class="keyword">import</span> java.net.URL;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThread2</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TestThread2</span><span class="params">(String url, String name)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.url = url;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        webDownLoader wDL = <span class="keyword">new</span> webDownLoader();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            wDL.downLoader(url, name);</span><br><span class="line">            System.out.println(<span class="string">"成功下载："</span> + name);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (MalformedURLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        TestThread2 t1 = <span class="keyword">new</span> TestThread2(<span class="string">"https://cdn.magdeleine.co/wp-content/uploads/2020/08/29466716734_934f972e67_o-1400x938.jpg"</span>, <span class="string">"1.jpg"</span>);</span><br><span class="line">        TestThread2 t2 = <span class="keyword">new</span> TestThread2(<span class="string">"https://cdn.magdeleine.co/wp-content/uploads/2020/08/watch-held-in-hand-over-road-1400x934.jpg"</span>, <span class="string">"2.jpg"</span>);</span><br><span class="line">        TestThread2 t3 = <span class="keyword">new</span> TestThread2(<span class="string">"https://cdn.magdeleine.co/wp-content/uploads/2020/08/27779526063_8ef85956e6_o-1400x933.jpg"</span>, <span class="string">"3.jpg"</span>);</span><br><span class="line"></span><br><span class="line">        t1.start();</span><br><span class="line">        t2.start();</span><br><span class="line">        t3.start();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//下载器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">webDownLoader</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//下载方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">downLoader</span><span class="params">(String url, String name)</span> <span class="keyword">throws</span> MalformedURLException </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            FileUtils.copyURLToFile(<span class="keyword">new</span> URL(url), <span class="keyword">new</span> File(name));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.out.println(<span class="string">"IO出现异常！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4、实现Runnable接口"><a href="#1-4、实现Runnable接口" class="headerlink" title="1.4、实现Runnable接口"></a>1.4、实现Runnable接口</h3><p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-09-22%20151702.png" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang.demo01;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实现Runnable接口，重现run方法，执行线程需要丢入Runnable实现类，调用start()方法。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThread03</span> <span class="keyword">implements</span>  <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//重写run()方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">200</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">"我在看代码！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        TestThread03 testThread03 = <span class="keyword">new</span> TestThread03();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(testThread03).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">"我在学习多线程！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-5、初识高并发"><a href="#1-5、初识高并发" class="headerlink" title="1.5、初识高并发"></a>1.5、初识高并发</h3><p>多个线程操作同一个资源的时候，会出现线程不安全、数据紊乱。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang.demo01;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//多个线程同时操作一个对象</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThread05</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> ticketNums = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(ticketNums &lt; <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">			<span class="comment">//模拟延时</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">"--&gt;拿到了第"</span> + ticketNums-- + <span class="string">"张票"</span>);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        TestThread05 testThread05 = <span class="keyword">new</span> TestThread05();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(testThread05, <span class="string">"小明"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(testThread05, <span class="string">"小刚"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(testThread05, <span class="string">"老师"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(testThread05, <span class="string">"小红"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(testThread05, <span class="string">"小李"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(testThread05, <span class="string">"小潘"</span>).start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-6、龟兔赛跑"><a href="#1-6、龟兔赛跑" class="headerlink" title="1.6、龟兔赛跑"></a>1.6、龟兔赛跑</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">package com.kuang.demo01;</span><br><span class="line"></span><br><span class="line">public class TestThread06 implements Runnable&#123;</span><br><span class="line"></span><br><span class="line">    public String winner;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;模拟龟兔赛跑</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 100; i++) &#123;</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F;模拟兔子休息</span><br><span class="line">            if(Thread.currentThread().getName() &#x3D;&#x3D; &quot;兔子&quot; &amp;&amp; i % 10 &#x3D;&#x3D; 0)&#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    Thread.sleep(1);</span><br><span class="line">                &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            boolean flag &#x3D; gameOver(i+1);</span><br><span class="line">            if(flag &#x3D;&#x3D; true)&#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot;跑了&quot; + i + &quot;步&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public boolean gameOver(int steps)&#123;</span><br><span class="line">        if(winner !&#x3D; null)&#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        if(steps &gt;&#x3D; 100)&#123;</span><br><span class="line">            winner &#x3D; Thread.currentThread().getName();</span><br><span class="line">            System.out.println(winner + &quot;是胜利者&quot;);</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        TestThread06 testThread06 &#x3D; new TestThread06();</span><br><span class="line"></span><br><span class="line">        new Thread(testThread06, &quot;兔子&quot;).start();</span><br><span class="line">        new Thread(testThread06, &quot;乌龟&quot;).start();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/09/21/leetcode%E7%AC%AC682%E9%A2%98-%E6%A3%92%E7%90%83%E6%AF%94%E8%B5%9B/leetcode%E7%AC%AC682%E9%A2%98-%E6%A3%92%E7%90%83%E6%AF%94%E8%B5%9B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1090,98 +1190,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/09/05/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
-      <meta itemprop="name" content="Curryforthreeeeee30">
-      <meta itemprop="description" content="把复杂留给自己，把简单留给世界。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SC&KD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/05/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">深拷贝、浅拷贝和拷贝构造函数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-05 20:20:37" itemprop="dateCreated datePublished" datetime="2020-09-05T20:20:37+08:00">2020-09-05</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/09/05/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/05/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p>拷贝对象和原始对象的引用类型引用同一个对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShallowCloneExample</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> arr[];</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ShallowCloneExample</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">			arr[i] = i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setValue</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">		arr[index] = value;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getData</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> arr[index];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ShallowCloneExample <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (ShallowCloneExample) <span class="keyword">super</span>.clone();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><p>拷贝对象和原始对象的引用类型引用不同对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeepCloneExample</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> arr[];</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">DeepCloneExample</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">			arr[i] = i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setValue</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">		arr[index] = value;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getData</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> arr[index];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> DeepCloneExample <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">		DeepCloneExample result = (DeepCloneExample) <span class="keyword">super</span>.clone();</span><br><span class="line">		result.arr = <span class="keyword">new</span> <span class="keyword">int</span>[arr.length];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">			result.arr[j] = j;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="拷贝构造函数"><a href="#拷贝构造函数" class="headerlink" title="拷贝构造函数"></a>拷贝构造函数</h3><p>使用 clone() 方法来拷贝一个对象即复杂又有风险，它会抛出异常，并且还需要类型转换。Effective Java 书上讲到，最好不要去使用 clone()，可以使用拷贝构造函数或者拷贝工厂来拷贝一个对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CloneConstructorExample</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> []arr;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">CloneConstructorExample</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated constructor stub</span></span><br><span class="line">		arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">			arr[i] = i;</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setValue</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">		arr[index] = value;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getData</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> arr[index];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//拷贝构造函数</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">CloneConstructorExample</span><span class="params">(CloneConstructorExample original)</span> </span>&#123;</span><br><span class="line">		arr = <span class="keyword">new</span> <span class="keyword">int</span>[original.arr.length];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; original.arr.length; j++) &#123;</span><br><span class="line">			arr[j] = original.arr[j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1253,7 +1261,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1266,7 +1274,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1316,12 +1324,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">50k</span>
+    <span title="站点总字数">55k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">46 分钟</span>
+    <span title="站点阅读时长">50 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
