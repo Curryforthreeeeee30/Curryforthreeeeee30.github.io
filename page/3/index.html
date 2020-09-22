@@ -161,6 +161,286 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/08/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%A0%B8%E5%BF%83API/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%A0%B8%E5%BF%83API/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
+      <meta itemprop="name" content="Curryforthreeeeee30">
+      <meta itemprop="description" content="把复杂留给自己，把简单留给世界。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SC&KD's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%A0%B8%E5%BF%83API/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%A0%B8%E5%BF%83API/" class="post-title-link" itemprop="url">java学习笔记之核心API</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-04 08:18:50" itemprop="dateCreated datePublished" datetime="2020-08-04T08:18:50+08:00">2020-08-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">java学习</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%A0%B8%E5%BF%83API/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%A0%B8%E5%BF%83API/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%A0%B8%E5%BF%83API/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%A0%B8%E5%BF%83API/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Java-Number-amp-Math-类"><a href="#Java-Number-amp-Math-类" class="headerlink" title="Java Number &amp; Math 类"></a>Java Number &amp; Math 类</h3><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>1.所有的包装类（Integer、Long、Byte、Double、Float、Short）都是抽象类Number 的子类。当内置数据类型被当作对象使用的时候，编译器会把内置类型装箱为包装类。相似的，编译器也可以把一个对象拆箱为内置类型。</p>
+<p>2.Math 的方法都被定义为 static 形式，通过 Math 类可以在主函数中直接调用。<br>主要有：<strong>Math.sin, Math.cos, Math.tan, Math.atan, Math.toDegrees</strong>.</p>
+<h4 id="Number和Math的常用API："><a href="#Number和Math的常用API：" class="headerlink" title="Number和Math的常用API："></a>Number和Math的常用API：</h4><hr>
+<p><strong>###Value()</strong>: 将 Number 对象转换为xxx数据类型的值并返回。<br>比如：intValue(), longValue(), doubleValue(), shortValue(), floatValue(), byteValue()，不是静态方法。</p>
+<hr>
+<p><strong>compareTo()</strong>：将number对象与参数比较。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(NumberSubClass referenceName)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>这里NumberSubClass可以是Byte, Double, Float, Integer, Short和Long中的一个。<br>返回值： 若相等返回0，小于（指定小于参数）返回-1， 大于返回1。</p>
+<hr>
+<p><strong>equals()</strong>：用于判断 Number 对象与方法的参数是否相等。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>只有类型和值都相等才会返回true，否则返回false。</p>
+<hr>
+<p><strong>valueOf()</strong>: 方法用于返回给定参数的原生 Number 对象值，是一个静态方法。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(String s)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(String s, <span class="keyword">int</span> redix)</span></span>;<span class="comment">//redix表示指定的进制数。</span></span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Integer x = Integer.valueOf(<span class="number">8</span>);<span class="comment">//生成一个值为8的Integer实例。</span></span><br><span class="line">Double y = Double.valueOf(<span class="string">"80"</span>);<span class="comment">//生成一个值为80.0的Double实例。</span></span><br><span class="line">Double z = Double.valueOf(<span class="number">80</span>);<span class="comment">//生成一个值为80.0的的Double实例。</span></span><br><span class="line">Integer w = Integer.valueOf(<span class="string">"444"</span>, <span class="number">16</span>);<span class="comment">//使用16进制。</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>toString</strong>方法：用于返回以一个字符串表示的 Number 对象值。<br>语法形式有两种，其中一种是静态方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">toString</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> String <span class="title">toString</span><span class="params">(<span class="keyword">int</span> i)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer x = <span class="number">5</span>;</span><br><span class="line">x.toString();<span class="comment">//返回String对象</span></span><br><span class="line">Integer.toString(<span class="number">12</span>);<span class="comment">//返回String对象</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>parseInt</strong>方法：将字符串参数解析成int整型。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">parseInt</span><span class="params">(String s)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">parseInt</span><span class="params">(String s, <span class="keyword">int</span> i)</span></span>;<span class="comment">//i为进制数</span></span><br></pre></td></tr></table></figure>
+<p>这里和valueOf()方法有相同之处————都是静态的，但是两者不同的地方是返回值类型不同，valueOf()返回的是Integer对象，而parseInt则返回一个int整型变量。<br>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x = Integer.parseInt(<span class="string">"9"</span>);</span><br><span class="line">Double y = Double.parseDouble(<span class="string">"10"</span>);<span class="comment">//返回值为5.0的double变量</span></span><br><span class="line"><span class="keyword">int</span> z = Integer.parseInt(<span class="string">"444"</span>, <span class="number">16</span>);<span class="comment">//16进制</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>abs</strong>方法：调用形式为Math.abs(x);<br><strong>ceil</strong>方法：上舍入（大于等于给定值）<br><strong>floor</strong>方法：下舍入（小于等于给定值）<br><strong>ceil</strong>和<strong>floor</strong>的语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ceil</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ceil</span><span class="params">(<span class="keyword">float</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">floor</span><span class="params">(<span class="keyword">double</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">floor</span><span class="params">(<span class="keyword">float</span> y)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><strong>rint</strong>方法：返回最接近参数的整数值<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">rint</span><span class="params">(<span class="keyword">double</span> y)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><strong>round</strong>方法：四舍五入，算法是Math.floor(x+0.5)。</p>
+<hr>
+<p><strong>min</strong>和<strong>max</strong>方法：返回两者之间最小值和最大值。<br><strong>exp</strong>方法：Math.exp(x).(另：Math.E表示表示自然对数的底数e。<br><strong>log</strong>方法：Math.log(x).<br><strong>pow</strong>方法：Math.pow(x, y).返回的是x的y次方。<br><strong>sqrt</strong>方法：返回算术平方根。<br><strong>toDegrees</strong>方法和<strong>toRadians</strong>方法分别是弧度转换成角度和角度转换成弧度的API。</p>
+<hr>
+<p><strong>random()</strong>方法：这是一个产生随机数的静态方法，语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">double</span> <span class="title">random</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>返回值范围在0.0 =&lt; Math.random &lt; 1.0。</p>
+<hr>
+<h3 id="Java-Character-类"><a href="#Java-Character-类" class="headerlink" title="Java Character 类"></a>Java Character 类</h3><h4 id="装箱和拆箱的区别说明"><a href="#装箱和拆箱的区别说明" class="headerlink" title="装箱和拆箱的区别说明"></a>装箱和拆箱的区别说明</h4><p>比如：将一个char类型的参数传递给需要一个Character类型参数的方法时，那么编译器会自动地将char类型参数转换为Character对象。 这种特征称为装箱，反过来称为拆箱。<br>再比如：将一个int类型参数转换成Integer对象是装箱，将Integer对象转换成int类型参数是拆箱。</p>
+<h4 id="常见的Character类的API"><a href="#常见的Character类的API" class="headerlink" title="常见的Character类的API"></a>常见的Character类的API</h4><hr>
+<p><strong>isLetter()</strong>方法：用于判断指定字符是否是字母。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isLetter</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Character.isLetter(<span class="string">'C'</span>);<span class="comment">//返回值为true.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>isDigit()</strong>方法：用于判断指定字符是否是数字。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isDigit</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Character.isDigit(<span class="string">'5'</span>);<span class="comment">//返回值为true.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>isWhitespace()</strong>方法：用于判断指定字符是否是空白字符，包括：<strong><em>tab键、空格键和换行符</em></strong>。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isWhitespace</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Character.isWhitespace(<span class="string">' '</span>);<span class="comment">//返回true.</span></span><br><span class="line">Character.isWhitespace(<span class="string">'\t'</span>);<span class="comment">//返回true.</span></span><br><span class="line">Character.isWhitespace(<span class="string">'\n'</span>);<span class="comment">//返回true.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>isUpperCase()</strong>方法：用于判断指定字符是否为大写字母。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isUpperCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><strong>isLowerCase()</strong>方法：用于判断指定字符是否为大写字母。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isLowerCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>toUpperCase()</strong>方法：用于将小写字符转换成大写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">toUpperCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Character.toUpperCase(<span class="string">'c'</span>);<span class="comment">//返回字符'C'.</span></span><br></pre></td></tr></table></figure>
+<p><strong>toLowerCase()</strong>方法：用于将小写字符转换成大写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">toLowerCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Character.toLowerCase(<span class="string">'C'</span>);<span class="comment">//返回字符'c'.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>toString()</strong>方法：用于返回一个指定char值的String对象。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">toString</span><span class="params">(<span class="keyword">char</span> c)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Character.toString(<span class="string">'a'</span>);<span class="comment">//返回一个String对象，值为"a".</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Java-String-类"><a href="#Java-String-类" class="headerlink" title="Java String 类"></a>Java String 类</h3><h4 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h4><p>String 类是不可改变的，所以你一旦创建了 String 对象，那它的值就无法改变了。</p>
+<p>如果需要对字符串做很多修改，那么应该选择使用 StringBuffer &amp; StringBuilder 类（之前的博客中有介绍）。</p>
+<h4 id="String类中常用的API"><a href="#String类中常用的API" class="headerlink" title="String类中常用的API"></a>String类中常用的API</h4><hr>
+<p><strong>charAt()</strong>方法：用于返回指定索引处的字符。索引范围为从 0 到 length() - 1。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">char</span> <span class="title">charAt</span><span class="params">(<span class="keyword">int</span> index)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"Hello,NJU!"</span>;</span><br><span class="line"><span class="keyword">char</span> c = s.charAt(<span class="number">2</span>);<span class="comment">//返回'l'.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>compareTo()</strong>方法：比较字符串大小。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(String anotherString)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"HelloNJU"</span>;</span><br><span class="line">String str2 = <span class="string">"HelloCSU"</span>;</span><br><span class="line">str1.compareTo(str2);<span class="comment">//返回'N'与'S'的ASCII码差值-5.</span></span><br><span class="line">str1.compareTo(str1);<span class="comment">//返回0</span></span><br><span class="line">str2.compareTo(str1);<span class="comment">//返回5.</span></span><br></pre></td></tr></table></figure>
+<p><strong>compareTo()</strong>方法还有一个孪生兄弟，那就是<strong>compareToIgnoreCase()</strong>，语法上和前者保持一致，主要差别是后者在比较的时候会忽略字母的大小写，举个栗子。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str4 = <span class="string">"HELLONJU"</span>;</span><br><span class="line">str1.compareToIgnoreCase(str4);<span class="comment">//返回0.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>concat()</strong>方法：用于连接字符串。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">concat</span><span class="params">(String s)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"金州勇士"</span>;</span><br><span class="line">String str2 = str1.concat(<span class="string">"总冠军！"</span>);<span class="comment">//返回"金州勇士总冠军！".</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>contentEquals()</strong>方法：用于将此字符串与指定的 StringBuffer 比较。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contentEquals</span><span class="params">(StringBuffer sb)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"String1"</span>;</span><br><span class="line">String str2 = <span class="string">"String2"</span>;</span><br><span class="line">StringBuffer sb = <span class="keyword">new</span> StringBuffer(str1);</span><br><span class="line">str1.contentEquals(sb);<span class="comment">//返回true.</span></span><br><span class="line">str2.contentEquals(sb);<span class="comment">//返回false.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>copyValueOf()</strong>方法：将字符数组参数转成成字符串。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">copyValueOf</span><span class="params">(<span class="keyword">char</span> []data)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">copyValueOf</span><span class="params">(<span class="keyword">char</span> []data, <span class="keyword">int</span> offset, <span class="keyword">int</span> count)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> []data = <span class="keyword">new</span> <span class="keyword">char</span>[]&#123;<span class="string">'H'</span>, <span class="string">'E'</span>, <span class="string">'L'</span>, <span class="string">'L'</span>, <span class="string">'O'</span>&#125;;</span><br><span class="line">String str1 = String.copyValueOf(data);<span class="comment">//返回字符串"Hello"</span></span><br><span class="line">String str2 = String.copyValueOf(data, <span class="number">2</span>, <span class="number">3</span>);<span class="comment">//返回字符串"LLO".</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>endsWith()</strong>方法：判断字符串是否以指定后缀结束。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">endsWith</span><span class="params">(String suffix)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"HelloNJU"</span>;</span><br><span class="line">str.endsWith(<span class="string">"NJU"</span>);<span class="comment">//返回true.</span></span><br></pre></td></tr></table></figure>
+<p>同理，还有一个<strong>startsWith()</strong>方法，与<strong>endsWith()</strong>方法不一样的是，它的语法形式还多了一种，可以指定从哪里开始。</p>
+<hr>
+<p><strong>equals()</strong>方法：将字符串与指定对象进行比较。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="keyword">new</span> String(<span class="string">"Hexo"</span>);</span><br><span class="line">String str2 = str1;</span><br><span class="line">str1.equals(str2);<span class="comment">//返回true.</span></span><br></pre></td></tr></table></figure>
+<p>和之前的<strong>compareTo()</strong>方法一样，<strong>equals()</strong>方法也有一个孪生兄弟，那就是<strong>equalsIgnoreCase()</strong>方法，即忽略大小写判断是否相等。语法形式上略有不同。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equalsIgnoreCase</span><span class="params">(String anotherString)</span></span>;<span class="comment">//参数数据类型不同.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>getChars()</strong>方法：将字符从字符串复制到目标字符数组。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getChars</span><span class="params">(<span class="keyword">int</span> srcBegin, <span class="keyword">int</span> srcEnd, <span class="keyword">char</span>[] dst, <span class="keyword">int</span> dstBegin)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"HelloNJU"</span>;</span><br><span class="line">Char[] dst = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">5</span>];</span><br><span class="line">str.getChars(<span class="number">0</span>, <span class="number">6</span>, dst, <span class="number">0</span>)<span class="comment">//dst数组变为&#123;'H', 'e', 'l', 'l', 'o'&#125;.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>hashCode()</strong>方法：返回字符串的哈希码<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">(String s)</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>indexOf()</strong>方法：返回指定字符串中某个字符的下标或子字符串的下标.<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(<span class="keyword">int</span> ch)</span></span>;<span class="comment">//实际参数使用也可用char c</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(<span class="keyword">int</span> ch, <span class="keyword">int</span> fromindex)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(String s)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(String s, <span class="keyword">int</span> fromindex)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>此外，<strong>lastlndexOf()</strong>方法返回的是从后往前数，指定字符串中某个字符的下标或子字符串的下标，语法形式与<strong>indexOf()</strong>方法类似。</p>
+<hr>
+<p><strong>regionMatches()</strong>方法：用于检测两个字符串在一个区域内是否相等。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">int</span> toffset, String other, <span class="keyword">int</span> ooffset, <span class="keyword">int</span> len)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">boolean</span> IgnoreCase, <span class="keyword">int</span> toffset, String other, <span class="keyword">int</span> ooffset, <span class="keyword">int</span> len)</span></span>;</span><br><span class="line">说明：ignoreCase -- 如果为 <span class="keyword">true</span>，则比较字符时忽略大小写。</span><br><span class="line">toffset -- 此字符串中子区域的起始偏移量。</span><br><span class="line">other -- 字符串参数。</span><br><span class="line">ooffset -- 字符串参数中子区域的起始偏移量。</span><br><span class="line">len -- 要比较的字符数。</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"HELLONJU"</span>;</span><br><span class="line">String str2 = <span class="string">"NJU"</span>;</span><br><span class="line">str1.regionMatches(<span class="number">5</span>, str2, <span class="number">0</span>, <span class="number">3</span>);<span class="comment">//返回true.</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>replace()</strong>方法：换字符串中的字符。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replace</span><span class="params">(<span class="keyword">char</span> oldChar, <span class="keyword">char</span> newChar)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"HELLONJU"</span>;</span><br><span class="line">str.replace(<span class="string">'N'</span>, <span class="string">'S'</span>);<span class="comment">//返回字符串"HELLOSJU"</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>subSequence()</strong>方法：返回字符串的子序列。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> CharSequence <span class="title">subSequence</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>subString()</strong>方法：返回字符串的子字符串。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">subString</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"HELLONJU"</span>;</span><br><span class="line">String str2 = str1.subString(<span class="number">0</span>,<span class="number">5</span>);<span class="comment">//返回字符串"HELLO".</span></span><br><span class="line">****</span><br><span class="line">**toCharArray()**方法：将字符串转换成字符数组</span><br><span class="line">语法形式：</span><br><span class="line">```java</span><br><span class="line"><span class="keyword">public</span> Char[] toCharArray();</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"HELLONJU"</span>;</span><br><span class="line"><span class="keyword">char</span>[] chars = str1.toCharArray();</span><br><span class="line">System.out.println(chars);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">char</span> ch : chars)&#123;</span><br><span class="line">    System.out.println(ch);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//复习一下数组的输出哈哈哈</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>toUpperCase()</strong>方法：将字符串变成大写。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toUpperCase</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>同理，还有<strong>toLowerCase()</strong>方法，将字符串变成小写。</p>
+<hr>
+<p><strong>toString()</strong>方法：返回此对象本身。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="keyword">new</span> String(<span class="string">"HELLONJU"</span>);</span><br><span class="line">s.toString();<span class="comment">//返回字符串"HELLONJU".</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>trim()</strong>方法：去除字符串首尾空白。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">trim</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>valueOf()</strong>方法：返回字符串形式，静态方法。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">char</span>[] data)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">char</span>[] data, <span class="keyword">int</span> offset, <span class="keyword">int</span> count)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">char</span> c)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Java-StringBuffer-类"><a href="#Java-StringBuffer-类" class="headerlink" title="Java StringBuffer 类"></a>Java StringBuffer 类</h3><h4 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h4><p>当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。</p>
+<p>和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象。</p>
+<p>StringBuilder 类在 Java 5 中被提出，它和 StringBuffer 之间的最大不同在于 StringBuilder 的方法不是线程安全的（不能同步访问）。</p>
+<p>由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder 类。然而在应用程序要求线程安全的情况下，则必须使用 StringBuffer 类。</p>
+<h4 id="StringBuffer类常用API"><a href="#StringBuffer类常用API" class="headerlink" title="StringBuffer类常用API"></a>StringBuffer类常用API</h4><hr>
+<p><strong>append()</strong>方法：将指定的字符串追加到此字符序列。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">append</span><span class="params">(String s)</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>reverse()</strong>方法：将此字符序列用其反转形式取代。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">reverse</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>delete()</strong>方法：移除此序列的子字符串中的字符。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">delete</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>insert()</strong>方法：在原字符序列插入字符。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">insert</span><span class="params">(<span class="keyword">int</span> offset, <span class="keyword">int</span> i)</span></span>;<span class="comment">//以String.valueOf(i)插入原字符序列的offset处。</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>replace()</strong>方法：使用给定 String 中的字符替换此序列的子字符串中的字符。<br>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">replace</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end, String str)</span></span>;</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/07/21/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9B%86%E5%90%88/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9B%86%E5%90%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1051,7 +1331,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1114,12 +1394,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">56k</span>
+    <span title="站点总字数">57k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">51 分钟</span>
+    <span title="站点阅读时长">52 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
