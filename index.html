@@ -161,6 +161,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
+      <meta itemprop="name" content="Curryforthreeeeee30">
+      <meta itemprop="description" content="把复杂留给自己，把简单留给世界。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SC&KD's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">leetcode第456题-132模式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-30 17:07:14" itemprop="dateCreated datePublished" datetime="2020-09-30T17:07:14+08:00">2020-09-30</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>584</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h4 id="https-leetcode-cn-com-problems-132-pattern"><a href="#https-leetcode-cn-com-problems-132-pattern" class="headerlink" title="https://leetcode-cn.com/problems/132-pattern/"></a><a href="https://leetcode-cn.com/problems/132-pattern/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/132-pattern/</a></h4><h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>这道题不得不说是一道很经典的题，只要想到了解法就很容易实现，只可惜思路不容易想到，刷了也有60多道题了，就发现有时候你得学会反着来，比如说这道题是一个很好的例子。我们可以想到将数组倒序遍历，如果我们找到一个比第二大的数小的话的话，是不是就可以返回true了？对，没错，就是这个思路！！！于是乎，下面这些代码便很容易解释了。</p>
+<h3 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">find132pattern</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Deque&lt;Integer&gt; deque = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> secondary = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &lt; secondary)</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">while</span>(!deque.isEmpty() &amp;&amp; nums[i] &gt; deque.peekLast())&#123;</span><br><span class="line">                secondary = deque.removeLast();</span><br><span class="line">            &#125;</span><br><span class="line">            deque.offer(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/09/30/leetcode%E7%AC%AC856%E9%A2%98-%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%88%86%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -227,7 +315,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h4 id="https-leetcode-cn-com-problems-score-of-parentheses"><a href="#https-leetcode-cn-com-problems-score-of-parentheses" class="headerlink" title="https://leetcode-cn.com/problems/score-of-parentheses/"></a><a href="https://leetcode-cn.com/problems/score-of-parentheses/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/score-of-parentheses/</a></h4><h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>这道题又TM不会做，可能是脑子不够用了吧，看了官方题解，来讲一下自己的理解。首先啊，肯定是要用到一个栈地，栈中的初始元素设为0，然后呢遍历字符串，如果字符是<strong>‘(‘</strong>的话，就需要向数组中添加元素0，如果是<strong>‘)’</strong>的话，那么就需要将栈顶元素乘以2再加到栈顶元素的上一个元素。但是如果只有<strong>()</strong>的话，那么只需要将栈顶元素的上一个元素加1就好了，完成这些之后，就直接返回栈中的栈顶元素就行了。</p>
+          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h4 id="https-leetcode-cn-com-problems-score-of-parentheses"><a href="#https-leetcode-cn-com-problems-score-of-parentheses" class="headerlink" title="https://leetcode-cn.com/problems/score-of-parentheses/"></a><a href="https://leetcode-cn.com/problems/score-of-parentheses/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/score-of-parentheses/</a></h4><h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>这道题又TM不会做，可能是脑子不够用了吧，看了官方题解，来讲一下自己的理解。首先啊，肯定是要用到一个栈的，栈中的初始元素设为0，然后呢遍历字符串，如果字符是<strong>‘(‘</strong>的话，就需要向数组中添加元素0，如果是<strong>‘)’</strong>的话，那么就需要将栈顶元素乘以2再加到栈顶元素的上一个元素。但是如果只有<strong>()</strong>的话，那么只需要将栈顶元素的上一个元素加1就好了，完成这些之后，就直接返回栈中的栈顶元素就行了。</p>
 <h3 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">scoreOfParentheses</span><span class="params">(String S)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        stack.push(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">char</span>[] chars = S.toCharArray();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c : chars)&#123;</span><br><span class="line">            <span class="keyword">if</span>(c == <span class="string">'('</span>)&#123;</span><br><span class="line">                stack.push(<span class="number">0</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                Integer pop1 = stack.pop();</span><br><span class="line">                Integer pop2 = stack.pop();</span><br><span class="line">                stack.push(pop2 + Math.max(<span class="number">2</span> * pop1, <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stack.peek();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -1042,97 +1130,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/09/21/leetcode%E7%AC%AC496%E9%A2%98-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A01/leetcode%E7%AC%AC496%E9%A2%98-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
-      <meta itemprop="name" content="Curryforthreeeeee30">
-      <meta itemprop="description" content="把复杂留给自己，把简单留给世界。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SC&KD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/21/leetcode%E7%AC%AC496%E9%A2%98-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A01/leetcode%E7%AC%AC496%E9%A2%98-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A01/" class="post-title-link" itemprop="url">leetcode第496题-下一个更大元素1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-21 12:54:57" itemprop="dateCreated datePublished" datetime="2020-09-21T12:54:57+08:00">2020-09-21</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/09/21/leetcode%E7%AC%AC496%E9%A2%98-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A01/leetcode%E7%AC%AC496%E9%A2%98-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A01/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/21/leetcode%E7%AC%AC496%E9%A2%98-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A01/leetcode%E7%AC%AC496%E9%A2%98-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A01/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h4 id="https-leetcode-cn-com-problems-next-greater-element-i"><a href="#https-leetcode-cn-com-problems-next-greater-element-i" class="headerlink" title="https://leetcode-cn.com/problems/next-greater-element-i/"></a><a href="https://leetcode-cn.com/problems/next-greater-element-i/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/next-greater-element-i/</a></h4><h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>这个题目说实话看上去还真的没有很好的办法，我只想到了遍历。。。于是乎，看了以下官方的思路，觉得很不错。这里介绍一下官方的思路：</p>
-<p>首先不要着急着去动nums1，而是去找nums2中每一个元素在nums2中该元素后面的第一个比他大的元素，然后建一个HashMap，把该元素和比他的元素扔进HashMap，至于怎么实现这一操作，那就是利用栈，先把nums2的第一个元素压栈，然后从nums2的第二个元素开始与栈顶元素比较大小，如果栈顶元素小的话，直接将这两个元素扔进HashMap，然后出栈，并且将该元素与新的栈顶元素比较大小，直到该元素小于栈顶元素，才将其入栈；反之则直接入栈。</p>
-<p>最后从HashMap中根据key（nums1元素的值）查找value不要太容易！</p>
-<p>但是值得注意的是，特殊情况：nums1和nums2都是空的，直接返回一个空数组就好了。</p>
-<h3 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution496</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] nextGreaterElement(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[nums1.length];</span><br><span class="line">        <span class="keyword">if</span>(nums1.length == <span class="number">0</span> &amp;&amp; nums2.length == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hashMap = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        stack.push(nums2[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums2.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums2[i] &lt; stack.peek())&#123;</span><br><span class="line">                stack.push(nums2[i]);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(!stack.empty() &amp;&amp; nums2[i] &gt; stack.peek())&#123;</span><br><span class="line">                hashMap.put(stack.peek(), nums2[i]);</span><br><span class="line">                stack.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(nums2[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!stack.empty())&#123;</span><br><span class="line">            hashMap.put(stack.peek(), -<span class="number">1</span>);</span><br><span class="line">            stack.pop();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; nums1.length; k++)&#123;</span><br><span class="line">            res[k] = hashMap.get(nums1[k]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1204,7 +1201,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

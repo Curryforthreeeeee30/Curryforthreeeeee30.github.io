@@ -21,21 +21,22 @@
     var CONFIG = {"hostname":"wyqian.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="这篇blog是来源于leetcode28题——实现strStr()（28题题目链接） 其实可以很简单地使用java语言中的substring函数和equals函数来实现，具体代码如下： 123456789101112class Solution&amp;#123;    public int strStr(String haystack, String needle)&amp;#123;        int l">
+  <meta name="description" content="题目描述https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;132-pattern&#x2F;题目分析这道题不得不说是一道很经典的题，只要想到了解法就很容易实现，只可惜思路不容易想到，刷了也有60多道题了，就发现有时候你得学会反着来，比如说这道题是一个很好的例子。我们可以想到将数组倒序遍历，如果我们找到一个比第二大的数小的话的话，是不是就可以返回true了？对，没错，就是这个思路！！！于是乎，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="寻找子串java">
-<meta property="og:url" content="http://wyqian.top/2020/08/18/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/index.html">
+<meta property="og:title" content="leetcode第456题-132模式">
+<meta property="og:url" content="http://wyqian.top/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
-<meta property="og:description" content="这篇blog是来源于leetcode28题——实现strStr()（28题题目链接） 其实可以很简单地使用java语言中的substring函数和equals函数来实现，具体代码如下： 123456789101112class Solution&amp;#123;    public int strStr(String haystack, String needle)&amp;#123;        int l">
+<meta property="og:description" content="题目描述https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;132-pattern&#x2F;题目分析这道题不得不说是一道很经典的题，只要想到了解法就很容易实现，只可惜思路不容易想到，刷了也有60多道题了，就发现有时候你得学会反着来，比如说这道题是一个很好的例子。我们可以想到将数组倒序遍历，如果我们找到一个比第二大的数小的话的话，是不是就可以返回true了？对，没错，就是这个思路！！！于是乎，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-18T06:00:12.000Z">
-<meta property="article:modified_time" content="2020-08-18T06:19:13.158Z">
+<meta property="article:published_time" content="2020-09-30T09:07:14.000Z">
+<meta property="article:modified_time" content="2020-09-30T09:14:10.231Z">
 <meta property="article:author" content="Curryforthreeeeee30">
-<meta property="article:tag" content="算法">
 <meta property="article:tag" content="java学习">
+<meta property="article:tag" content="数据结构与算法">
+<meta property="article:tag" content="队列">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://wyqian.top/2020/08/18/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/">
+<link rel="canonical" href="http://wyqian.top/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -48,7 +49,7 @@
   };
 </script>
 
-  <title>寻找子串java | SC&KD's Blog</title>
+  <title>leetcode第456题-132模式 | SC&KD's Blog</title>
   
 
 
@@ -166,7 +167,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/08/18/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
@@ -179,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          寻找子串java
+          leetcode第456题-132模式
         </h1>
 
         <div class="post-meta">
@@ -189,7 +190,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-08-18 14:00:12" itemprop="dateCreated datePublished" datetime="2020-08-18T14:00:12+08:00">2020-08-18</time>
+              <time title="创建时间：2020-09-30 17:07:14" itemprop="dateCreated datePublished" datetime="2020-09-30T17:07:14+08:00">2020-09-30</time>
             </span>
 
           
@@ -208,8 +209,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/08/18/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/18/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/%E5%AF%BB%E6%89%BE%E5%AD%90%E4%B8%B2java/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -219,7 +220,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>434</span>
+              <span>584</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -238,10 +239,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>这篇blog是来源于leetcode28题——实现strStr()（<a href="https://leetcode-cn.com/problems/implement-strstr/" target="_blank" rel="noopener">28题题目链接</a>）</p>
-<p>其实可以很简单地使用java语言中的substring函数和equals函数来实现，具体代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len_hay = haystack.length();</span><br><span class="line">        <span class="keyword">int</span> len_nee = needle.length();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> start = <span class="number">0</span>; start &lt; len_hay-len_nee+<span class="number">1</span>; start++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(haystack.substring(start, start+len_nee).equals(needle))&#123;</span><br><span class="line">                <span class="keyword">return</span> start;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>仔细看看，就算needle是一个空字符串，返回值是-1，也是满足题目要求的。</p>
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h4 id="https-leetcode-cn-com-problems-132-pattern"><a href="#https-leetcode-cn-com-problems-132-pattern" class="headerlink" title="https://leetcode-cn.com/problems/132-pattern/"></a><a href="https://leetcode-cn.com/problems/132-pattern/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/132-pattern/</a></h4><h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>这道题不得不说是一道很经典的题，只要想到了解法就很容易实现，只可惜思路不容易想到，刷了也有60多道题了，就发现有时候你得学会反着来，比如说这道题是一个很好的例子。我们可以想到将数组倒序遍历，如果我们找到一个比第二大的数小的话的话，是不是就可以返回true了？对，没错，就是这个思路！！！于是乎，下面这些代码便很容易解释了。</p>
+<h3 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">find132pattern</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Deque&lt;Integer&gt; deque = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> secondary = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &lt; secondary)</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">while</span>(!deque.isEmpty() &amp;&amp; nums[i] &gt; deque.peekLast())&#123;</span><br><span class="line">                secondary = deque.removeLast();</span><br><span class="line">            &#125;</span><br><span class="line">            deque.offer(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -252,19 +252,19 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\08\06\动态规划\动态规划\" rel="bookmark">动态规划</a></div>
+      <div class="popular-posts-title"><a href="\2020\09\19\leetcode第20题-有效的括号\leetcode第20题-有效的括号\" rel="bookmark">leetcode第20题-有效的括号</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\08\06\贪心算法\贪心算法\" rel="bookmark">贪心算法</a></div>
+      <div class="popular-posts-title"><a href="\2020\09\19\leetcode第155题-最小栈\leetcode第155题-最小栈\" rel="bookmark">leetcode第155题-最小栈</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\05\==与equals的区别\==与equals的区别\" rel="bookmark">==与equals的区别</a></div>
+      <div class="popular-posts-title"><a href="\2020\09\19\leetcode第225题-用队列实现栈\leetcode第225题-用队列实现栈\" rel="bookmark">leetcode第225题-用队列实现栈</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\05\深拷贝、浅拷贝和拷贝构造函数\深拷贝、浅拷贝和拷贝构造函数\" rel="bookmark">深拷贝、浅拷贝和拷贝构造函数</a></div>
+      <div class="popular-posts-title"><a href="\2020\09\21\leetcode第682题-棒球比赛\leetcode第682题-棒球比赛\" rel="bookmark">leetcode第682题-棒球比赛</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\05\静态内部类\静态内部类\" rel="bookmark">静态内部类</a></div>
+      <div class="popular-posts-title"><a href="\2020\09\22\leetcode第71题-简化路径\leetcode第71题-简化路径\" rel="bookmark">leetcode第71题-简化路径</a></div>
     </li>
   </ul>
 
@@ -291,8 +291,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
               <a href="/tags/java%E5%AD%A6%E4%B9%A0/" rel="tag"># java学习</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag"># 数据结构与算法</a>
+              <a href="/tags/%E9%98%9F%E5%88%97/" rel="tag"># 队列</a>
           </div>
 
         
@@ -301,13 +302,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/08/06/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="prev" title="动态规划">
-      <i class="fa fa-chevron-left"></i> 动态规划
+    <a href="/2020/09/30/leetcode%E7%AC%AC856%E9%A2%98-%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%88%86%E6%95%B0/" rel="prev" title="leetcode第856题-括号的分数">
+      <i class="fa fa-chevron-left"></i> leetcode第856题-括号的分数
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/09/02/%E5%8C%B9%E9%85%8D%E6%BB%A4%E6%B3%A2/%E5%8C%B9%E9%85%8D%E6%BB%A4%E6%B3%A2/" rel="next" title="匹配滤波">
-      匹配滤波 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -367,6 +365,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#https-leetcode-cn-com-problems-132-pattern"><span class="nav-number">1.1.</span> <span class="nav-text">https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;132-pattern&#x2F;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目分析"><span class="nav-number">2.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目代码"><span class="nav-number">3.</span> <span class="nav-text">题目代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
