@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="m5NcKgUu0g" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wyqian.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="转载https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_42629988&#x2F;article&#x2F;details&#x2F;108046740?ops_request_misc&#x3D;%257B%2522request%255Fid%2522%253A%2522160170872119195188318565%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java常用类">
+<meta property="og:url" content="http://wyqian.top/2020/10/03/java%E5%B8%B8%E7%94%A8%E7%B1%BB/java%E5%B8%B8%E7%94%A8%E7%B1%BB/index.html">
+<meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
+<meta property="og:description" content="转载https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_42629988&#x2F;article&#x2F;details&#x2F;108046740?ops_request_misc&#x3D;%257B%2522request%255Fid%2522%253A%2522160170872119195188318565%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20170108.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20170401.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20170532.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20172158.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20195157.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20200603.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20211013.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20212955.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20215751.png">
+<meta property="article:published_time" content="2020-10-03T07:18:34.000Z">
+<meta property="article:modified_time" content="2020-10-03T13:58:09.829Z">
+<meta property="article:author" content="Curryforthreeeeee30">
+<meta property="article:tag" content="java学习">
+<meta property="article:tag" content="补充常用类的知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20170108.png">
+
+<link rel="canonical" href="http://wyqian.top/2020/10/03/java%E5%B8%B8%E7%94%A8%E7%B1%BB/java%E5%B8%B8%E7%94%A8%E7%B1%BB/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>java常用类 | SC&KD's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">SC&KD's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">保持热情，不被生活琐事所磨灭</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-allergies fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-battery-full fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/Curryforthreeeeee30" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/10/03/java%E5%B8%B8%E7%94%A8%E7%B1%BB/java%E5%B8%B8%E7%94%A8%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
+      <meta itemprop="name" content="Curryforthreeeeee30">
+      <meta itemprop="description" content="把复杂留给自己，把简单留给世界。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SC&KD's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java常用类
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-10-03 15:18:34" itemprop="dateCreated datePublished" datetime="2020-10-03T15:18:34+08:00">2020-10-03</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/10/03/java%E5%B8%B8%E7%94%A8%E7%B1%BB/java%E5%B8%B8%E7%94%A8%E7%B1%BB/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/03/java%E5%B8%B8%E7%94%A8%E7%B1%BB/java%E5%B8%B8%E7%94%A8%E7%B1%BB/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="转载"><a href="#转载" class="headerlink" title="转载"></a>转载</h3><p><a href="https://blog.csdn.net/qq_42629988/article/details/108046740?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160170872119195188318565%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=160170872119195188318565&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-108046740.pc_first_rank_v2_rank_v28_p&amp;utm_term=%E5%B8%B8%E7%94%A8%E7%B1%BB&amp;spm=1018.2118.3001.4187" target="_blank" rel="noopener">https://blog.csdn.net/qq_42629988/article/details/108046740?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160170872119195188318565%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=160170872119195188318565&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-108046740.pc_first_rank_v2_rank_v28_p&amp;utm_term=%E5%B8%B8%E7%94%A8%E7%B1%BB&amp;spm=1018.2118.3001.4187</a></p>
+<h3 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestString</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"abc"</span>;</span><br><span class="line">        <span class="comment">//1.字符串转字节数组，toCharArray()</span></span><br><span class="line">        <span class="keyword">char</span>[] charArray = s.toCharArray();</span><br><span class="line">        System.out.println(Arrays.toString(charArray));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.替换字符串，replace()</span></span><br><span class="line">        String s1 = s.replace(<span class="string">'b'</span>,<span class="string">'3'</span>);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        System.out.println(s1);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.判断是否含有指定字符串，contains()</span></span><br><span class="line">        String s3 = <span class="string">"abcgerghe"</span>;</span><br><span class="line">        <span class="keyword">boolean</span> flag1 = s3.contains(<span class="string">"abc"</span>);</span><br><span class="line">        <span class="keyword">boolean</span> flag2 = s3.contains(<span class="string">"ij"</span>);</span><br><span class="line">        System.out.println(Boolean.toString(flag1) + Boolean.toString(flag2));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.比较字符的大小，compareTo()</span></span><br><span class="line">        String s4 = <span class="string">"abc"</span>;</span><br><span class="line">        String s5 = <span class="string">"ab"</span>;</span><br><span class="line">        <span class="keyword">int</span> a = s4.compareTo(s5);</span><br><span class="line">        <span class="keyword">int</span> b = s5.compareTo(s4);</span><br><span class="line">        System.out.println(a);</span><br><span class="line">        System.out.println(b);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5.子字符串第一次，最后一次在字符串中出现的下标，indexOf(), lastIndexOf()</span></span><br><span class="line">        String s6 = <span class="string">"诚朴雄伟,励学敦行,知行合一,经世致用。"</span>;</span><br><span class="line">        System.out.println(s6.indexOf(<span class="string">","</span>));</span><br><span class="line">        System.out.println(s6.lastIndexOf(<span class="string">","</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//6.制定索引位置，截取子字符串，subString()</span></span><br><span class="line">        String s7 = s6;</span><br><span class="line">        System.out.println(s7.substring(<span class="number">0</span>,<span class="number">4</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//7.根据指定字符，转化成数组。split();</span></span><br><span class="line">        String s8 = <span class="string">"你好-这里是南京市-南大-欢迎你来到电子学院-学习！"</span>;</span><br><span class="line">        String [] temp = s8.split(<span class="string">"-"</span>);</span><br><span class="line">        <span class="keyword">for</span> (String s2 : temp) &#123;</span><br><span class="line">            System.out.println(s2);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//8.去掉字符串前后空格,trim()</span></span><br><span class="line">        String s9 = <span class="string">"   这里是雷达实验室    "</span>;</span><br><span class="line">        System.out.println(s9.trim());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//9.截取指定位置字符，charAt()</span></span><br><span class="line">        String s10 = <span class="string">"abcd"</span>;</span><br><span class="line">        System.out.println(s10.charAt(<span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//10.字符串拼接,concat()</span></span><br><span class="line">        String s11 = <span class="string">"这里是"</span>;</span><br><span class="line">        String s12 = <span class="string">"南大"</span>;</span><br><span class="line">        String s13 = s11.concat(s12);</span><br><span class="line">        System.out.println(s13);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Date类和SimpleDateFormat类"><a href="#Date类和SimpleDateFormat类" class="headerlink" title="Date类和SimpleDateFormat类"></a>Date类和SimpleDateFormat类</h3><p>复习时间和日期时请参考廖雪峰的官方网站：<a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">https://www.liaoxuefeng.com/</a></p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20170108.png" alt></p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20170401.png" alt></p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20170532.png" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//获取当前时间</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date();</span><br><span class="line">        System.out.println(date.getTime());<span class="comment">//时间戳，long类型以毫秒表示的时间戳</span></span><br><span class="line">        System.out.println(date.getYear() + <span class="number">1900</span>);</span><br><span class="line">        System.out.println(date.getMonth() + <span class="number">1</span>);</span><br><span class="line">        System.out.println(date.getDate());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//转换成String格式</span></span><br><span class="line">        System.out.println(date.toString());<span class="comment">//China Standard Time,简称CST,中国标准时间</span></span><br><span class="line">        System.out.println(date.toGMTString());<span class="comment">//GMT时区表示</span></span><br><span class="line">        System.out.println(date.toLocaleString());<span class="comment">//本地时间表示</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//simpleDateFormat类</span></span><br><span class="line">        SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);<span class="comment">//打印出我们想要的格式</span></span><br><span class="line">        System.out.println(format.format(date));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20172158.png" alt></p>
+<h3 id="Calendar类"><a href="#Calendar类" class="headerlink" title="Calendar类"></a>Calendar类</h3><p><code>Calendar</code>可以用于获取并设置年、月、日、时、分、秒，它和<code>Date</code>比，主要多了一个可以做简单的日期和时间运算的功能。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestCalendar</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//获取当前时间</span></span><br><span class="line">        Calendar time = Calendar.getInstance();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> y = time.get(Calendar.YEAR);</span><br><span class="line">        <span class="keyword">int</span> m = time.get(Calendar.MONTH) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> d = time.get(Calendar.DAY_OF_MONTH);</span><br><span class="line">        <span class="keyword">int</span> hh = time.get(Calendar.HOUR_OF_DAY);</span><br><span class="line">        <span class="keyword">int</span> MM = time.get(Calendar.MINUTE);</span><br><span class="line">        <span class="keyword">int</span> ss = time.get(Calendar.SECOND);</span><br><span class="line">        <span class="keyword">int</span> ms = time.get(Calendar.MILLISECOND);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//打印出当前时间</span></span><br><span class="line">        System.out.println(y + <span class="string">"-"</span> + m + <span class="string">"-"</span> + d + <span class="string">"  "</span> + hh + <span class="string">":"</span> + MM + <span class="string">":"</span> + ss + <span class="string">":"</span> + ms);</span><br><span class="line">        <span class="comment">//利用time.getTime()方法可以将Calendar对象转换成Date对象，然后利用format方法显示</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>).format(time.getTime()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="TimeZone类"><a href="#TimeZone类" class="headerlink" title="TimeZone类"></a>TimeZone类</h3><p><code>Calendar</code>和<code>Date</code>相比，它提供了时区转换的功能。时区用<code>TimeZone</code>对象表示。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.TimeZone;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestTimeZone</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TimeZone tzDefault = TimeZone.getDefault();<span class="comment">//当前时区</span></span><br><span class="line"></span><br><span class="line">        TimeZone tzGMT8 = TimeZone.getTimeZone(<span class="string">"GMT-8:00"</span>);<span class="comment">//GMT时区</span></span><br><span class="line">        TimeZone tzAs = TimeZone.getTimeZone(<span class="string">"Asia/Shanghai"</span>);<span class="comment">//上海时区</span></span><br><span class="line"></span><br><span class="line">        System.out.println(tzDefault.getID());</span><br><span class="line">        System.out.println(tzGMT8.getID());</span><br><span class="line">        System.out.println(tzAs.getID());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="转换时区-使用TimeZone类实现"><a href="#转换时区-使用TimeZone类实现" class="headerlink" title="转换时区-使用TimeZone类实现"></a>转换时区-使用TimeZone类实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Time;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"><span class="keyword">import</span> java.util.TimeZone;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestChangeTimeZone</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar c  = Calendar.getInstance();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//清除所有</span></span><br><span class="line">        c.clear();</span><br><span class="line">        <span class="comment">//设置时区</span></span><br><span class="line">        c.setTimeZone(TimeZone.getTimeZone(<span class="string">"Asia/Shanghai"</span>));</span><br><span class="line">        <span class="comment">//设置时间</span></span><br><span class="line">        c.set(<span class="number">2020</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">19</span>,<span class="number">43</span>,<span class="number">20</span>);</span><br><span class="line">        <span class="comment">//下面做转换时区,从中国上海时区转换到美国纽约时区</span></span><br><span class="line">        SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd hh:MM:ss"</span>);</span><br><span class="line">        sdf.setTimeZone(TimeZone.getTimeZone(<span class="string">"America/New_York"</span>));</span><br><span class="line">        System.out.println(sdf.format(c.getTime()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取系统当前时间戳"><a href="#获取系统当前时间戳" class="headerlink" title="获取系统当前时间戳"></a>获取系统当前时间戳</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(System.currentTimeMillis());<span class="comment">//获得系统当前时间戳</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="LocalDateTime类"><a href="#LocalDateTime类" class="headerlink" title="LocalDateTime类"></a>LocalDateTime类</h3><p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20195157.png" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.time.LocalDate;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalDateTime;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalTime;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestLocateDateTime</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        LocalTime lt = LocalTime.now();<span class="comment">//当前时间</span></span><br><span class="line">        LocalDate ld = LocalDate.now();<span class="comment">//当前日期</span></span><br><span class="line">        LocalDateTime ldt = LocalDateTime.now();<span class="comment">//当前日期和时间</span></span><br><span class="line"></span><br><span class="line">        System.out.println(lt);</span><br><span class="line">        System.out.println(ld);</span><br><span class="line">        System.out.println(ldt);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//也可以像下面这样：</span></span><br><span class="line">        LocalDateTime ldt2 = LocalDateTime.now();</span><br><span class="line">        LocalDate ld2 = ldt2.toLocalDate();</span><br><span class="line">        LocalTime lt2 = ldt2.toLocalTime();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//反过来也可创建LocalDateTime对象</span></span><br><span class="line">        LocalDateTime DateTimeNow = LocalDateTime.of(<span class="number">2020</span>, <span class="number">10</span>, <span class="number">3</span>, <span class="number">20</span>, <span class="number">00</span>, <span class="number">00</span>);</span><br><span class="line">        System.out.println(DateTimeNow);</span><br><span class="line">        LocalDate dateNow = LocalDate.of(<span class="number">2020</span>, <span class="number">10</span>, <span class="number">3</span>);</span><br><span class="line">        LocalTime timeNow = LocalTime.of(<span class="number">20</span>, <span class="number">02</span>, <span class="number">00</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//按照ISO8601的格式传入也是没有问题的</span></span><br><span class="line">        LocalDateTime parse = LocalDateTime.parse(<span class="string">"2020-10-03T20:00:45.482437900"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20200603.png" alt></p>
+<h3 id="DateTimeFormatter类"><a href="#DateTimeFormatter类" class="headerlink" title="DateTimeFormatter类"></a>DateTimeFormatter类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.time.LocalDateTime;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDateTimeFormatter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//用DateTimeFormatter.ofPattern实现和SimpleDateFormat类中format()方法一样的效果</span></span><br><span class="line">        DateTimeFormatter dTF = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd HH:mm:ss"</span>);</span><br><span class="line">        System.out.println(dTF.format(LocalDateTime.now()));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//自定义解析</span></span><br><span class="line">        LocalDateTime ldt = LocalDateTime.parse(<span class="string">"2020/10/03 20:16:20"</span>, dTF);</span><br><span class="line">        System.out.println(ldt);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还可以指定Locale，比如说指定中国或者是美国，请看下面这个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.time.ZonedDateTime;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="keyword">import</span> java.util.Locale;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDateTimeFormatter2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//获取当前时间</span></span><br><span class="line">        ZonedDateTime zDT = ZonedDateTime.now();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//指定是中国或者美国</span></span><br><span class="line">        DateTimeFormatter dTF1 = DateTimeFormatter.ofPattern(<span class="string">"yyyy MM dd EE HH:mm:ss"</span>, Locale.CHINA);</span><br><span class="line">        DateTimeFormatter dTF2 = DateTimeFormatter.ofPattern(<span class="string">"EE MM dd yyyy HH:mm:ss"</span>, Locale.US);</span><br><span class="line"></span><br><span class="line">        System.out.println(dTF1.format(zDT));</span><br><span class="line">        System.out.println(dTF2.format(zDT));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Duration类和Period类"><a href="#Duration类和Period类" class="headerlink" title="Duration类和Period类"></a>Duration类和Period类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.time.Duration;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalDate;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalDateTime;</span><br><span class="line"><span class="keyword">import</span> java.time.Period;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDateTimeFormatter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//用DateTimeFormatter.ofPattern实现和SimpleDateFormat类中format()方法一样的效果</span></span><br><span class="line">        DateTimeFormatter dTF = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd HH:mm:ss"</span>);</span><br><span class="line">        System.out.println(dTF.format(LocalDateTime.now()));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//自定义解析,解析成ISO 861格式</span></span><br><span class="line">        LocalDateTime ldt = LocalDateTime.parse(<span class="string">"2020/10/03 20:16:20"</span>, dTF);</span><br><span class="line">        System.out.println(ldt);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//测试isBefore()方法和isAfter()方法</span></span><br><span class="line">        LocalDateTime now = LocalDateTime.now();</span><br><span class="line">        LocalDateTime target = LocalDateTime.of(<span class="number">2020</span>,<span class="number">10</span>,<span class="number">4</span>,<span class="number">12</span>,<span class="number">20</span>,<span class="number">23</span>);</span><br><span class="line">        System.out.println(now.isBefore(target));</span><br><span class="line">        System.out.println(now.isAfter(target));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//测试Duration类和Period类,Duration类只用于LocalDateTime类，Period类只用于LocalDate类</span></span><br><span class="line">        LocalDateTime d1 = LocalDateTime.now();</span><br><span class="line">        LocalDateTime d2 = LocalDateTime.of(<span class="number">2020</span>, <span class="number">10</span>, <span class="number">4</span>,<span class="number">20</span>,<span class="number">29</span>,<span class="number">50</span>);</span><br><span class="line">        Duration timeBetween = Duration.between(d1, d2);</span><br><span class="line">        System.out.println(timeBetween);</span><br><span class="line"></span><br><span class="line">        LocalDate d3 = LocalDate.now();</span><br><span class="line">        LocalDate d4 = LocalDate.of(<span class="number">2020</span>, <span class="number">11</span>, <span class="number">4</span>);</span><br><span class="line">        Period daysBetween = Period.between(d3, d4);</span><br><span class="line">        System.out.println(daysBetween);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ZonedDateTime类"><a href="#ZonedDateTime类" class="headerlink" title="ZonedDateTime类"></a>ZonedDateTime类</h3><p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20211013.png" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.time.LocalDateTime;</span><br><span class="line"><span class="keyword">import</span> java.time.ZoneId;</span><br><span class="line"><span class="keyword">import</span> java.time.ZonedDateTime;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestZonedDateTime</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建带时区的日期和时间的方式1：使用ZonedDateTime.now()方法</span></span><br><span class="line">        <span class="comment">//获取当前时间</span></span><br><span class="line">        ZonedDateTime zDT = ZonedDateTime.now();</span><br><span class="line">        <span class="comment">//获取美国纽约时区的当前时间</span></span><br><span class="line">        ZonedDateTime zDT2 = ZonedDateTime.now(ZoneId.of(<span class="string">"America/New_York"</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(zDT);</span><br><span class="line">        System.out.println(zDT2);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建带时区的日期和时间的方式2：使用LocalDateTime中的atZone()方法</span></span><br><span class="line">        LocalDateTime ldt = LocalDateTime.now();</span><br><span class="line">        ZonedDateTime zDT3 = ldt.atZone(ZoneId.of(<span class="string">"America/New_York"</span>));</span><br><span class="line">        ZonedDateTime zDT4 = ldt.atZone(ZoneId.systemDefault());<span class="comment">//系统默认时区</span></span><br><span class="line">        System.out.println(zDT3);</span><br><span class="line">        System.out.println(zDT4);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="转换时区-使用ZonedDateTime类实现"><a href="#转换时区-使用ZonedDateTime类实现" class="headerlink" title="转换时区-使用ZonedDateTime类实现"></a>转换时区-使用ZonedDateTime类实现</h3><p>比用TimeZone类实现简单多了……</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.time.ZoneId;</span><br><span class="line"><span class="keyword">import</span> java.time.ZonedDateTime;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestChangeTimeZone2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ZonedDateTime zDT = ZonedDateTime.now(ZoneId.of(<span class="string">"Asia/Shanghai"</span>));</span><br><span class="line">        ZonedDateTime zDT2 = zDT.withZoneSameInstant(ZoneId.of(<span class="string">"America/New_York"</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(zDT);</span><br><span class="line">        System.out.println(zDT2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20212955.png" alt></p>
+<h3 id="Instant"><a href="#Instant" class="headerlink" title="Instant"></a>Instant</h3><p>这个类也能实现时间戳，效果和<strong>System.currentTimeMillis()</strong>效果是一样的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.time.Instant;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestInstant</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Instant now = Instant.now();</span><br><span class="line">        <span class="keyword">long</span> epochSecond = now.getEpochSecond();<span class="comment">//获取时间戳,是以秒为单位的</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">long</span> l = now.toEpochMilli();<span class="comment">//这个就是一以ms为单位的</span></span><br><span class="line"></span><br><span class="line">        System.out.println(epochSecond);</span><br><span class="line">        System.out.println(l);</span><br><span class="line">        System.out.println(System.currentTimeMillis());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Instant是高精度时间戳，它可以实现ZonedDateTime的互换。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以指定时间戳创建Instant:</span></span><br><span class="line">Instant ins = Instant.ofEpochSecond(<span class="number">1568568760</span>);</span><br><span class="line">ZonedDateTime zdt = ins.atZone(ZoneId.systemDefault());</span><br><span class="line">System.out.println(zdt); <span class="comment">// 2019-09-16T01:32:40+08:00[Asia/Shanghai]</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-03%20215751.png" alt></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\08\06\动态规划\动态规划\" rel="bookmark">动态规划</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\08\18\寻找子串java\寻找子串java\" rel="bookmark">寻找子串java</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\08\06\贪心算法\贪心算法\" rel="bookmark">贪心算法</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\05\==与equals的区别\==与equals的区别\" rel="bookmark">==与equals的区别</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\05\深拷贝、浅拷贝和拷贝构造函数\深拷贝、浅拷贝和拷贝构造函数\" rel="bookmark">深拷贝、浅拷贝和拷贝构造函数</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Curryforthreeeeee30 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Curryforthreeeeee30 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java%E5%AD%A6%E4%B9%A0/" rel="tag"># java学习</a>
+              <a href="/tags/%E8%A1%A5%E5%85%85%E5%B8%B8%E7%94%A8%E7%B1%BB%E7%9A%84%E7%9F%A5%E8%AF%86/" rel="tag"># 补充常用类的知识</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/03/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/" rel="prev" title="java基础补充">
+      <i class="fa fa-chevron-left"></i> java基础补充
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#转载"><span class="nav-number">1.</span> <span class="nav-text">转载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String类"><span class="nav-number">2.</span> <span class="nav-text">String类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date类和SimpleDateFormat类"><span class="nav-number">3.</span> <span class="nav-text">Date类和SimpleDateFormat类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Calendar类"><span class="nav-number">4.</span> <span class="nav-text">Calendar类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TimeZone类"><span class="nav-number">5.</span> <span class="nav-text">TimeZone类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转换时区-使用TimeZone类实现"><span class="nav-number">6.</span> <span class="nav-text">转换时区-使用TimeZone类实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取系统当前时间戳"><span class="nav-number">7.</span> <span class="nav-text">获取系统当前时间戳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LocalDateTime类"><span class="nav-number">8.</span> <span class="nav-text">LocalDateTime类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DateTimeFormatter类"><span class="nav-number">9.</span> <span class="nav-text">DateTimeFormatter类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duration类和Period类"><span class="nav-number">10.</span> <span class="nav-text">Duration类和Period类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZonedDateTime类"><span class="nav-number">11.</span> <span class="nav-text">ZonedDateTime类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转换时区-使用ZonedDateTime类实现"><span class="nav-number">12.</span> <span class="nav-text">转换时区-使用ZonedDateTime类实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instant"><span class="nav-number">13.</span> <span class="nav-text">Instant</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Curryforthreeeeee30"
+      src="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
+  <p class="site-author-name" itemprop="name">Curryforthreeeeee30</p>
+  <div class="site-description" itemprop="description">把复杂留给自己，把简单留给世界。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Curryforthreeeeee30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Curryforthreeeeee30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wanyun_qian@163.com" title="E-Mail → mailto:wanyun_qian@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/wanyun_qian" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;wanyun_qian" rel="noopener" target="_blank"><i class="fa fa-fighter-jet fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/5262513822/profile?topnav=1&wvr=6&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;5262513822&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Curryforthreeeeee30</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">94k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:25</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'OFKgux9umN8mfj7KNEwCq3Uc-gzGzoHsz',
+      appKey     : 'v6tDnJ3gDBdO0mYlQh4h23BM',
+      placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+      avatar     : 'monsterid',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  <script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>	
+<script type="text/javascript" src="/js/src/custom.js"></script>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</body>
+</html>
