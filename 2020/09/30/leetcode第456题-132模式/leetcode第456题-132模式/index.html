@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"wyqian.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="题目描述https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;132-pattern&#x2F;题目分析这道题不得不说是一道很经典的题，只要想到了解法就很容易实现，只可惜思路不容易想到，刷了也有60多道题了，就发现有时候你得学会反着来，比如说这道题是一个很好的例子。我们可以想到将数组倒序遍历，如果我们找到一个比第二大的数小的话的话，是不是就可以返回true了？对，没错，就是这个思路！！！于是乎，">
+  <meta name="description" content="题目描述https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;132-pattern&#x2F;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode第456题-132模式">
 <meta property="og:url" content="http://wyqian.top/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
-<meta property="og:description" content="题目描述https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;132-pattern&#x2F;题目分析这道题不得不说是一道很经典的题，只要想到了解法就很容易实现，只可惜思路不容易想到，刷了也有60多道题了，就发现有时候你得学会反着来，比如说这道题是一个很好的例子。我们可以想到将数组倒序遍历，如果我们找到一个比第二大的数小的话的话，是不是就可以返回true了？对，没错，就是这个思路！！！于是乎，">
+<meta property="og:description" content="题目描述https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;132-pattern&#x2F;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-30T09:07:14.000Z">
-<meta property="article:modified_time" content="2020-09-30T09:14:10.231Z">
+<meta property="article:modified_time" content="2020-10-16T12:20:58.240Z">
 <meta property="article:author" content="Curryforthreeeeee30">
 <meta property="article:tag" content="java学习">
 <meta property="article:tag" content="数据结构与算法">
@@ -242,7 +242,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h4 id="https-leetcode-cn-com-problems-132-pattern"><a href="#https-leetcode-cn-com-problems-132-pattern" class="headerlink" title="https://leetcode-cn.com/problems/132-pattern/"></a><a href="https://leetcode-cn.com/problems/132-pattern/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/132-pattern/</a></h4><h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>这道题不得不说是一道很经典的题，只要想到了解法就很容易实现，只可惜思路不容易想到，刷了也有60多道题了，就发现有时候你得学会反着来，比如说这道题是一个很好的例子。我们可以想到将数组倒序遍历，如果我们找到一个比第二大的数小的话的话，是不是就可以返回true了？对，没错，就是这个思路！！！于是乎，下面这些代码便很容易解释了。</p>
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h4 id="https-leetcode-cn-com-problems-132-pattern"><a href="#https-leetcode-cn-com-problems-132-pattern" class="headerlink" title="https://leetcode-cn.com/problems/132-pattern/"></a><a href="https://leetcode-cn.com/problems/132-pattern/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/132-pattern/</a></h4><a id="more"></a>
+
+
+<h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>这道题不得不说是一道很经典的题，只要想到了解法就很容易实现，只可惜思路不容易想到，刷了也有60多道题了，就发现有时候你得学会反着来，比如说这道题是一个很好的例子。我们可以想到将数组倒序遍历，如果我们找到一个比第二大的数小的话的话，是不是就可以返回true了？对，没错，就是这个思路！！！于是乎，下面这些代码便很容易解释了。</p>
 <h3 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">find132pattern</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Deque&lt;Integer&gt; deque = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> secondary = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &lt; secondary)</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">while</span>(!deque.isEmpty() &amp;&amp; nums[i] &gt; deque.peekLast())&#123;</span><br><span class="line">                secondary = deque.removeLast();</span><br><span class="line">            &#125;</span><br><span class="line">            deque.offer(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
