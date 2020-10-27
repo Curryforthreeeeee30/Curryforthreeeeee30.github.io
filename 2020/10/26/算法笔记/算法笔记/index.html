@@ -27,7 +27,7 @@
   <meta name="description" content="时间复杂度不要低阶项，不要高阶项的系数，剩下的就是时间复杂度所需要的。也就是说该算法收敛于该时间复杂度的标准内。 如图展示的就是排序的时间复杂度的例子，其中C表示比较代价（包括了寻址取出数字和比较的代价，是一个常数）。  再来举个例子，一个有序数组，现在我们要寻找一个数是否在这个数组。 方法1：遍历该数组，那么时间复杂度就是O(N)； 方法2：使用二分查找，每次看（上限+下限）&#x2F;2的值与要寻找的值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法笔记">
-<meta property="og:url" content="http://wyqian.top/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="http://wyqian.top/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
 <meta property="og:description" content="时间复杂度不要低阶项，不要高阶项的系数，剩下的就是时间复杂度所需要的。也就是说该算法收敛于该时间复杂度的标准内。 如图展示的就是排序的时间复杂度的例子，其中C表示比较代价（包括了寻址取出数字和比较的代价，是一个常数）。  再来举个例子，一个有序数组，现在我们要寻找一个数是否在这个数组。 方法1：遍历该数组，那么时间复杂度就是O(N)； 方法2：使用二分查找，每次看（上限+下限）&#x2F;2的值与要寻找的值">
 <meta property="og:locale" content="zh_CN">
@@ -37,15 +37,19 @@
 <meta property="og:image" content="https://i.loli.net/2020/10/26/BZuAajOCTegPKWG.png">
 <meta property="og:image" content="https://i.loli.net/2020/10/26/k9LXD2YSCfgVm1Z.png">
 <meta property="og:image" content="https://i.loli.net/2020/10/26/GZqdwB1VhLaf5xE.png">
+<meta property="og:image" content="https://i.loli.net/2020/10/27/w4uOIpsSb6NdUy8.png">
+<meta property="og:image" content="https://i.loli.net/2020/10/27/SlJIORF6Z9jEC5s.png">
+<meta property="og:image" content="https://i.loli.net/2020/10/27/b4MgjdRqOmp17So.png">
+<meta property="og:image" content="https://i.loli.net/2020/10/27/MHSQc472PfueFma.png">
 <meta property="article:published_time" content="2020-10-26T06:00:38.000Z">
-<meta property="article:modified_time" content="2020-10-26T09:19:01.512Z">
+<meta property="article:modified_time" content="2020-10-27T03:23:39.569Z">
 <meta property="article:author" content="Curryforthreeeeee30">
 <meta property="article:tag" content="数据结构与算法">
 <meta property="article:tag" content="算法笔记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2020/10/26/YEANlnrImub5Gjs.png">
 
-<link rel="canonical" href="http://wyqian.top/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="http://wyqian.top/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -176,7 +180,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
@@ -218,8 +222,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -229,14 +233,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.7k</span>
+              <span>4.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -277,6 +281,21 @@
 <p><img src="https://i.loli.net/2020/10/26/GZqdwB1VhLaf5xE.png" alt></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zuoshen.sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeOfInsertSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">2</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>&#125;;</span><br><span class="line">        System.out.println(Arrays.toString(InsertSort(arr)));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] InsertSort(<span class="keyword">int</span> arr[])&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> arr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i-<span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; arr[j+<span class="number">1</span>]; j--)&#123;</span><br><span class="line">                swap(arr, j, j+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = arr[j];</span><br><span class="line">        arr[j] = arr[i];</span><br><span class="line">        arr[i] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>上述所介绍的冒泡排序、选择排序和插入排序的额外空间复杂度都是O(1)，因为都只用到了有限的几个变量作为辅助空间。</p>
+<h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><h5 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h5><p>在介绍归并排序之前，先介绍一下递归的用法。如图是一张递归过程的演示图。</p>
+<p><img src="https://i.loli.net/2020/10/27/w4uOIpsSb6NdUy8.png" alt></p>
+<p>递归过程实际上是与栈这种数据结构一起配合工作的，递归过程中，每次进入到新的子过程（其实就是自己）中的时候，都会把父过程的信息（包括变量、程序跑到了第几行等信息）压入栈中，等到子过程完成之后，会有一个返回值，返回值给谁呢？就是给栈中的元素（也即是父过程）。</p>
+<p>例子：用递归思想求数组的最大值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zuoshen.sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeOfRecursion</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">8</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">20</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> max = getMax(arr, <span class="number">0</span>, arr.length-<span class="number">1</span>);</span><br><span class="line">        System.out.println(max);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getMax</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> leftIndex, <span class="keyword">int</span> rightIndex)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(leftIndex == rightIndex)&#123;</span><br><span class="line">            <span class="keyword">return</span> arr[leftIndex];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = leftIndex + (rightIndex - leftIndex) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 还有一种写法是：int mid = (leftIndex + rightIndex) / 2;</span></span><br><span class="line"><span class="comment">        * 这种写法不好，原因是可能产生溢出，但是上面那种写法不会，原因是计算过程中的值一定小于rightIndex。</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">        <span class="keyword">int</span> maxLeft = getMax(arr, leftIndex, mid);</span><br><span class="line">        <span class="keyword">int</span> maxRight = getMax(arr, mid+<span class="number">1</span>, rightIndex);</span><br><span class="line">        <span class="keyword">return</span> Math.max(maxLeft, maxRight);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是归并排序的java实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zuoshen.sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeOfMergeSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">3</span>,<span class="number">9</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">        MergeSort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">MergeSort</span><span class="params">(<span class="keyword">int</span> arr[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sortProcess(arr, <span class="number">0</span>, arr.length-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sortProcess</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(L == R)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = L + (R-L) / <span class="number">2</span>;</span><br><span class="line">        sortProcess(arr, L, mid);</span><br><span class="line">        sortProcess(arr, mid+<span class="number">1</span>, R);</span><br><span class="line">        <span class="comment">//最后外排</span></span><br><span class="line">        merge(arr, L, mid, R);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] help = <span class="keyword">new</span> <span class="keyword">int</span>[r-l+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> p1 = l;</span><br><span class="line">        <span class="keyword">int</span> p2 = mid+<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//当两个数组都不越界时</span></span><br><span class="line">        <span class="keyword">while</span>(p1 &lt;= mid &amp;&amp; p2 &lt;= r)&#123;</span><br><span class="line">            help[i++] = arr[p1] &lt; arr[p2] ? arr[p1++] : arr[p2++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//但是必将有一个数组会越界</span></span><br><span class="line">        <span class="keyword">while</span>(p1 &lt;= mid)&#123;</span><br><span class="line">            help[i++] = arr[p1++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(p2 &lt;= r)&#123;</span><br><span class="line">            help[i++] = arr[p2++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//最后将辅助数组help赋给原来的数组arr</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; help.length; j++)&#123;</span><br><span class="line">            arr[l+j] = help[j];</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>归并排序的时间复杂度分析</p>
+<p><img src="https://i.loli.net/2020/10/27/SlJIORF6Z9jEC5s.png" alt></p>
+<p><img src="https://i.loli.net/2020/10/27/b4MgjdRqOmp17So.png" alt></p>
+<p><img src="https://i.loli.net/2020/10/27/MHSQc472PfueFma.png" alt></p>
+<h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>上述所介绍的归并排序、快速排序和堆排序时间复杂度是O(N*logN)。空间复杂度的话，归并排序是O(N)，快速排序是O(logN)，堆排序是O(1)。</p>
 
     </div>
 
@@ -336,7 +355,7 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/25/JavaScript/" rel="prev" title="JavaScript">
+    <a href="/2020/10/25/JavaScript/JavaScript/" rel="prev" title="JavaScript">
       <i class="fa fa-chevron-left"></i> JavaScript
     </a></div>
       <div class="post-nav-item"></div>
@@ -400,7 +419,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂度"><span class="nav-number">2.</span> <span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最优解"><span class="nav-number">3.</span> <span class="nav-text">最优解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">4.</span> <span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对数器"><span class="nav-number">4.1.</span> <span class="nav-text">对数器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡排序"><span class="nav-number">4.2.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择排序"><span class="nav-number">4.3.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入排序"><span class="nav-number">4.4.</span> <span class="nav-text">插入排序</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂度"><span class="nav-number">2.</span> <span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最优解"><span class="nav-number">3.</span> <span class="nav-text">最优解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">4.</span> <span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对数器"><span class="nav-number">4.1.</span> <span class="nav-text">对数器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡排序"><span class="nav-number">4.2.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择排序"><span class="nav-number">4.3.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入排序"><span class="nav-number">4.4.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归并排序"><span class="nav-number">4.5.</span> <span class="nav-text">归并排序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#递归"><span class="nav-number">4.5.1.</span> <span class="nav-text">递归</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速排序"><span class="nav-number">4.6.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">4.7.</span> <span class="nav-text">堆排序</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -483,12 +502,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">165k</span>
+    <span title="站点总字数">172k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:30</span>
+    <span title="站点阅读时长">2:36</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
