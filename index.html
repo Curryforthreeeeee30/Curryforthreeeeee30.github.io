@@ -164,6 +164,228 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
+      <meta itemprop="name" content="Curryforthreeeeee30">
+      <meta itemprop="description" content="Explore in every moment of the cudgel thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SC&KD's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">算法笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-10-26 14:00:38" itemprop="dateCreated datePublished" datetime="2020-10-26T14:00:38+08:00">2020-10-26</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/26/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>不要低阶项，不要高阶项的系数，剩下的就是时间复杂度所需要的。也就是说该算法收敛于该时间复杂度的标准内。</p>
+<p>如图展示的就是排序的时间复杂度的例子，其中C表示比较代价（包括了寻址取出数字和比较的代价，是一个常数）。</p>
+<p><img src="https://i.loli.net/2020/10/26/YEANlnrImub5Gjs.png" alt></p>
+<p>再来举个例子，一个有序数组，现在我们要寻找一个数是否在这个数组。</p>
+<p>方法1：遍历该数组，那么时间复杂度就是O(N)；</p>
+<p>方法2：使用二分查找，每次看（上限+下限）/2的值与要寻找的值是否相等，如果没有找到就每次二分缩小范围，这样的话时间复杂度就是O(logN)。</p>
+<p><img src="https://i.loli.net/2020/10/26/bYQBLrwk2IcaRJs.png" alt></p>
+<p>例子3：有两个数组，两个数组都是有序的，假设A的长度是N，B的长度是M，比如<code>A=[1,2,3]，B=[2,3,4,5]</code>。现在需要求两个数组的公共部分。</p>
+<p>方法1：每次从A数组中拿一个数去B中遍历，这样的话时间复杂度就是O(N*M);</p>
+<p>方法2：每次从A数组中拿一个数去B中进行二分查找，这样的话时间复杂度就是O(N*log(M))；</p>
+<p>方法3：设置两个指针，分别初始化指在两个数组的首个元素，然后比较指针对应的数，如果相等就一起指向下一个数；如果不相等，那么较小的数对应的指针移动，依次下去。。。最差情况下两个指针分别移动了N和M次，那么这样的话时间复杂度就是O(N+M)。</p>
+<p>母庸置疑，方法1一定是最差的，由于数据量不确定，所以方法2和方法3谁更好要看具体情况。 </p>
+<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>指的是额外空间，指的是支持算法流程需要的辅助空间。所以如果调用一个数组，input进来的数组是不算在空间复杂度里面的。在算法里面自己设置的数组才是额外数组，才会算在空间复杂度里面。</p>
+<p>例子：数组逆序</p>
+<p><img src="https://i.loli.net/2020/10/26/N4iGxolcE3Oty7K.png" alt></p>
+<p>这个时候由于只需要一个临时变量进行数据交换操作，没有形成量级的空间，所以这个算法的额外空间复杂度为O(N)。</p>
+<h3 id="最优解"><a href="#最优解" class="headerlink" title="最优解"></a>最优解</h3><p>没有特殊声明的情况下，最优解是指先满足时间复杂度的情况下使用最小空间，也就是说先满足时间复杂度最优！</p>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><h4 id="对数器"><a href="#对数器" class="headerlink" title="对数器"></a>对数器</h4><p><img src="https://i.loli.net/2020/10/26/BZuAajOCTegPKWG.png" alt></p>
+<h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><p>不分好坏，流程严格固定，时间复杂度是O(N^2)。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zuoshen.sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">bubblesort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr [] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">7</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        <span class="keyword">if</span>(arr == <span class="keyword">null</span> &amp;&amp; arr.length &lt; <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> end = arr.length-<span class="number">1</span>; end &gt; <span class="number">0</span>; end--)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; end; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(arr[i] &gt; arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">                    swap(arr, i, i+<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = arr[j];</span><br><span class="line">        arr[j] = arr[i];</span><br><span class="line">        arr[i] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p>不分好坏，流程严格固定，时间复杂度是O(N^2)。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zuoshen.sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeOfSelectionSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">3</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">7</span>&#125;;</span><br><span class="line">        System.out.println(Arrays.toString(SelectionSort(arr)));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] SelectionSort(<span class="keyword">int</span> arr[])&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> arr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> minIndex = i;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; arr.length; j++)&#123;</span><br><span class="line">                minIndex = (arr[j] &lt; arr[minIndex]) ? j : minIndex;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(arr, i, minIndex);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = arr[j];</span><br><span class="line">        arr[j] = arr[i];</span><br><span class="line">        arr[i] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><p><img src="https://i.loli.net/2020/10/26/k9LXD2YSCfgVm1Z.png" alt></p>
+<p>插入排序最好情况下时间复杂度是O(N)，最坏情况下是O(N^2)。最好情况就是事先给的数组就是排好序的，最坏情况是事先给的数组是逆序的。往往说时间复杂度指的就是最差情况的时间复杂度。</p>
+<p><img src="https://i.loli.net/2020/10/26/GZqdwB1VhLaf5xE.png" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zuoshen.sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeOfInsertSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">2</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>&#125;;</span><br><span class="line">        System.out.println(Arrays.toString(InsertSort(arr)));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] InsertSort(<span class="keyword">int</span> arr[])&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> arr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i-<span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; arr[j+<span class="number">1</span>]; j--)&#123;</span><br><span class="line">                swap(arr, j, j+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = arr[j];</span><br><span class="line">        arr[j] = arr[i];</span><br><span class="line">        arr[i] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/10/25/JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
+      <meta itemprop="name" content="Curryforthreeeeee30">
+      <meta itemprop="description" content="Explore in every moment of the cudgel thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SC&KD's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/25/JavaScript/" class="post-title-link" itemprop="url">JavaScript</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-10-25 19:07:34" itemprop="dateCreated datePublished" datetime="2020-10-25T19:07:34+08:00">2020-10-25</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/10/25/JavaScript/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/25/JavaScript/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1、什么是JavaScript"><a href="#1、什么是JavaScript" class="headerlink" title="1、什么是JavaScript?"></a>1、什么是JavaScript?</h3><h4 id="1-1、概述"><a href="#1-1、概述" class="headerlink" title="1.1、概述"></a>1.1、概述</h4><p>JavaScript是一门世界上最流行的脚本语言。</p>
+<p>Java、JavaScript</p>
+<p>10天~</p>
+<p>==<code>一个合格的后端人员，必须要精通JavaScript</code>==</p>
+<h4 id="1-2、JavaScript历史"><a href="#1-2、JavaScript历史" class="headerlink" title="1.2、JavaScript历史"></a>1.2、JavaScript历史</h4><p><a href="https://blog.csdn.net/kese7952/article/details/79357868" target="_blank" rel="noopener">https://blog.csdn.net/kese7952/article/details/79357868</a></p>
+<p>ECMAScript可以理解成是JavaScript的一个标准。</p>
+<p>最新版本已经到ES6了。</p>
+<p>但是大部分浏览器还只停留在支持es5代码上！</p>
+<p>开发环境（ES6）与线上环境（ES5）版本不一致。</p>
+<h3 id="2、快速入门"><a href="#2、快速入门" class="headerlink" title="2、快速入门"></a>2、快速入门</h3><p>2.1、引入JavaScript</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>js基本入门<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--方式一：script标签内，写script代码--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        alert(<span class="string">'hello, nju'</span>);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--方式二：外部引入--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--需要注意的是：script标签需要成对出现--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/wyqian.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--方式三：加上type属性--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--这种写法其实没有必要，因为不声明的话，默认也是JavaScript--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2、基本语法"><a href="#2-2、基本语法" class="headerlink" title="2.2、基本语法"></a>2.2、基本语法</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>基本入门<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//定义变量 变量类型 变量名 = 变量值</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> score = <span class="number">98</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="comment">//流程控制</span></span></span><br><span class="line">        if(score &gt;= 60 &amp;&amp; score &lt;70)&#123;</span><br><span class="line"><span class="actionscript">            alert(<span class="string">'及格'</span>);</span></span><br><span class="line"><span class="actionscript">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(score &gt;= <span class="number">70</span> &amp;&amp; score &lt; <span class="number">90</span>)&#123;</span></span><br><span class="line"><span class="actionscript">            alert(<span class="string">'良好'</span>);</span></span><br><span class="line"><span class="actionscript">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(score &gt;= <span class="number">90</span>)&#123;</span></span><br><span class="line"><span class="actionscript">            alert(<span class="string">'优秀'</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>经常要使用到的浏览器工具是（浏览器调试必备须知）：</p>
+<p>Elements：查看html和CSS；</p>
+<p>Console：控制台;</p>
+<p>Sources: 调试JavaScript代码;</p>
+<p>Network：网络</p>
+<p>Application：查看cookies等。</p>
+<p><img src="https://i.loli.net/2020/10/25/WJuK1pE3khxrg5B.png" alt></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/10/20/PriorityQueue%E4%BD%BF%E7%94%A8/PriorityQueue%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -305,14 +527,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>11k</span>
+              <span>20k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
+              <span>18 分钟</span>
             </span>
 
         </div>
@@ -912,194 +1134,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/10/03/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
-      <meta itemprop="name" content="Curryforthreeeeee30">
-      <meta itemprop="description" content="Explore in every moment of the cudgel thinking.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SC&KD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/03/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/" class="post-title-link" itemprop="url">java基础补充</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-03 13:04:48" itemprop="dateCreated datePublished" datetime="2020-10-03T13:04:48+08:00">2020-10-03</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/10/03/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/03/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/03/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/java%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
-      <meta itemprop="name" content="Curryforthreeeeee30">
-      <meta itemprop="description" content="Explore in every moment of the cudgel thinking.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SC&KD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">leetcode第456题-132模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-30 17:07:14" itemprop="dateCreated datePublished" datetime="2020-09-30T17:07:14+08:00">2020-09-30</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>584</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h4 id="https-leetcode-cn-com-problems-132-pattern"><a href="#https-leetcode-cn-com-problems-132-pattern" class="headerlink" title="https://leetcode-cn.com/problems/132-pattern/"></a><a href="https://leetcode-cn.com/problems/132-pattern/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/132-pattern/</a></h4>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/30/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/leetcode%E7%AC%AC456%E9%A2%98-132%E6%A8%A1%E5%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1171,7 +1205,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1184,7 +1218,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1238,12 +1272,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">152k</span>
+    <span title="站点总字数">165k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:18</span>
+    <span title="站点阅读时长">2:30</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
