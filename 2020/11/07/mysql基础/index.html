@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+  
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="m5NcKgUu0g" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wyqian.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":320,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1、初识MySQLJavaEE: 企业级开发 Web 前端（页面：展示，数据！） 后台：（连接点：连接数据库JDBC，链接前端（控制，控制视图跳转，和给前端传递数据）） 数据库（存数据，txt， excel， word）  只会写代码，学好数据库，基本混饭吃 操作系统，数据结构与算法！当一个不错的程序员！ 离散数学，数字电路，体系结构，编译原理。 + 实战经验，高级程序员~优秀的程序员  1.1、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql基础">
+<meta property="og:url" content="http://wyqian.top/2020/11/07/mysql%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
+<meta property="og:description" content="1、初识MySQLJavaEE: 企业级开发 Web 前端（页面：展示，数据！） 后台：（连接点：连接数据库JDBC，链接前端（控制，控制视图跳转，和给前端传递数据）） 数据库（存数据，txt， excel， word）  只会写代码，学好数据库，基本混饭吃 操作系统，数据结构与算法！当一个不错的程序员！ 离散数学，数字电路，体系结构，编译原理。 + 实战经验，高级程序员~优秀的程序员  1.1、">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/11/07/VPgXZdD1uyzH5kO.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/07/mz2rOqyXJYtQWhe.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/07/scbfA1wYCH7Rn6q.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/07/o8dvULX2ZxlOYbs.png">
+<meta property="article:published_time" content="2020-11-07T01:21:30.000Z">
+<meta property="article:modified_time" content="2020-11-07T06:24:21.080Z">
+<meta property="article:author" content="Curryforthreeeeee30">
+<meta property="article:tag" content="mysql基础">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/11/07/VPgXZdD1uyzH5kO.png">
+
+<link rel="canonical" href="http://wyqian.top/2020/11/07/mysql%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>mysql基础 | SC&KD's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">SC&KD's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">小Q写字的地方</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-allergies fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-battery-full fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/Curryforthreeeeee30" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/11/07/mysql%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
+      <meta itemprop="name" content="Curryforthreeeeee30">
+      <meta itemprop="description" content="Explore in every moment of the cudgel thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SC&KD's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          mysql基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-07 09:21:30" itemprop="dateCreated datePublished" datetime="2020-11-07T09:21:30+08:00">2020-11-07</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/11/07/mysql%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/07/mysql%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="1、初识MySQL"><a href="#1、初识MySQL" class="headerlink" title="1、初识MySQL"></a>1、初识MySQL</h3><p>JavaEE: 企业级开发 Web</p>
+<p>前端（页面：展示，数据！）</p>
+<p>后台：（连接点：连接数据库JDBC，链接前端（控制，控制视图跳转，和给前端传递数据））</p>
+<p>数据库（存数据，txt， excel， word）</p>
+<blockquote>
+<p>只会写代码，学好数据库，基本混饭吃</p>
+<p>操作系统，数据结构与算法！当一个不错的程序员！</p>
+<p>离散数学，数字电路，体系结构，编译原理。 + 实战经验，高级程序员~优秀的程序员</p>
+</blockquote>
+<h4 id="1-1、为什么学习数据库"><a href="#1-1、为什么学习数据库" class="headerlink" title="1.1、为什么学习数据库"></a>1.1、为什么学习数据库</h4><p>1、岗位需求</p>
+<p>2、现在的世界，大数据时代~，得数据者得天下</p>
+<p>3、被迫需求：存数据</p>
+<p>4、<strong><em>数据库是所有软件体系中最核心的存在</em></strong> DBA</p>
+<h4 id="1-2、什么是数据库"><a href="#1-2、什么是数据库" class="headerlink" title="1.2、什么是数据库"></a>1.2、什么是数据库</h4><p>数据库（DB，DataBase）</p>
+<p>概念：数据仓库，软件，安装在操作系统（windows,linux,mac…）之上!  SQL，可以存储大量的数据。500万！</p>
+<p>作用：存储数据，管理数据</p>
+<h4 id="1-3、数据库分类"><a href="#1-3、数据库分类" class="headerlink" title="1.3、数据库分类"></a>1.3、数据库分类</h4><p>关系型数据库：(SQL)</p>
+<ul>
+<li>MySQL，Oracle，Sql Server，DB2，SQLlite</li>
+<li>通过表和表之间，列和列之间的关系进行数据的存储，学员信息表，考勤表……</li>
+</ul>
+<p>非关系型数据库（NOSQL）Not Only SQL</p>
+<ul>
+<li>Redis，MongoDB</li>
+<li>非关系型数据库，对象存储，通过对象的自身的属性来决定。</li>
+</ul>
+<p><strong><em>DBMS(数据库管理系统)</em></strong></p>
+<ul>
+<li>数据库的管理软件，科学有效的管理我们的数据。维护和获取数据；</li>
+<li>MySQL，数据库管理系统！</li>
+</ul>
+<p><img src="https://i.loli.net/2020/11/07/VPgXZdD1uyzH5kO.png" alt></p>
+<h4 id="1-4、MySQL简介"><a href="#1-4、MySQL简介" class="headerlink" title="1.4、MySQL简介"></a>1.4、MySQL简介</h4><p>MySQL是一个<strong>关系型数据库管理系统</strong></p>
+<p>前世：瑞典MySQL AB公司</p>
+<p>今生：属于Oracle旗下产品</p>
+<p>MySQL是最好的 <a href="https://baike.baidu.com/item/RDBMS/1048260" target="_blank" rel="noopener">RDBMS</a> (Relational Database Management System，关系数据库管理系统) 应用软件之一。</p>
+<p>开源的数据库软件~</p>
+<p>体积小、速度快、总体拥有成本低，招人成本比较低，所有人必须会~</p>
+<p>中小型网站，或者大型网站，集群</p>
+<p>官网：<a href="https://www.mysql.com/" target="_blank" rel="noopener">https://www.mysql.com/</a></p>
+<p>官网下载地址：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p>
+<p>5.7  稳</p>
+<p>安装建议：</p>
+<p>1、尽量不要使用exe，注册表</p>
+<p>2、尽可能使用压缩包安装~</p>
+<h4 id="1-5、安装MySQL"><a href="#1-5、安装MySQL" class="headerlink" title="1.5、安装MySQL"></a>1.5、安装MySQL</h4><p>教程:<a href="https://mp.weixin.qq.com/s/E1PM4EHwU6Joot4OG0gDjw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/E1PM4EHwU6Joot4OG0gDjw</a></p>
+<p><img src="https://i.loli.net/2020/11/07/mz2rOqyXJYtQWhe.png" alt></p>
+<blockquote>
+<p>sc delete mysql，清空服务</p>
+</blockquote>
+<p>1.6、安装SQLyog</p>
+<p>教程:<a href="https://mp.weixin.qq.com/s/E1PM4EHwU6Joot4OG0gDjw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/E1PM4EHwU6Joot4OG0gDjw</a></p>
+<p><img src="https://i.loli.net/2020/11/07/scbfA1wYCH7Rn6q.png" alt></p>
+<p>1、新建一个数据库school</p>
+<p><img src="https://i.loli.net/2020/11/07/o8dvULX2ZxlOYbs.png" alt></p>
+<p><strong><em>每一个sqlyog的执行操作，本质上就是对应了一个sql，可以在软件的历史记录中查看。</em></strong>😁</p>
+<p>2、新建一张表student</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段：id，name,age</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\11\07\mysql基础\mysql基础\" rel="bookmark">mysql基础</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Curryforthreeeeee30 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Curryforthreeeeee30 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mysql%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> mysql基础</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/07/mysql%E5%9F%BA%E7%A1%80/mysql%E5%9F%BA%E7%A1%80/" rel="prev" title="mysql基础">
+      <i class="fa fa-chevron-left"></i> mysql基础
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、初识MySQL"><span class="nav-number">1.</span> <span class="nav-text">1、初识MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1、为什么学习数据库"><span class="nav-number">1.1.</span> <span class="nav-text">1.1、为什么学习数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2、什么是数据库"><span class="nav-number">1.2.</span> <span class="nav-text">1.2、什么是数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3、数据库分类"><span class="nav-number">1.3.</span> <span class="nav-text">1.3、数据库分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4、MySQL简介"><span class="nav-number">1.4.</span> <span class="nav-text">1.4、MySQL简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5、安装MySQL"><span class="nav-number">1.5.</span> <span class="nav-text">1.5、安装MySQL</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Curryforthreeeeee30"
+      src="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
+  <p class="site-author-name" itemprop="name">Curryforthreeeeee30</p>
+  <div class="site-description" itemprop="description">Explore in every moment of the cudgel thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Curryforthreeeeee30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Curryforthreeeeee30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wanyun_qian@163.com" title="E-Mail → mailto:wanyun_qian@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/wanyun_qian" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;wanyun_qian" rel="noopener" target="_blank"><i class="fa fa-fighter-jet fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/5262513822/profile?topnav=1&wvr=6&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;5262513822&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=5291304129&auto=1&height=90"></iframe>
+    </div>
+    
+    
+    
+  </aside>
+  <div id="sidebar-dimmer"></div>
+  
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Curryforthreeeeee30</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">186k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:49</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,0' opacity='0.5' zIndex='-1' count='150' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'OFKgux9umN8mfj7KNEwCq3Uc-gzGzoHsz',
+      appKey     : 'v6tDnJ3gDBdO0mYlQh4h23BM',
+      placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+      avatar     : 'monsterid',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  <script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>	
+<script type="text/javascript" src="/js/src/custom.js"></script>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
