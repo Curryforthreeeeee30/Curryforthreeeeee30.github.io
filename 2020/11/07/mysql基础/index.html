@@ -35,8 +35,10 @@
 <meta property="og:image" content="https://i.loli.net/2020/11/07/mz2rOqyXJYtQWhe.png">
 <meta property="og:image" content="https://i.loli.net/2020/11/07/scbfA1wYCH7Rn6q.png">
 <meta property="og:image" content="https://i.loli.net/2020/11/07/o8dvULX2ZxlOYbs.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/07/PUYcxhzKOfFuqZw.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/07/B5ujwTyhRW9al27.png">
 <meta property="article:published_time" content="2020-11-07T01:21:30.000Z">
-<meta property="article:modified_time" content="2020-11-07T06:24:21.080Z">
+<meta property="article:modified_time" content="2020-11-07T13:20:22.450Z">
 <meta property="article:author" content="Curryforthreeeeee30">
 <meta property="article:tag" content="mysql基础">
 <meta property="article:tag" content="数据库">
@@ -227,14 +229,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>3.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -296,14 +298,187 @@
 <blockquote>
 <p>sc delete mysql，清空服务</p>
 </blockquote>
-<p>1.6、安装SQLyog</p>
-<p>教程:<a href="https://mp.weixin.qq.com/s/E1PM4EHwU6Joot4OG0gDjw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/E1PM4EHwU6Joot4OG0gDjw</a></p>
+<h4 id="1-6、安装SQLyog"><a href="#1-6、安装SQLyog" class="headerlink" title="1.6、安装SQLyog"></a>1.6、安装SQLyog</h4><p>教程:<a href="https://mp.weixin.qq.com/s/E1PM4EHwU6Joot4OG0gDjw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/E1PM4EHwU6Joot4OG0gDjw</a></p>
 <p><img src="https://i.loli.net/2020/11/07/scbfA1wYCH7Rn6q.png" alt></p>
 <p>1、新建一个数据库school</p>
 <p><img src="https://i.loli.net/2020/11/07/o8dvULX2ZxlOYbs.png" alt></p>
 <p><strong><em>每一个sqlyog的执行操作，本质上就是对应了一个sql，可以在软件的历史记录中查看。</em></strong>😁</p>
 <p>2、新建一张表student</p>
+<p><img src="https://i.loli.net/2020/11/07/PUYcxhzKOfFuqZw.png" alt></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段：id，name,age</span><br></pre></td></tr></table></figure>
+
+<p>3、添加一些数据</p>
+<p><img src alt>)<img src="https://i.loli.net/2020/11/07/B5ujwTyhRW9al27.png" alt="2020-11-07_143800"></p>
+<h4 id="1-7、连接数据库"><a href="#1-7、连接数据库" class="headerlink" title="1.7、连接数据库"></a>1.7、连接数据库</h4><p>命令行连接</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p123456 <span class="comment">--连接数据库</span></span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">password</span>=<span class="keyword">password</span>(<span class="string">'123456'</span>)<span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root'</span>; <span class="comment">--修改密码</span></span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;<span class="comment">--刷新数据库</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-------------------------------------------</span></span><br><span class="line"><span class="comment">-- 所有语句都使用；结尾</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;<span class="comment">--显示所有数据库</span></span><br><span class="line"><span class="keyword">use</span> school;<span class="comment">--切换数据库 use 数据库名</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;<span class="comment">--查看数据库中所有的表</span></span><br><span class="line"><span class="keyword">describe</span> student;<span class="comment">--查看特定表的详细设计信息</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> westos;<span class="comment">--创建一个数据库</span></span><br><span class="line"></span><br><span class="line">exit;<span class="comment">--退出连接</span></span><br><span class="line"><span class="comment">-- 单行注释（SQL的本来的注释）</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">多行注释（sql的多行注释）</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>数据库***语言   CRUD增删改查！   </p>
+<p>DDL     定义</p>
+<p>DML    操作</p>
+<p>DQL     查询</p>
+<p>DCL     控制</p>
+<h3 id="2、操作数据库"><a href="#2、操作数据库" class="headerlink" title="2、操作数据库"></a>2、操作数据库</h3><p>操作数据库&gt;操作数据库中的表&gt;操作数据库中表的数据</p>
+<p><strong><em>MySQL关键字不区分大小写</em></strong></p>
+<h4 id="2-1、操作数据库-了解"><a href="#2-1、操作数据库-了解" class="headerlink" title="2.1、操作数据库(了解)"></a>2.1、操作数据库(了解)</h4><p>1、创建数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] NBA;</span><br></pre></td></tr></table></figure>
+
+<p>2、删除数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> NBA;</span><br></pre></td></tr></table></figure>
+
+<p>3、使用数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--``tab键的上面，如果你的表明或者字段名是一个特殊字符，就需要带``</span></span><br><span class="line"><span class="keyword">USE</span> <span class="string">`school`</span>;</span><br></pre></td></tr></table></figure>
+
+<p>4、查看数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">DATABASES</span>;<span class="comment">--查看所有数据库</span></span><br></pre></td></tr></table></figure>
+
+<p>学习思路：</p>
+<ul>
+<li>对照sqlyog可视化历史记录查看sql。</li>
+<li>固定的语法或关键字必须要强行记住。</li>
+</ul>
+<h4 id="2-2、数据库的列类型"><a href="#2-2、数据库的列类型" class="headerlink" title="2.2、数据库的列类型"></a>2.2、数据库的列类型</h4><blockquote>
+<p>数值</p>
+</blockquote>
+<ul>
+<li>tinyint   十分小的数据    1个字节</li>
+<li>smallint  较小的数据    2个字节</li>
+<li>mediumint    中等大小的数据   3个字节</li>
+<li><strong>int  标准的整数         4个字节</strong>   常用的</li>
+<li>bigint       较大的数据  8个字节</li>
+<li>float   浮点数      4个字节</li>
+<li>double 浮点数     8个字节（精度问题！）</li>
+<li>decimal   字符串形式的浮点数  金融计算的时候一般使用decimal</li>
+</ul>
+<blockquote>
+<p>字符串 </p>
+</blockquote>
+<ul>
+<li>char   字符串固定大小的   0~255</li>
+<li><strong>varchar   可变字符串   0~65535</strong>   常用的    String</li>
+<li>tinytext   微型文本  2^8-1</li>
+<li><strong>text    文本串    2^16-1</strong>    保存大文本</li>
+</ul>
+<blockquote>
+<p>时间日期</p>
+</blockquote>
+<p>java.util.Date</p>
+<ul>
+<li>date   YYYY-MM-DD 日期格式</li>
+<li>time   HH：mm：ss 时间格式</li>
+<li><strong>datetime YYYY-MM-DD HH：mm：ss   最常用的时间格式</strong></li>
+<li><strong>timestamp  时间戳  1970.1.1至今的毫秒数！</strong>也较为常用</li>
+<li>year 年份表示</li>
+</ul>
+<blockquote>
+<p>null</p>
+</blockquote>
+<ul>
+<li>没有值，未知</li>
+<li><strong>注意，不要使用NULL进行运算，结果为NULL</strong></li>
+</ul>
+<h4 id="2-3、数据库的字段属性（重点）"><a href="#2-3、数据库的字段属性（重点）" class="headerlink" title="2.3、数据库的字段属性（重点）"></a>2.3、数据库的字段属性（重点）</h4><p><strong>Unsigned:</strong></p>
+<ul>
+<li>无符号的整数</li>
+<li>声明了该列不能设置为负数</li>
+</ul>
+<p><strong>zerofill:</strong></p>
+<ul>
+<li>0填充的</li>
+<li>不足的位数，使用0填充，int(3)，5—-005</li>
+</ul>
+<p><strong>自增：</strong></p>
+<ul>
+<li>通常可以理解为自动在上一条记录基础上+1(默认)</li>
+<li>通常用来设计唯一的主键~index，必须是整数类型</li>
+<li>可以自定义设计主键自增的起始值和步长</li>
+</ul>
+<p><strong>非空：</strong>NULL not null</p>
+<ul>
+<li>假设设置为NOT NULL，如果不给他赋值，就会报错</li>
+<li>NULL，如果不填写值，默认就是null!</li>
+</ul>
+<p><strong>默认：</strong></p>
+<ul>
+<li>设置默认的值！</li>
+<li>sex，默认值为男，如果不指定该列的值，则会有默认的值！</li>
+</ul>
+<p>扩展：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">每一个表，都必须存在以下五个字段！未来做项目用的，表示每一条记录存在意义！（阿里规范）</span></span><br><span class="line"><span class="comment">id 主键</span></span><br><span class="line"><span class="comment">`version` 乐观锁</span></span><br><span class="line"><span class="comment">is_delete  伪删除</span></span><br><span class="line"><span class="comment">gmt_create  创建时间</span></span><br><span class="line"><span class="comment">gmt_update  修改时间</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4、创建数据库表（重点）"><a href="#2-4、创建数据库表（重点）" class="headerlink" title="2.4、创建数据库表（重点）"></a>2.4、创建数据库表（重点）</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--目标：创建一个school数据库</span></span><br><span class="line"><span class="comment">--创建学生表（列、字段）  使用SQL创建</span></span><br><span class="line"><span class="comment">--学号、姓名、密码、性别、出生日期、家庭住址、电子邮箱</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--注意点，使用英文()，表的名称和字段尽量使用``括起来</span></span><br><span class="line"><span class="comment">--AUTO_INCREMENT  自增</span></span><br><span class="line"><span class="comment">--字符串使用单引号括起来！</span></span><br><span class="line"><span class="comment">--所有语句后面加,(英文的)，最后一个不用加</span></span><br><span class="line"><span class="comment">--PRIMARY KEY 主键，一般一个表只有一个唯一的主键！</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="string">`student`</span>(</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT <span class="keyword">COMMENT</span> <span class="string">'学生id'</span>,</span><br><span class="line">  <span class="string">`name`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'匿名'</span> <span class="keyword">COMMENT</span> <span class="string">'学生姓名'</span>,</span><br><span class="line">  <span class="string">`pwd`</span> <span class="built_in">VARCHAR</span>(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'123456'</span> <span class="keyword">COMMENT</span> <span class="string">'登陆密码'</span>,</span><br><span class="line">  <span class="string">`sex`</span> <span class="built_in">VARCHAR</span>(<span class="number">2</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'女'</span> <span class="keyword">COMMENT</span> <span class="string">'性别'</span>,</span><br><span class="line">  <span class="string">`birthday`</span> DATETIME <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'出生日期'</span>,</span><br><span class="line">  <span class="string">`address`</span> <span class="built_in">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'家庭住址'</span>,</span><br><span class="line">  <span class="string">`email`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'电子邮箱'</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">INNODB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8</span><br></pre></td></tr></table></figure>
+
+<p>格式：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] <span class="string">`表名`</span>(</span><br><span class="line">	<span class="string">`字段名`</span> 列类型 [属性] [索引] [注释]，</span><br><span class="line">    <span class="string">`字段名`</span> 列类型 [属性] [索引] [注释]，</span><br><span class="line">    ......</span><br><span class="line">    <span class="string">`字段名`</span> 列类型 [属性] [索引] [注释]，</span><br><span class="line">    PRIMARY <span class="keyword">KEY</span>(<span class="string">`字段名`</span>)</span><br><span class="line">)[表类型][表的字符集设置]</span><br></pre></td></tr></table></figure>
+
+<p>常用命令：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> school;<span class="comment">-- 查看创建数据库的语句</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student;<span class="comment">-- 查看创建表的语句 </span></span><br><span class="line">DESC student;<span class="comment">-- 显示表的结构</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-5、数据表的类型"><a href="#2-5、数据表的类型" class="headerlink" title="2.5、数据表的类型"></a>2.5、数据表的类型</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 关于数据库引擎</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">INNODB  默认使用~</span></span><br><span class="line"><span class="comment">MYISAM  早些年使用</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MYISAM</th>
+<th>INNODB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>事务支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>数据行锁定</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>外键约束</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>全文索引</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>表空间大小</td>
+<td>较小</td>
+<td>较大，约为2倍</td>
+</tr>
+</tbody></table>
+<p>常规使用操作：</p>
+<ul>
+<li>MYISAM   节约空间，速度较快</li>
+<li>INNODB   安全性高，事务的处理，多表多用户操作</li>
+</ul>
+<blockquote>
+<p>在物理空间存在的位置</p>
+</blockquote>
+<p>所有的数据库文件都存在data目录下，一个文件夹就对应一个数据库！</p>
+<p>本质还是文件的存储！</p>
+<p>MySQL引擎在物理文件上的区别</p>
+<ul>
+<li>INNODB在数据库表中只有一个*.frm文件，以及上级目录下的ibdata1文件</li>
+<li>MYISAM对应文件<ul>
+<li>*.frm - 表结构的定义文件</li>
+<li>*.MYD - 数据文件（data）</li>
+<li>*.MYI  - 索引文件</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>设置数据库表的字符集编码</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">charset = utf8</span><br></pre></td></tr></table></figure>
+
+<p>不设置的话，会是MySQL默认的字符集编码~（不支持中文！）</p>
+<p><a href="https://www.jianshu.com/p/ec0c86ee3e04" target="_blank" rel="noopener">https://www.jianshu.com/p/ec0c86ee3e04</a></p>
+<p>MySQL的默认编码是Latin1，不支持中文</p>
+<p>在my.ini中配置默认的编码</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">character-<span class="keyword">set</span>-<span class="keyword">server</span>=utf8</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -416,7 +591,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、初识MySQL"><span class="nav-number">1.</span> <span class="nav-text">1、初识MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1、为什么学习数据库"><span class="nav-number">1.1.</span> <span class="nav-text">1.1、为什么学习数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2、什么是数据库"><span class="nav-number">1.2.</span> <span class="nav-text">1.2、什么是数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3、数据库分类"><span class="nav-number">1.3.</span> <span class="nav-text">1.3、数据库分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4、MySQL简介"><span class="nav-number">1.4.</span> <span class="nav-text">1.4、MySQL简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5、安装MySQL"><span class="nav-number">1.5.</span> <span class="nav-text">1.5、安装MySQL</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、初识MySQL"><span class="nav-number">1.</span> <span class="nav-text">1、初识MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1、为什么学习数据库"><span class="nav-number">1.1.</span> <span class="nav-text">1.1、为什么学习数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2、什么是数据库"><span class="nav-number">1.2.</span> <span class="nav-text">1.2、什么是数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3、数据库分类"><span class="nav-number">1.3.</span> <span class="nav-text">1.3、数据库分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4、MySQL简介"><span class="nav-number">1.4.</span> <span class="nav-text">1.4、MySQL简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5、安装MySQL"><span class="nav-number">1.5.</span> <span class="nav-text">1.5、安装MySQL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6、安装SQLyog"><span class="nav-number">1.6.</span> <span class="nav-text">1.6、安装SQLyog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7、连接数据库"><span class="nav-number">1.7.</span> <span class="nav-text">1.7、连接数据库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、操作数据库"><span class="nav-number">2.</span> <span class="nav-text">2、操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1、操作数据库-了解"><span class="nav-number">2.1.</span> <span class="nav-text">2.1、操作数据库(了解)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2、数据库的列类型"><span class="nav-number">2.2.</span> <span class="nav-text">2.2、数据库的列类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3、数据库的字段属性（重点）"><span class="nav-number">2.3.</span> <span class="nav-text">2.3、数据库的字段属性（重点）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4、创建数据库表（重点）"><span class="nav-number">2.4.</span> <span class="nav-text">2.4、创建数据库表（重点）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5、数据表的类型"><span class="nav-number">2.5.</span> <span class="nav-text">2.5、数据表的类型</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -499,12 +674,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">186k</span>
+    <span title="站点总字数">189k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:49</span>
+    <span title="站点阅读时长">2:52</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
