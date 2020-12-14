@@ -164,95 +164,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/12/03/%E9%87%8D%E6%8B%BE%E7%9A%84%E7%BE%8E%E5%A5%BD/%E9%87%8D%E6%8B%BE%E7%9A%84%E7%BE%8E%E5%A5%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
-      <meta itemprop="name" content="Curryforthreeeeee30">
-      <meta itemprop="description" content="Explore in every moment of the cudgel thinking.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SC&KD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/03/%E9%87%8D%E6%8B%BE%E7%9A%84%E7%BE%8E%E5%A5%BD/%E9%87%8D%E6%8B%BE%E7%9A%84%E7%BE%8E%E5%A5%BD/" class="post-title-link" itemprop="url">重拾的美好</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-03 13:48:19" itemprop="dateCreated datePublished" datetime="2020-12-03T13:48:19+08:00">2020-12-03</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/12/03/%E9%87%8D%E6%8B%BE%E7%9A%84%E7%BE%8E%E5%A5%BD/%E9%87%8D%E6%8B%BE%E7%9A%84%E7%BE%8E%E5%A5%BD/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/03/%E9%87%8D%E6%8B%BE%E7%9A%84%E7%BE%8E%E5%A5%BD/%E9%87%8D%E6%8B%BE%E7%9A%84%E7%BE%8E%E5%A5%BD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>27</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="remember"><a href="#remember" class="headerlink" title="remember"></a>remember</h2><ul>
-<li>她不爱喝甜的奶茶，而且对甜度很敏感😘</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/11/17/JavaWeb/JavaWeb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -300,14 +211,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>48k</span>
+              <span>57k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>44 分钟</span>
+              <span>52 分钟</span>
             </span>
 
         </div>
@@ -1137,12 +1048,124 @@
 <p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-11-29_201555.png" alt></p>
 <p>Filter开发步骤：</p>
 <ol>
-<li>导包</li>
-<li>编写过滤器<ol>
-<li>导包不要错</li>
+<li><p>导包</p>
+</li>
+<li><p>编写过滤器</p>
+<ol>
+<li><p>导包不要错</p>
+</li>
+<li><pre><code class="java"><span class="keyword">package</span> com.wyqian.filter;
+
+<span class="keyword">import</span> javax.servlet.*;
+<span class="keyword">import</span> java.io.IOException;
+
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharacterEncodingFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>{
+    <span class="comment">//初始化：web服务器启动的时候就执行了，随时等待过滤对象出现</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>{
+        System.out.println(<span class="string">"CharacterEncodingFilter初始化"</span>);
+    }
+
+    <span class="comment">//chain：链</span>
+    <span class="comment">/*</span>
+<span class="comment">    1.过滤中的所有代码，都会在过滤特定请求时被执行</span>
+<span class="comment">    2.必须要让过滤器继续同行：filterChain.doFilter(servletRequest, servletResponse);</span>
+<span class="comment">     */</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException </span>{
+        servletRequest.setCharacterEncoding(<span class="string">"utf-8"</span>);
+        servletResponse.setCharacterEncoding(<span class="string">"utf-8"</span>);
+        servletResponse.setContentType(<span class="string">"text/html;charset=utf-8"</span>);
+
+        System.out.println(<span class="string">"doFilter执行前..."</span>);
+        filterChain.doFilter(servletRequest, servletResponse);<span class="comment">//为了放行，不然程序到这儿就停住了</span>
+        System.out.println(<span class="string">"doFilter执行后..."</span>);
+    }
+
+    <span class="comment">//销毁：web服务器关闭的时候，过滤会销毁</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>{
+        System.out.println(<span class="string">"CharacterEncodingFilter销毁"</span>);
+    }
+}
+
+&lt;!--￼<span class="number">86</span>--&gt;
+</code></pre>
+</li>
 </ol>
 </li>
 </ol>
+<h2 id="12、监听器"><a href="#12、监听器" class="headerlink" title="12、监听器"></a>12、监听器</h2><p>实现一个监听器的接口，有很多种</p>
+<p>步骤：</p>
+<ol>
+<li><p>实现监听器接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wyqian.listener;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletContext;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpSessionEvent;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpSessionListener;</span><br><span class="line"></span><br><span class="line"><span class="comment">//统计网站在线人数：统计session</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">onlineCountListener</span> <span class="keyword">implements</span> <span class="title">HttpSessionListener</span> </span>&#123;</span><br><span class="line">    <span class="comment">//创建session监听</span></span><br><span class="line">    <span class="comment">//一旦创建session，就会触发一次这个事件</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sessionCreated</span><span class="params">(HttpSessionEvent httpSessionEvent)</span> </span>&#123;</span><br><span class="line">        ServletContext sC = httpSessionEvent.getSession().getServletContext();</span><br><span class="line">        Integer onlineCount = (Integer) sC.getAttribute(<span class="string">"onlineCount"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(httpSessionEvent.getSession().getId());</span><br><span class="line">        <span class="keyword">if</span>(onlineCount == <span class="keyword">null</span>)&#123;</span><br><span class="line">            onlineCount = <span class="keyword">new</span> Integer(<span class="number">1</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> count = onlineCount.intValue();</span><br><span class="line">            onlineCount = <span class="keyword">new</span> Integer(count + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        sC.setAttribute(<span class="string">"onlineCount"</span>, onlineCount);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//销毁session监听</span></span><br><span class="line">    <span class="comment">//一旦销毁session，就会触发一次这个事件</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sessionDestroyed</span><span class="params">(HttpSessionEvent httpSessionEvent)</span> </span>&#123;</span><br><span class="line">        ServletContext sC = httpSessionEvent.getSession().getServletContext();</span><br><span class="line">        Integer onlineCount = (Integer) sC.getAttribute(<span class="string">"onlineCount"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(onlineCount == <span class="keyword">null</span>)&#123;</span><br><span class="line">            onlineCount = <span class="keyword">new</span> Integer(<span class="number">0</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> count = onlineCount.intValue();</span><br><span class="line">            onlineCount = <span class="keyword">new</span> Integer(count - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        sC.setAttribute(<span class="string">"onlineCount"</span>, onlineCount);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置监听器</p>
+</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--配置监听器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>com.wyqian.listener.onlineCountListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>第一次启动的时候，由于Tomcat的原因，会显示3人在线，打印出<strong><em>sessionId</em></strong>可以看到有三个Id，但是前两个会被销毁，重新发布项目（redeploy）之后就会变成在线人数1人。</p>
+<p>​    3.  看情况是否使用</p>
+<h2 id="13、过滤器、监听器常见应用"><a href="#13、过滤器、监听器常见应用" class="headerlink" title="13、过滤器、监听器常见应用"></a>13、过滤器、监听器常见应用</h2><p>监听器：GUI编程中经常使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wyqian.listener;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.*;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.WindowEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.WindowListener;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">panel</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Frame frame = <span class="keyword">new</span> Frame(<span class="string">"金州勇士新赛季加油丫"</span>);<span class="comment">//创建窗口</span></span><br><span class="line">        Panel panel = <span class="keyword">new</span> Panel();<span class="comment">//创建面板</span></span><br><span class="line">        frame.setLayout(<span class="keyword">null</span>);<span class="comment">//设置窗体布局</span></span><br><span class="line"></span><br><span class="line">        frame.setBounds(<span class="number">300</span>,<span class="number">300</span>,<span class="number">500</span>,<span class="number">500</span>);</span><br><span class="line">        frame.setBackground(<span class="keyword">new</span> Color(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>));</span><br><span class="line"></span><br><span class="line">        panel.setBounds(<span class="number">30</span>,<span class="number">80</span>,<span class="number">300</span>,<span class="number">300</span>);</span><br><span class="line">        panel.setBackground(<span class="keyword">new</span> Color(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">        frame.add(panel);<span class="comment">//把面板加到窗口</span></span><br><span class="line">        frame.setVisible(<span class="keyword">true</span>);<span class="comment">//使窗口保持可见</span></span><br><span class="line">        <span class="comment">//当然也可以实现WindowListener的子类，这样的话可以选择实现哪个方法，不用去重写所有方法</span></span><br><span class="line">        frame.addWindowListener(<span class="keyword">new</span> WindowListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowOpened</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"正在打开..."</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowClosing</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"正在关闭..."</span>);</span><br><span class="line">                System.exit(<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowClosed</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"已经关闭"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowIconified</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowDeiconified</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowActivated</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"激活"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowDeactivated</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"未激活"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用户登录之后才能进入主页！用户注销后就不能进入主页！</p>
+<p>1、用户登陆之后，向Session中放入用户的数据</p>
+<p>2、进入主页的时候要判断用户是否已经登录；要求：在过滤器中实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line"></span><br><span class="line">    HttpServletRequest req = (HttpServletRequest) servletRequest;</span><br><span class="line">    HttpServletResponse resp = (HttpServletResponse) servletResponse;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(req.getSession().getAttribute(Content.USER_SESSION) == <span class="keyword">null</span>)&#123;</span><br><span class="line">        resp.sendRedirect(<span class="string">"/error/error.jsp"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    filterChain.doFilter(servletRequest, servletResponse);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="14、JDBC"><a href="#14、JDBC" class="headerlink" title="14、JDBC"></a>14、JDBC</h2><p>什么是JDBC：Java连接数据库！</p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-12_214818.png" alt></p>
+<p>需要jar包的支持：</p>
+<ul>
+<li>java.sql</li>
+<li>javax.sql</li>
+<li>mysql-connector-java…连接驱动（必须要导入）</li>
+</ul>
+<p>实验环境搭建：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`users`</span>(</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">  <span class="string">`name`</span> <span class="built_in">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">  <span class="string">`password`</span> <span class="built_in">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">  <span class="string">`email`</span> <span class="built_in">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">  <span class="string">`birthday`</span> <span class="built_in">DATE</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`users`</span>(<span class="string">`id`</span>, <span class="string">`name`</span>, <span class="string">`password`</span>, <span class="string">`email`</span>, <span class="string">`birthday`</span>)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="number">1</span>, <span class="string">'张三'</span>, <span class="string">'123'</span>, <span class="string">'zs@qq.com'</span>, <span class="string">'2020-01-01'</span>),</span><br><span class="line">(<span class="number">2</span>, <span class="string">'李四'</span>, <span class="string">'234'</span>, <span class="string">'ls@qq.com'</span>, <span class="string">'2020-01-02'</span>),</span><br><span class="line">(<span class="number">3</span>, <span class="string">'王五'</span>, <span class="string">'345'</span>, <span class="string">'ww@qq.com'</span>, <span class="string">'2020-01-03'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>导入数据库依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.47<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>IDEA连接数据库</p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-14_200829.png" alt></p>
+<p>JDBC固定步骤：</p>
+<ol>
+<li>加载驱动</li>
+<li>连接数据库，代表数据库</li>
+<li>向数据库发送SQL的对象Statement：CRUD</li>
+<li>编写SQL（根据业务不同，SQL语句会不同）</li>
+<li>执行SQL</li>
+<li>关闭连接</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wyqian.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestJdbc</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, SQLException </span>&#123;</span><br><span class="line">        <span class="comment">//加载驱动</span></span><br><span class="line">        Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//配置信息</span></span><br><span class="line">        <span class="comment">//useUnicode=true&amp;characterEncoding=utf-8解决中文乱码问题</span></span><br><span class="line">        String url = <span class="string">"jdbc:mysql://localhost:3306/jdbc?useUnicode=true&amp;characterEncoding=utf-8"</span>;</span><br><span class="line">        String username = <span class="string">"root"</span>;</span><br><span class="line">        String password = <span class="string">"123456"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//连接数据库</span></span><br><span class="line">        Connection connection = DriverManager.getConnection(url, username, password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//执行SQl的对象</span></span><br><span class="line">        Statement statement = connection.createStatement();</span><br><span class="line"></span><br><span class="line">        ResultSet rs = statement.executeQuery(<span class="string">"select * from users;"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">            System.out.println(<span class="string">"id="</span> + rs.getString(<span class="string">"id"</span>));</span><br><span class="line">            System.out.println(<span class="string">"姓名="</span> + rs.getString(<span class="string">"name"</span>));</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">            System.out.println(<span class="string">"密码="</span> + rs.getString(<span class="string">"password"</span>));</span><br><span class="line">            System.out.println(<span class="string">"电子邮箱="</span> + rs.getString(<span class="string">"email"</span>));</span><br><span class="line">            System.out.println(<span class="string">"生日="</span> + rs.getString(<span class="string">"birthday"</span>));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭资源</span></span><br><span class="line">        rs.close();</span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>预编译SQL</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wyqian.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestJdbc02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, SQLException </span>&#123;</span><br><span class="line">        <span class="comment">//1. 加载驱动</span></span><br><span class="line">        Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//配置信息</span></span><br><span class="line">        String url = <span class="string">"jdbc:mysql://localhost:3306/jdbc?useUnicode=true&amp;characterEncoding=utf-8"</span>;</span><br><span class="line">        String username = <span class="string">"root"</span>;</span><br><span class="line">        String pwd = <span class="string">"123456"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//连接数据库</span></span><br><span class="line">        Connection connection = DriverManager.getConnection(url, username, pwd);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//编写SQL</span></span><br><span class="line">        String sql = <span class="string">"insert into users (id, name, password, email, birthday) values(?,?,?,?,?)"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//预编译</span></span><br><span class="line">        PreparedStatement preparedStatement = connection.prepareStatement(sql);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//给占位符赋值</span></span><br><span class="line">        preparedStatement.setInt(<span class="number">1</span>,<span class="number">4</span>);</span><br><span class="line">        preparedStatement.setString(<span class="number">2</span>,<span class="string">"斯蒂芬库里"</span>);</span><br><span class="line">        preparedStatement.setString(<span class="number">3</span>,<span class="string">"30"</span>);</span><br><span class="line">        preparedStatement.setString(<span class="number">4</span>,<span class="string">"curry@qq.com"</span>);</span><br><span class="line">        preparedStatement.setDate(<span class="number">5</span>,<span class="keyword">new</span> Date(System.currentTimeMillis()));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//执行SqL</span></span><br><span class="line">        <span class="keyword">int</span> i = preparedStatement.executeUpdate();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(i &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"插入成功！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭资源</span></span><br><span class="line">        preparedStatement.close();</span><br><span class="line">        connection.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>事务</strong></p>
+<p>要么都成功，要么都失败！</p>
+<p>ACID原则：保证数据的安全。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">开启事务</span><br><span class="line">事务提交  commit()</span><br><span class="line">事务回滚  rollback()</span><br><span class="line">关闭事务</span><br><span class="line"></span><br><span class="line">转账：</span><br><span class="line">A:<span class="number">1000</span></span><br><span class="line">B:<span class="number">1000</span></span><br><span class="line">    </span><br><span class="line">A(<span class="number">900</span>)   --<span class="number">100</span>--&gt;   B(<span class="number">1100</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>Junit单元测试</strong></p>
+<p>依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--单元测试--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>简单使用</p>
+<p>@Test注解只有在方法上有效，只要加了这个注解的方法，就可以直接运行！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"Hello"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/1568442289597.png" alt="1568442261610"></p>
+<p>失败的时候是红色：</p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/1568442289597.png" alt="1568442289597"></p>
+<p><strong>搭建一个环境</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">account</span>(</span><br><span class="line">   <span class="keyword">id</span> <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line">   <span class="string">`name`</span> <span class="built_in">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">   money <span class="built_in">FLOAT</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">account</span>(<span class="string">`name`</span>,money) <span class="keyword">VALUES</span>(<span class="string">'A'</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">account</span>(<span class="string">`name`</span>,money) <span class="keyword">VALUES</span>(<span class="string">'B'</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">account</span>(<span class="string">`name`</span>,money) <span class="keyword">VALUES</span>(<span class="string">'C'</span>,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//配置信息</span></span><br><span class="line">    <span class="comment">//useUnicode=true&amp;characterEncoding=utf-8 解决中文乱码</span></span><br><span class="line">    String url=<span class="string">"jdbc:mysql://localhost:3306/jdbc?useUnicode=true&amp;characterEncoding=utf-8"</span>;</span><br><span class="line">    String username = <span class="string">"root"</span>;</span><br><span class="line">    String password = <span class="string">"123456"</span>;</span><br><span class="line"></span><br><span class="line">    Connection connection = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//1.加载驱动</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</span><br><span class="line">        <span class="comment">//2.连接数据库,代表数据库</span></span><br><span class="line">         connection = DriverManager.getConnection(url, username, password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.通知数据库开启事务,false 开启</span></span><br><span class="line">        connection.setAutoCommit(<span class="keyword">false</span>);</span><br><span class="line"></span><br><span class="line">        String sql = <span class="string">"update account set money = money-100 where name = 'A'"</span>;</span><br><span class="line">        connection.prepareStatement(sql).executeUpdate();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//制造错误</span></span><br><span class="line">        <span class="comment">//int i = 1/0;</span></span><br><span class="line"></span><br><span class="line">        String sql2 = <span class="string">"update account set money = money+100 where name = 'B'"</span>;</span><br><span class="line">        connection.prepareStatement(sql2).executeUpdate();</span><br><span class="line"></span><br><span class="line">        connection.commit();<span class="comment">//以上两条SQL都执行成功了，就提交事务！</span></span><br><span class="line">        System.out.println(<span class="string">"success"</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//如果出现异常，就通知数据库回滚事务</span></span><br><span class="line">            connection.rollback();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e1) &#123;</span><br><span class="line">            e1.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            connection.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -3427,6 +3450,100 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wyqian.top/2020/10/04/Arrays%E7%94%A8%E6%B3%95/Arrays%E7%94%A8%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/58333354?s=400&u=e1d2bc0a78040dc1468fa246086b741ce66df868&v=4">
+      <meta itemprop="name" content="Curryforthreeeeee30">
+      <meta itemprop="description" content="Explore in every moment of the cudgel thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SC&KD's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/04/Arrays%E7%94%A8%E6%B3%95/Arrays%E7%94%A8%E6%B3%95/" class="post-title-link" itemprop="url">Arrays用法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-10-04 10:21:28" itemprop="dateCreated datePublished" datetime="2020-10-04T10:21:28+08:00">2020-10-04</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/10/04/Arrays%E7%94%A8%E6%B3%95/Arrays%E7%94%A8%E6%B3%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/04/Arrays%E7%94%A8%E6%B3%95/Arrays%E7%94%A8%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Arrays常用的方法"><a href="#Arrays常用的方法" class="headerlink" title="Arrays常用的方法"></a>Arrays常用的方法</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/04/Arrays%E7%94%A8%E6%B3%95/Arrays%E7%94%A8%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
@@ -3498,7 +3615,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -3511,7 +3628,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -3565,12 +3682,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">276k</span>
+    <span title="站点总字数">284k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:11</span>
+    <span title="站点阅读时长">4:19</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
