@@ -43,8 +43,13 @@
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-30_153410.png">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-30_154442.png">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-30_161248.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-30_204658.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-30_213452.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/20201017070716720.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-31_110055.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-31_113327.png">
 <meta property="article:published_time" content="2020-12-25T06:33:58.000Z">
-<meta property="article:modified_time" content="2020-12-30T08:59:40.025Z">
+<meta property="article:modified_time" content="2020-12-31T03:39:45.300Z">
 <meta property="article:author" content="Curryforthreeeeee30">
 <meta property="article:tag" content="java">
 <meta property="article:tag" content="SSM框架">
@@ -235,14 +240,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>18k</span>
+              <span>21k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>16 分钟</span>
+              <span>19 分钟</span>
             </span>
 
         </div>
@@ -691,7 +696,114 @@
 
 </li>
 </ol>
-<h3 id="7-2、RowBounds分页"><a href="#7-2、RowBounds分页" class="headerlink" title="7.2、RowBounds分页"></a>7.2、RowBounds分页</h3>
+<h3 id="7-2、RowBounds分页"><a href="#7-2、RowBounds分页" class="headerlink" title="7.2、RowBounds分页"></a>7.2、RowBounds分页</h3><p>不再使用SQL实现分页</p>
+<ol>
+<li><p>接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//分页2</span></span><br><span class="line"><span class="function">List&lt;User&gt; <span class="title">getUserByRowBounds</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mapper.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--分页2--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getUserByRowBounds"</span> <span class="attr">resultMap</span>=<span class="string">"UserMap"</span>&gt;</span></span><br><span class="line">    select * from mybatis.user</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    分页2</span></span><br><span class="line"><span class="comment">    在java代码层面上实现</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getUserByRowBounds</span><span class="params">()</span></span>&#123;</span><br><span class="line">    SqlSession sqlSession = MybatisUtils.getSqlSession();</span><br><span class="line">    RowBounds rowBounds = <span class="keyword">new</span> RowBounds(<span class="number">0</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">    List&lt;User&gt; userList = sqlSession.selectList(<span class="string">"com.wyqian.dao.UserDao.getUserByRowBounds"</span>, <span class="keyword">null</span>, rowBounds);</span><br><span class="line">    <span class="keyword">for</span> (User user : userList) &#123;</span><br><span class="line">        System.out.println(user);</span><br><span class="line">    &#125;</span><br><span class="line">    sqlSession.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="7-3、分页插件"><a href="#7-3、分页插件" class="headerlink" title="7.3、分页插件"></a>7.3、分页插件</h3><p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-30_204658.png" alt></p>
+<p>了解即可，万一以后公司架构师说要使用，你需要它是什么东西！</p>
+<h2 id="8、使用注解开发"><a href="#8、使用注解开发" class="headerlink" title="8、使用注解开发"></a>8、使用注解开发</h2><h3 id="8-1、面向接口编程"><a href="#8-1、面向接口编程" class="headerlink" title="8.1、面向接口编程"></a>8.1、面向接口编程</h3><ul>
+<li>大家之前都学过面向对象编程，也学习过接口，但在真正的开发中，很多时候我们会选择面向接口编程</li>
+<li><strong>根本原因 : 解耦 , 可拓展 , 提高复用 , 分层开发中 , 上层不用管具体的实现 , 大家都遵守共同的标准 , 使得开发变得容易 , 规范性更好</strong></li>
+<li>在一个面向对象的系统中，系统的各种功能是由许许多多的不同对象协作完成的。在这种情况下，各个对象内部是如何实现自己的,对系统设计人员来讲就不那么重要了；</li>
+<li>而各个对象之间的协作关系则成为系统设计的关键。小到不同类之间的通信，大到各模块之间的交互，在系统设计之初都是要着重考虑的，这也是系统设计的主要工作内容。面向接口编程就是指按照这种思想来编程。</li>
+</ul>
+<p><strong>关于接口的理解</strong></p>
+<ul>
+<li>接口从更深层次的理解，应是定义（规范，约束）与实现（名实分离的原则）的分离。</li>
+<li>接口的本身反映了系统设计人员对系统的抽象理解。</li>
+<li>接口应有两类：</li>
+<li><ul>
+<li>第一类是对一个个体的抽象，它可对应为一个抽象体(abstract class)；</li>
+<li>第二类是对一个个体某一方面的抽象，即形成一个抽象面（interface）；</li>
+</ul>
+</li>
+<li>一个体有可能有多个抽象面。抽象体与抽象面是有区别的。</li>
+</ul>
+<p><strong>三个面向区别</strong></p>
+<ul>
+<li>面向对象是指，我们考虑问题时，以对象为单位，考虑它的属性及方法 .</li>
+<li>面向过程是指，我们考虑问题时，以一个具体的流程（事务过程）为单位，考虑它的实现 .</li>
+<li>接口设计与非接口设计是针对复用技术而言的，与面向对象（过程）不是一个问题.更多的体现就是对系统整体的架构</li>
+</ul>
+<h3 id="8-2、使用注解开发"><a href="#8-2、使用注解开发" class="headerlink" title="8.2、使用注解开发"></a>8.2、使用注解开发</h3><ol>
+<li><p>注解在接口上实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Select</span>(<span class="string">"select * from mybatis.user"</span>)</span><br><span class="line"><span class="function">List&lt;User&gt; <span class="title">getUser</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>需要在核心配置文件中绑定接口</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">"com.wyqian.dao.UserMapper"</span>&gt;</span><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getUser</span><span class="params">()</span></span>&#123;</span><br><span class="line">    SqlSession sqlSession = MybatisUtils.getSqlSession();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//底层主要应用反射</span></span><br><span class="line">    UserMapper mapper = sqlSession.getMapper(UserMapper<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">    List&lt;User&gt; userList = mapper.getUser();</span><br><span class="line">    <span class="keyword">for</span> (User user : userList) &#123;</span><br><span class="line">        System.out.println(user);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sqlSession.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>本质：反射机制实现</p>
+<p>底层：动态代理！</p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-30_213452.png" alt></p>
+<p><strong>Mybatis详细的执行流程！</strong></p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/20201017070716720.png" alt></p>
+<h3 id="8-3、CRUD"><a href="#8-3、CRUD" class="headerlink" title="8.3、CRUD"></a>8.3、CRUD</h3><p>我们可以在工具类创建的时候开启自动提交事务！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SqlSession <span class="title">getSqlSession</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sqlSessionFactory.openSession(<span class="keyword">true</span>);<span class="comment">//开启自动提交事务</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 编写接口，增加注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Select</span>(<span class="string">"select * from mybatis.user"</span>)</span><br><span class="line">    <span class="function">List&lt;User&gt; <span class="title">getUser</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//方法存在多个参数，所以参数前面一定要加上@Param("id")注解</span></span><br><span class="line">    <span class="comment">//引用对象不需要写@Param</span></span><br><span class="line">    <span class="meta">@Select</span>(<span class="string">"select * from mybatis.user where id = $&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function">User <span class="title">getUserById</span><span class="params">(@Param(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加一个用户</span></span><br><span class="line">    <span class="meta">@Insert</span>(<span class="string">"insert into mybatis.user (id, name, pwd) values(#&#123;id&#125;, #&#123;name&#125;, #&#123;password&#125;)"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">insertUser</span><span class="params">(User user)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//修改用户</span></span><br><span class="line">    <span class="meta">@Update</span>(<span class="string">"update mybatis.user set name = #&#123;name&#125;, pwd = #&#123;password&#125; where id = #&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">updateUser</span><span class="params">(User user)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除一个用户</span></span><br><span class="line">    <span class="meta">@Delete</span>(<span class="string">"delete from mybatis.user where id = #&#123;id2&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">deleteUser</span><span class="params">(@Param(<span class="string">"id2"</span>)</span> <span class="keyword">int</span> id)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试类</p>
+<p>【注意：我们必须要将接口注册绑定到我们的核心配置文件中！】</p>
+<p><strong>关于@Param()注解</strong></p>
+<ul>
+<li>基本类型的参数或者String类型，需要加上</li>
+<li>引用类型不需要加</li>
+<li>如果只有一个基本类型的话，可以忽略，但是建议大家都加上！</li>
+<li>我们在SQL中引用的就是我们这里的@Param(“uid”)中设定的属性名！</li>
+</ul>
+<p><strong>#{}    ${}区别</strong></p>
+<p>就相当于statement和prepareStatement的区别，#{}可以防止SQL注入，而${}无法防止SQL注入！</p>
+<h2 id="9、Lombok"><a href="#9、Lombok" class="headerlink" title="9、Lombok"></a>9、Lombok</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.</span><br><span class="line">Never write another getter or equals method again, with one annotation your <span class="class"><span class="keyword">class</span> <span class="title">has</span> <span class="title">a</span> <span class="title">fully</span> <span class="title">featured</span> <span class="title">builder</span>, <span class="title">Automate</span> <span class="title">your</span> <span class="title">logging</span> <span class="title">variables</span>, <span class="title">and</span> <span class="title">much</span> <span class="title">more</span>.</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>java  library</li>
+<li>plugs</li>
+<li>build tools</li>
+<li>with one annotation your class</li>
+</ul>
+<p>使用步骤:</p>
+<ol>
+<li><p>在IDEA中安装Lombok插件！</p>
+</li>
+<li><p>在项目中导入lombok的jar包</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.18.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在实体类上加注解即可！</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-31_110055.png" alt></p>
+<p>说明：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span>：无参构造、get、set、toString、hashcode、equals</span><br><span class="line"><span class="meta">@AllArgsConstructor</span>  有参构造</span><br><span class="line"><span class="meta">@NoArgsConstructor</span>   无参构造</span><br><span class="line"><span class="meta">@Getter</span>  and   <span class="meta">@Setter</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="meta">@EqualsAndHashCode</span></span><br></pre></td></tr></table></figure>
+
+<p>4、测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>三个注解就实现了之前的用IDEA  ALT+Insert实现的所有方法！</p>
+<p>但是lombok有好处也有坏处，好处是简洁，坏处就是减少源码的可读性！</p>
+<h2 id="10、多对一"><a href="#10、多对一" class="headerlink" title="10、多对一"></a>10、多对一</h2><p>多对一：</p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2020-12-31_113327.png" alt></p>
+<ul>
+<li>多个学生，对应一个老师</li>
+<li>对于学生这边而言，<strong>关联</strong>…多个学生，关联一个老师【多对一】</li>
+<li>对于老师而言，<strong>集合</strong>，一个老师有很多学生【一对多】</li>
+</ul>
+
     </div>
 
     
@@ -814,7 +926,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mybatis-9-28"><span class="nav-number">1.</span> <span class="nav-text">Mybatis-9.28</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、简介"><span class="nav-number">2.</span> <span class="nav-text">1、简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1、什么是Mybatis"><span class="nav-number">2.1.</span> <span class="nav-text">1.1、什么是Mybatis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2、持久化"><span class="nav-number">2.2.</span> <span class="nav-text">1.2、持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3、持久层"><span class="nav-number">2.3.</span> <span class="nav-text">1.3、持久层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4、为什么需要Mybatis"><span class="nav-number">2.4.</span> <span class="nav-text">1.4、为什么需要Mybatis?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、第一个Mybatis程序"><span class="nav-number">3.</span> <span class="nav-text">2、第一个Mybatis程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1、搭建环境"><span class="nav-number">3.1.</span> <span class="nav-text">2.1、搭建环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2、创建一个模块"><span class="nav-number">3.2.</span> <span class="nav-text">2.2、创建一个模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3、编写代码"><span class="nav-number">3.3.</span> <span class="nav-text">2.3、编写代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4、测试"><span class="nav-number">3.4.</span> <span class="nav-text">2.4、测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、CRUD"><span class="nav-number">4.</span> <span class="nav-text">3、CRUD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、namespace"><span class="nav-number">4.1.</span> <span class="nav-text">1、namespace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、select"><span class="nav-number">4.2.</span> <span class="nav-text">2、select</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、Insert"><span class="nav-number">4.3.</span> <span class="nav-text">3、Insert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、update"><span class="nav-number">4.4.</span> <span class="nav-text">4、update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、delete"><span class="nav-number">4.5.</span> <span class="nav-text">5、delete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、分析错误"><span class="nav-number">4.6.</span> <span class="nav-text">6、分析错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、万能Map"><span class="nav-number">4.7.</span> <span class="nav-text">7、万能Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、思考题"><span class="nav-number">4.8.</span> <span class="nav-text">8、思考题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、配置解析"><span class="nav-number">5.</span> <span class="nav-text">4、配置解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、核心配置文件"><span class="nav-number">5.1.</span> <span class="nav-text">1、核心配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、环境配置（environments）"><span class="nav-number">5.2.</span> <span class="nav-text">2、环境配置（environments）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、属性（properties）"><span class="nav-number">5.3.</span> <span class="nav-text">3、属性（properties）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、类型别名（typeAliases）"><span class="nav-number">5.4.</span> <span class="nav-text">4、类型别名（typeAliases）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、设置"><span class="nav-number">5.5.</span> <span class="nav-text">5、设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、其他配置"><span class="nav-number">5.6.</span> <span class="nav-text">6、其他配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、映射器（mappers）"><span class="nav-number">5.7.</span> <span class="nav-text">7、映射器（mappers）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、生命周期和作用域"><span class="nav-number">5.8.</span> <span class="nav-text">8、生命周期和作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、解决属性名和字段名不一致的问题"><span class="nav-number">6.</span> <span class="nav-text">5、解决属性名和字段名不一致的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、问题"><span class="nav-number">6.1.</span> <span class="nav-text">1、问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、resultMap"><span class="nav-number">6.2.</span> <span class="nav-text">2、resultMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、日志"><span class="nav-number">7.</span> <span class="nav-text">6、日志</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1、日志工厂"><span class="nav-number">7.1.</span> <span class="nav-text">6.1、日志工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2、Log4j"><span class="nav-number">7.2.</span> <span class="nav-text">6.2、Log4j</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、分页"><span class="nav-number">8.</span> <span class="nav-text">7、分页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1、使用Limit分页"><span class="nav-number">8.1.</span> <span class="nav-text">7.1、使用Limit分页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2、RowBounds分页"><span class="nav-number">8.2.</span> <span class="nav-text">7.2、RowBounds分页</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mybatis-9-28"><span class="nav-number">1.</span> <span class="nav-text">Mybatis-9.28</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、简介"><span class="nav-number">2.</span> <span class="nav-text">1、简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1、什么是Mybatis"><span class="nav-number">2.1.</span> <span class="nav-text">1.1、什么是Mybatis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2、持久化"><span class="nav-number">2.2.</span> <span class="nav-text">1.2、持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3、持久层"><span class="nav-number">2.3.</span> <span class="nav-text">1.3、持久层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4、为什么需要Mybatis"><span class="nav-number">2.4.</span> <span class="nav-text">1.4、为什么需要Mybatis?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、第一个Mybatis程序"><span class="nav-number">3.</span> <span class="nav-text">2、第一个Mybatis程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1、搭建环境"><span class="nav-number">3.1.</span> <span class="nav-text">2.1、搭建环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2、创建一个模块"><span class="nav-number">3.2.</span> <span class="nav-text">2.2、创建一个模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3、编写代码"><span class="nav-number">3.3.</span> <span class="nav-text">2.3、编写代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4、测试"><span class="nav-number">3.4.</span> <span class="nav-text">2.4、测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、CRUD"><span class="nav-number">4.</span> <span class="nav-text">3、CRUD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、namespace"><span class="nav-number">4.1.</span> <span class="nav-text">1、namespace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、select"><span class="nav-number">4.2.</span> <span class="nav-text">2、select</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、Insert"><span class="nav-number">4.3.</span> <span class="nav-text">3、Insert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、update"><span class="nav-number">4.4.</span> <span class="nav-text">4、update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、delete"><span class="nav-number">4.5.</span> <span class="nav-text">5、delete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、分析错误"><span class="nav-number">4.6.</span> <span class="nav-text">6、分析错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、万能Map"><span class="nav-number">4.7.</span> <span class="nav-text">7、万能Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、思考题"><span class="nav-number">4.8.</span> <span class="nav-text">8、思考题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、配置解析"><span class="nav-number">5.</span> <span class="nav-text">4、配置解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、核心配置文件"><span class="nav-number">5.1.</span> <span class="nav-text">1、核心配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、环境配置（environments）"><span class="nav-number">5.2.</span> <span class="nav-text">2、环境配置（environments）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、属性（properties）"><span class="nav-number">5.3.</span> <span class="nav-text">3、属性（properties）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、类型别名（typeAliases）"><span class="nav-number">5.4.</span> <span class="nav-text">4、类型别名（typeAliases）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、设置"><span class="nav-number">5.5.</span> <span class="nav-text">5、设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、其他配置"><span class="nav-number">5.6.</span> <span class="nav-text">6、其他配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、映射器（mappers）"><span class="nav-number">5.7.</span> <span class="nav-text">7、映射器（mappers）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、生命周期和作用域"><span class="nav-number">5.8.</span> <span class="nav-text">8、生命周期和作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、解决属性名和字段名不一致的问题"><span class="nav-number">6.</span> <span class="nav-text">5、解决属性名和字段名不一致的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、问题"><span class="nav-number">6.1.</span> <span class="nav-text">1、问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、resultMap"><span class="nav-number">6.2.</span> <span class="nav-text">2、resultMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、日志"><span class="nav-number">7.</span> <span class="nav-text">6、日志</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1、日志工厂"><span class="nav-number">7.1.</span> <span class="nav-text">6.1、日志工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2、Log4j"><span class="nav-number">7.2.</span> <span class="nav-text">6.2、Log4j</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、分页"><span class="nav-number">8.</span> <span class="nav-text">7、分页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1、使用Limit分页"><span class="nav-number">8.1.</span> <span class="nav-text">7.1、使用Limit分页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2、RowBounds分页"><span class="nav-number">8.2.</span> <span class="nav-text">7.2、RowBounds分页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3、分页插件"><span class="nav-number">8.3.</span> <span class="nav-text">7.3、分页插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、使用注解开发"><span class="nav-number">9.</span> <span class="nav-text">8、使用注解开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1、面向接口编程"><span class="nav-number">9.1.</span> <span class="nav-text">8.1、面向接口编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2、使用注解开发"><span class="nav-number">9.2.</span> <span class="nav-text">8.2、使用注解开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3、CRUD"><span class="nav-number">9.3.</span> <span class="nav-text">8.3、CRUD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、Lombok"><span class="nav-number">10.</span> <span class="nav-text">9、Lombok</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、多对一"><span class="nav-number">11.</span> <span class="nav-text">10、多对一</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -897,12 +1009,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">348k</span>
+    <span title="站点总字数">352k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:17</span>
+    <span title="站点阅读时长">5:20</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
