@@ -24,16 +24,16 @@
     var CONFIG = {"hostname":"wyqian.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":320,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="学习的方式  不知道这个代码怎么来的 这个代码跑不起来 这个项目对我们有什么帮助，不会模块化分析  任何一个开源项目，都可以让自己得到提升！ 下面以一个案例来说明如何分析开源项目： https:&#x2F;&#x2F;gitee.com&#x2F;elunez&#x2F;eladmin https:&#x2F;&#x2F;gitee.com&#x2F;elunez&#x2F;eladmin-web 观察开源项目后端的  前端的  开源项目下载下载完毕，然后解压，优先使用码云">
+  <meta name="description" content="学习的方式  不知道这个代码怎么来的 这个代码跑不起来 这个项目对我们有什么帮助，不会模块化分析  任何一个开源项目，都可以让自己得到提升！ 下面以一个案例来说明如何分析开源项目： https:&#x2F;&#x2F;gitee.com&#x2F;elunez&#x2F;eladmin https:&#x2F;&#x2F;gitee.com&#x2F;elunez&#x2F;eladmin-web 观察开源项目后端的  前端的  开源项目下载下载完毕，然后解压，优先使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何分析开源项目">
 <meta property="og:url" content="http://wyqian.top/2021/03/25/%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/index.html">
 <meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
-<meta property="og:description" content="学习的方式  不知道这个代码怎么来的 这个代码跑不起来 这个项目对我们有什么帮助，不会模块化分析  任何一个开源项目，都可以让自己得到提升！ 下面以一个案例来说明如何分析开源项目： https:&#x2F;&#x2F;gitee.com&#x2F;elunez&#x2F;eladmin https:&#x2F;&#x2F;gitee.com&#x2F;elunez&#x2F;eladmin-web 观察开源项目后端的  前端的  开源项目下载下载完毕，然后解压，优先使用码云">
+<meta property="og:description" content="学习的方式  不知道这个代码怎么来的 这个代码跑不起来 这个项目对我们有什么帮助，不会模块化分析  任何一个开源项目，都可以让自己得到提升！ 下面以一个案例来说明如何分析开源项目： https:&#x2F;&#x2F;gitee.com&#x2F;elunez&#x2F;eladmin https:&#x2F;&#x2F;gitee.com&#x2F;elunez&#x2F;eladmin-web 观察开源项目后端的  前端的  开源项目下载下载完毕，然后解压，优先使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-03-25_093314.png">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-03-25_094706.png">
-<meta property="og:image" content="http://wyqian.top/2021/03/25/%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/H:%5Chexoblog%5Cblog%5Csource_posts%5C%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%5C2021-03-25_122739.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-03-25_122739.jpg">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-03-25_131534.png">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-03-25_131758.png">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-03-25_132113.png">
@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-03-25_133926.png">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-03-25_134502.png">
 <meta property="article:published_time" content="2021-03-25T01:10:00.000Z">
-<meta property="article:modified_time" content="2021-03-25T06:05:11.553Z">
+<meta property="article:modified_time" content="2021-03-25T06:20:33.224Z">
 <meta property="article:author" content="精进的coder">
 <meta property="article:tag" content="java学习">
 <meta property="article:tag" content="学习方式">
@@ -251,7 +251,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p> 学习的方式</p>
+        <a id="more"></a>
+
+<p> 学习的方式</p>
 <ol>
 <li>不知道这个代码怎么来的</li>
 <li>这个代码跑不起来</li>
@@ -280,7 +282,7 @@
 <li>后端项目<strong><em>导入</em></strong>跑起来</li>
 <li>等待所有的项目跑成功！</li>
 </ol>
-<p><img src="/2021/03/25/%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/H:%5Chexoblog%5Cblog%5Csource_posts%5C%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%5C2021-03-25_122739.png" alt></p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-03-25_122739.jpg" alt></p>
 <p>只要发现了Swagger，那么跑起来的第一步就是先进入Swagger-ui页面，因为这里面都是接口！</p>
 <p>进而查看配置文件！默认端口，有哪些配置，需要改为自己的项目和环境地址！</p>
 <p>前端就是安装依赖，启动测试运行，看接口是否正常！</p>
