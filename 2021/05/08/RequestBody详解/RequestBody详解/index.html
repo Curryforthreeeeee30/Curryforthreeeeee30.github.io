@@ -24,12 +24,12 @@
     var CONFIG = {"hostname":"wyqian.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":320,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="@RequestBody介绍​    1、@RequestBody主要用来接收前端传递给后端的json字符串中的数据的（请求体中的数据）。由于GET方式没有请求体，所以使用@RequestBody接受数据的时候，前端不能用GET方式提交数据，而是用POST方式提交。 ​    2、在后端的同一个接口中，@RequestBody和@ResquestParam()可以同时使用，@RequestBody">
+  <meta name="description" content="@RequestBody介绍">
 <meta property="og:type" content="article">
 <meta property="og:title" content="@RequestBody详解">
 <meta property="og:url" content="http://wyqian.top/2021/05/08/RequestBody%E8%AF%A6%E8%A7%A3/RequestBody%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="SC&amp;KD&#39;s Blog">
-<meta property="og:description" content="@RequestBody介绍​    1、@RequestBody主要用来接收前端传递给后端的json字符串中的数据的（请求体中的数据）。由于GET方式没有请求体，所以使用@RequestBody接受数据的时候，前端不能用GET方式提交数据，而是用POST方式提交。 ​    2、在后端的同一个接口中，@RequestBody和@ResquestParam()可以同时使用，@RequestBody">
+<meta property="og:description" content="@RequestBody介绍">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-05-08_101428.png">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-05-08_101531.png">
@@ -43,7 +43,7 @@
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-05-08_103810.png">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-05-08_105907.png">
 <meta property="article:published_time" content="2021-05-08T01:33:38.000Z">
-<meta property="article:modified_time" content="2021-05-08T02:59:41.041Z">
+<meta property="article:modified_time" content="2021-06-10T09:10:12.151Z">
 <meta property="article:author" content="精进的coder">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -252,7 +252,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="RequestBody介绍"><a href="#RequestBody介绍" class="headerlink" title="@RequestBody介绍"></a>@RequestBody介绍</h3><p>​    1、@RequestBody主要<strong><em>用来接收前端传递给后端的json字符串中的数据</em></strong>的（请求体中的数据）。由于<strong><em>GET方式没有请求体</em></strong>，所以使用@RequestBody接受数据的时候，前端不能用GET方式提交数据，而是用<strong><em>POST方式</em></strong>提交。</p>
+        <h3 id="RequestBody介绍"><a href="#RequestBody介绍" class="headerlink" title="@RequestBody介绍"></a>@RequestBody介绍</h3><a id="more"></a>
+
+<p>​    1、@RequestBody主要<strong><em>用来接收前端传递给后端的json字符串中的数据</em></strong>的（请求体中的数据）。由于<strong><em>GET方式没有请求体</em></strong>，所以使用@RequestBody接受数据的时候，前端不能用GET方式提交数据，而是用<strong><em>POST方式</em></strong>提交。</p>
 <p>​    2、在后端的同一个接口中，@RequestBody和@ResquestParam()可以同时使用，@RequestBody最多只能有一个，而@ResquestParam()可以有多个。</p>
 <p>​    3、@RequestBody 接收的是<strong><em>请求体</em></strong>里面的数据；而@RequestParam接收的是<strong><em>key-value</em></strong>里面的参数。</p>
 <p>​    4、如果参数前写了@RequestParam(xxx)，那么前端必须有对应的xxx名字才行(不管其是否有值，当然可以通过设置该注解的required属性来调节是否必须传)，如果没有xxx名的话，那么请求会出错，报400。</p>
