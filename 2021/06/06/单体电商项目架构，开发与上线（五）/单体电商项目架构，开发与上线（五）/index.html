@@ -70,9 +70,11 @@
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-06-10_132553.png">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-06-10_132713.png">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-06-10_132840.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210617101606.png">
 <meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-06-10_132950.png">
+<meta property="og:image" content="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/clipboard.png">
 <meta property="article:published_time" content="2021-06-06T12:26:43.000Z">
-<meta property="article:modified_time" content="2021-06-10T09:08:50.785Z">
+<meta property="article:modified_time" content="2021-06-17T07:40:56.189Z">
 <meta property="article:author" content="如若初见">
 <meta property="article:tag" content="java项目">
 <meta name="twitter:card" content="summary">
@@ -262,14 +264,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>2.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -389,10 +391,25 @@
 <p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-06-10_132713.png" alt></p>
 <p>然后访问前端：<a href="http://www.qwyttch.top:8080/foodie-shop/,控制台报错：" target="_blank" rel="noopener">http://www.qwyttch.top:8080/foodie-shop/,控制台报错：</a></p>
 <p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-06-10_132840.png" alt></p>
-<p>这是由于跨域引起的问题，因此，打开后端代码，修改CorsConfig里面的配置：</p>
+<p>这说的是解析地址的时候出了问题，经历一番查找bug的过程，最终在url请求上解决了问题，在url上加www。</p>
+<p>这里的问题在于：如果说你在浏览器里面访问：qwyttch.top:8080/foodie-shop/index.html，那么浏览器会给你自动加上www的协议。而我们在请求后端的时候，并不会给你加上www，所以需要自己写。</p>
+<p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210617101606.png" alt></p>
+<p>还有一个问题，是由于跨域引起的问题，因此，打开后端代码，修改CorsConfig里面的配置：</p>
 <p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/2021-06-10_132950.png" alt></p>
-<p>然后对maven项目clean和install，上传打好的war包：</p>
-<p>JAVA_HOME=/usr/java/jdk1.8.0_281-amd64<br>CLASSPATH=%JAVA_HOME%/lib;%JAVA_HOME%/jre/lib<br>PATH=$JAVA_HOME/bin;$JAVA_HOME/jre/bin<br>export PATH CLASSPATH JAVA_HOME</p>
+<p>然后对maven项目clean和install，上传打好的war包（其实只要上传CorsConfig.class文件就好了）。</p>
+<h3 id="解决Cookie异常，测试订单支付流程"><a href="#解决Cookie异常，测试订单支付流程" class="headerlink" title="解决Cookie异常，测试订单支付流程"></a>解决Cookie异常，测试订单支付流程</h3><p><img src="https://gitee.com/Curryforthreeeeee30/HexoPicture/raw/master/PicturteBed/clipboard.png" alt></p>
+<p>我们可以使用旧版的processor来替换新版的processor。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/tomcat-api/conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim context.xml</span><br></pre></td></tr></table></figure>
+
+<p>![](H:\hexoblog\blog\source_posts\单体电商项目架构，开发与上线（五）\clipboard (1).png)</p>
+<p>重启tomcat服务器：</p>
+<p>![](H:\hexoblog\blog\source_posts\单体电商项目架构，开发与上线（五）\clipboard (2).png)</p>
+<p>最后访问：</p>
+<p><a href="http://www.qwyttch.top:8080/foodie-shop/" target="_blank" rel="noopener">http://www.qwyttch.top:8080/foodie-shop/</a></p>
+<p><a href="http://www.qwyttch.top:8080/foodie-center/" target="_blank" rel="noopener">http://www.qwyttch.top:8080/foodie-center/</a></p>
+<p>都是可以正常访问的。</p>
 
     </div>
 
@@ -509,7 +526,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本章概述与服务器购买建议"><span class="nav-number">1.</span> <span class="nav-text">本章概述与服务器购买建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装JDK-安装前自检查"><span class="nav-number">2.</span> <span class="nav-text">安装JDK-安装前自检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装JDK-配置JDK使其生效"><span class="nav-number">3.</span> <span class="nav-text">安装JDK-配置JDK使其生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Tomcat-部署第一台Tomcat"><span class="nav-number">4.</span> <span class="nav-text">安装Tomcat-部署第一台Tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Tomcat-部署第二台Tomcat与域名配置方案"><span class="nav-number">5.</span> <span class="nav-text">安装Tomcat-部署第二台Tomcat与域名配置方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MariaDB-手把手跟着MariaDB官方文档下载rpms"><span class="nav-number">6.</span> <span class="nav-text">MariaDB-手把手跟着MariaDB官方文档下载rpms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MariaDB-离线安装MariaDB"><span class="nav-number">7.</span> <span class="nav-text">MariaDB-离线安装MariaDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MariaDB-配置MariaDB"><span class="nav-number">8.</span> <span class="nav-text">MariaDB-配置MariaDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringBoot多环境部署profile"><span class="nav-number">9.</span> <span class="nav-text">SpringBoot多环境部署profile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梳理不同环境的配置"><span class="nav-number">10.</span> <span class="nav-text">梳理不同环境的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringBoot打包war"><span class="nav-number">11.</span> <span class="nav-text">SpringBoot打包war</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传并发布war"><span class="nav-number">12.</span> <span class="nav-text">上传并发布war</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布前端项目"><span class="nav-number">13.</span> <span class="nav-text">发布前端项目</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本章概述与服务器购买建议"><span class="nav-number">1.</span> <span class="nav-text">本章概述与服务器购买建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装JDK-安装前自检查"><span class="nav-number">2.</span> <span class="nav-text">安装JDK-安装前自检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装JDK-配置JDK使其生效"><span class="nav-number">3.</span> <span class="nav-text">安装JDK-配置JDK使其生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Tomcat-部署第一台Tomcat"><span class="nav-number">4.</span> <span class="nav-text">安装Tomcat-部署第一台Tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Tomcat-部署第二台Tomcat与域名配置方案"><span class="nav-number">5.</span> <span class="nav-text">安装Tomcat-部署第二台Tomcat与域名配置方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MariaDB-手把手跟着MariaDB官方文档下载rpms"><span class="nav-number">6.</span> <span class="nav-text">MariaDB-手把手跟着MariaDB官方文档下载rpms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MariaDB-离线安装MariaDB"><span class="nav-number">7.</span> <span class="nav-text">MariaDB-离线安装MariaDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MariaDB-配置MariaDB"><span class="nav-number">8.</span> <span class="nav-text">MariaDB-配置MariaDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringBoot多环境部署profile"><span class="nav-number">9.</span> <span class="nav-text">SpringBoot多环境部署profile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梳理不同环境的配置"><span class="nav-number">10.</span> <span class="nav-text">梳理不同环境的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringBoot打包war"><span class="nav-number">11.</span> <span class="nav-text">SpringBoot打包war</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传并发布war"><span class="nav-number">12.</span> <span class="nav-text">上传并发布war</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布前端项目"><span class="nav-number">13.</span> <span class="nav-text">发布前端项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决Cookie异常，测试订单支付流程"><span class="nav-number">14.</span> <span class="nav-text">解决Cookie异常，测试订单支付流程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -525,7 +542,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-count">65</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -538,7 +555,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -593,12 +610,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">586k</span>
+    <span title="站点总字数">636k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">8:53</span>
+    <span title="站点阅读时长">9:38</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
